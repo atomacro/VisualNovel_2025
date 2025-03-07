@@ -1,0 +1,423 @@
+﻿title: Start
+---
+// Define a variable to track the player's choice
+<<declare $playerChoice = "" >>
+
+<<jump Scene1>>
+
+// //<<change SceneManager SampleScene Sample2>> //<<change GameObjectWithScript FromScene ToScene>>
+// <<changefade SceneManager SampleScene SampleScene2 0.5>> //<<changefade GameObjectWithScript FromScene ToScene speed>>
+
+
+===
+
+title: Scene1
+---
+There’s an old legend about jumping off a secret cliff in the mountains.
+
+They said that if you jump, you’ll go to a different world. <br><br>A world where all your worries will go away.
+
+Luna: "..."
+// <<changefade SceneManager SampleScene SampleScene2 0.5>> //<<changefade GameObjectWithScript FromScene ToScene speed>>
+
+
+I look around.
+
+Luna: "..."
+
+This might be it.
+
+I can feel it. #choice
+
+-> Jump
+
+I walk closer to the end of the cliff.
+
+I take a deep breath.
+
+Then I make the jump.
+
+// Black Screen.
+
+Luna: "!!"
+
+I closed my eyes, it was scary.
+
+The cold wind blows onto my whole body as I fall freely.
+
+Then, a bright light seeps into my eyelids.
+
+I open my eyes.
+
+// CG START: Luna falling from the sky.
+
+Luna: "Wha-?!"
+
+…it’s beautiful…
+
+Luna: “Aaaaahh!!”
+
+…but I’m still falling!
+
+?: “...don’t worry.”
+
+I hear a voice near me. Where did that come from?! <br><br>I’m in mid air!
+
+?: “Trust me, this won’t hurt. You’ll fall like a feather once you’re near the ground.”
+
+The moment I got close to hitting the ground, I started to fall slower until I was standing with my own two feet.
+
+// CG END: Luna falling from the sky -> BG: Grasslands
+
+Luna: “Woah… That was…”
+
+?: “Awesome, wasn’t it?”
+
+I immediately looked behind and saw someone I don’t know.
+
+No… How do I look behind? I can even see myself in front of me?!
+
+Luna: “...no, it was weird. This is all weird. I’ve never experienced something like this before.”
+
+Maybe I just need to get used to this.
+
+Luna: “My clothes changed, too! Nobody stripped me off and changed them, right?”
+
+?: “What?! Why would you even think that?!”
+
+Luna: “I… My mom used to change my clothes… so…”
+
+?: “No one’s going to do that to you here, don’t you worry!”
+
+Luna: “I wasn’t worrying?”
+
+?: “Okay, whatever. I’m-”
+
+Luna: “Where did you even come from? I heard you when I was still falling.”
+
+?: “Y- You did? You heard me yelling all the way up there?”
+
+Luna: “Um…”
+
+?: “How did you end up that high anyway?”
+
+Luna: “I jumped off a cliff.”
+
+?: “Funny. There’s no cliff nearby.”
+
+Luna: “You haven’t even asked for my name yet.”
+
+?: “I don’t have to! I already know who you are.”
+?: “You’re Luna, right?”
+
+Luna: “But I don’t know you?”
+
+?: “You didn’t let me finish earlier!”
+
+Luna: “Eh. I don’t talk to annoying people.”
+
+?: “You don’t talk to people at all.”
+?: “But here, you will! This whole world is for you, and only for you.”
+
+Luna: “...”
+Luna: “Okay, but what’s your name again?”
+
+?: “You’re hurting me.”
+
+Luna: “I literally don’t know you.”
+
+Sol: “I’m Sol.”
+
+Luna: “And what do I do here?”
+
+Sol: “Whatever you want!”
+
+Luna: “Whatever I want… What do I want?”
+
+Sol: “Well… I found what I want. This time, I’ll help someone do the same, and that someone is you!”
+
+Luna: “I don’t ask for help from other people.”
+
+Sol: “Then you aren’t going anywhere.”
+
+Luna: “...”
+Luna: “Fine.”
+
+Sol: “Let’s go! I know a place where we can start off.”
+
+<<jump Scene2>>
+
+===
+
+title: Scene2
+---
+// Black Screen.
+
+This is so weird.
+
+I can see myself in front of me.
+
+Maybe I’ll find answers soon?
+
+Sol: “What are you spacing out for?”
+
+// BG: Town Scenery
+
+Another weird thing is, this all looks too familiar.
+
+Sol: “If you think this looks familiar, I told you earlier.”
+Sol: “This whole world is for you! We’ll find you within you.”
+
+Luna: “I don’t think that’s important right now.”
+
+Sol: “It is! It’s always important! Looking for yourself is important!”
+
+Luna: “Why?”
+
+Sol: “Because… You get to know yourself!”
+
+Luna: “But I already do.”
+
+Sol: “It’s not just about getting to know your name and personal details. It’s way more than that.”
+Sol: “Don’t ask anymore questions, it’s my turn! Where do you want to start?”
+
+Out of nowhere, a cat walks up to both of you. #choice
+-> Pet it.
+    I slightly kneel to caress its head. The cat was completely white. Its fur is so smooth and soft.
+    I stopped petting and went back to the conversation.
+-> Ignore it.
+    (Nothing happens)
+
+Sol: “Oh, no wonder your name sounded familiar. You have the same name as that cat!”
+
+“Oddly enough, it’s purely white. If you say luna, it’s supposed to be the moon, right? So shouldn’t the cat be in a darker color?”
+
+“Actually, now that I think about it, the moon is white. It’s not so far off, isn’t it?”
+
+Luna: “I...”
+Luna: “...”
+
+Luna: “I want to know more about this world.”
+
+Sol: “Oh…? Okay. In return, I want to know more about you, too.”
+
+Luna: “I thought you already knew me?”
+
+Sol: “I told you, it’s more than just knowing your name!”
+Sol: “Okay, hold on. Maybe you’ll be able to open up more if I tell you more about me?”
+
+Luna: “I’m not interested.”
+
+Sol: “Please just hear me out, I really do want to help you.”
+
+Luna: “Mom said I shouldn’t talk to strangers. I’ll get in trouble if she sees me, especially with a boy.”
+
+Sol: “This is a world where you don’t have to worry too much about anything. Just be yourself, or find yourself.”
+Sol: “Come on, I know a place where we can talk.”
+
+// BG: Cafe Diner
+=== 
+
+title: Scene3
+---
+
+Luna: “Isn’t this a little expensive?”
+
+Sol: “My treat! Get whatever you want.”
+
+Luna: “...Okay.”
+
+Luna: “I want…” #choice
+-> Black Coffee
+    <<set $playerChoice = "coffee">>
+-> Strawberry Cake
+    <<set $playerChoice = "cake">>
+-> Don’t get anything
+    <<set $playerChoice = "nothing">>
+    
+<<if $playerChoice == "coffee">>
+    Luna: “I’ll get black coffee.”
+
+	Sol looked at me with a raised eyebrow.
+	Sol: “Aren’t you 12?”
+
+	Luna: “You said I can get anything?”
+
+	Sol: “I was just saying-”
+
+	Luna: “Okay, fine… I’ll get strawberry cake.”
+	Luna: “My mom wouldn’t allow me to drink coffee either. I just got to sneak a coffee or two behind her back and thought it tasted good.”
+	
+    Sol: “Is strawberry your favorite?”
+
+	Luna: “I just like it. Is it yours?”
+
+	Sol: “No, my favorite’s chocolate. But I’ll order the same.”
+<<elseif $playerChoice == "cake">>
+    Sol: “Just as I expected!”
+
+	Luna: “It tastes good.”
+
+	Sol: “Right?! I love cake, chocolate’s my favorite!”
+
+	Sol: “Their cake here tastes so good, it’ll blow you away harder than the wind when you were falling.”
+
+	Luna: “Are you getting chocolate cake?”
+
+	Sol: “Nope, I’m getting the same.”
+
+	Luna: “Uh… All that talk about good cake only to not get what you want?”
+<<elseif $playerChoice == "nothing">>
+    Luna: “I’m not hungry.”
+
+	Sol: “Aww… But you’ll be missing out.”
+
+	Sol: “I’ll order you strawberry cake in case you’re just too shy to ask for something.”
+
+	Luna: “Fine.”
+
+	Luna: “You like strawberry cake?”
+
+	Sol: “My favorite’s chocolate, actually! 
+<<endif>>
+
+Sol: “...I haven’t tasted their strawberry cake yet. Chocolate might be cool, but I want to try out other flavors too!”
+
+Luna: “...”
+
+Sol: “Look for a place to sit! I’ll order first.”
+Sol went to the counter and started ordering.
+
+I looked for a table away from other people then took a seat.
+
+Normally, at times like these, people would stare at me with judgmental eyes.
+
+There was a hanging TV near the counter. It’s playing some kind of trivia about how the method of parenting affects a child.
+
+I hear distant idle chatter.
+
+…
+
+No one’s looking at me today.
+
+It makes me feel at ease, but I’m not used to it.
+
+It makes me feel uneasy, even though nothing bad is happening.
+
+I caught a glimpse of Sol coming towards me from the counter. He placed the table number at the center of the table.
+
+Sol: “There’s so many seats ahead, why’d you pick this one?”
+
+Luna: “I like it.”
+
+Sol: “Which one, exactly?”
+
+Luna: “I don’t like places with too many people. It bothers me.”
+Luna: “Besides, there’s a window beside us. I like the view.”
+
+There was a short silence between us. It seemed like Sol didn’t know what to say.
+
+Luna: “When are we eating?”
+
+Sol: “They’re still preparing the food. It’ll come soon, don’t worry.”
+
+In the distance, we see two plates slowly floating towards our table. Plates with mini strawberry cakes. It landed in front of us.
+
+It looks so cute. They look like oversized macarons with icing on top. A strawberry on top, too.
+
+The table number also started floating on its own and moved back to the counter.
+
+Sol: “Thank you for your service!”
+
+Luna: “But there’s no one there?”
+
+Sol: “Just think there is! It doesn’t hurt to be kind to nothing.”
+
+Luna: “It does. There’s no reason to be kind to nothing. It’ll just hurt because no one understands.”
+
+I picked up the fork and dug it into the cake, then I started picking up a bit and eating it.
+
+Sol: “It looks so good, I don’t want to ruin it…”
+
+Luna: “It’s food. Don’t waste it.”
+
+Sol: “I noticed you always talk about your mom. What about your dad?”
+
+Luna: “I don’t like him. Don’t bring him up.”
+
+Sol: “Why not?”
+
+Because he’s an asshole.
+
+Luna: “I just don’t. At least my mom notices me and what I do.”
+
+Sol: “Is your mom a good person?”
+
+Luna: “Maybe. She’s my mom, so she must be.”
+
+I look at Sol’s plate and it’s already empty.
+
+Luna: “...I thought you didn’t want to touch your cake?”
+
+Sol: “It looked cute, but I started to get hungry! I can’t control my stomach, you know?”
+
+Luna: “I barely even ate half of mine yet.”
+
+Sol: “Weren’t you the person who told me not to waste it?”
+
+Luna: “I- I know that. It’s just that I didn’t expect you to inhale it!”
+
+Sol: “You were just busy talking so I took the time to eat while listening.”
+
+Luna: “Weren’t you part of the conversation?”
+Luna: “Okay, whatever. That was my fault.”
+
+I continued eating more cake.
+
+Sol: “Hey, no one’s blaming you here. I’m sorry.”
+Sol: “...? Are you upset? Why aren’t you noticing me?”
+
+Luna: “*swallow* I’m eating. You don’t talk when your mouth’s full.”
+
+Sol: “You eat pretty slow.”
+
+I place the fork on the now empty plate.
+
+Luna: “Actually, can you tell me more about this world? Aside from what you already told me earlier.”
+
+Sol: “It came from your heart! From deep inside you.”
+
+Luna: “That’s it?”
+
+Sol: “That’s mostly it!”
+Sol: “Hold on, I’ll return the plates to the counter.”
+
+Sol stands up and picks up the plates.
+
+I could hear the TV playing a news report in the distance, but I decided to look outside the window.
+
+There are leaves falling outside.
+
+This is… alright.
+
+TV: “--around 8PM wearing orange shorts by the gas station located near the outskirts. The mother has stated that it has been 2 days since they went missing. If you have any informa..."
+
+I’m not familiar with this environment.
+
+Besides that, I can see myself. It feels like I’m in some sort of story book.
+
+What do I do here? What’s my objective? Is my objective to look for myself?
+
+What does that mean anyway?
+
+Sol: “...llo. Hellooo?”
+
+I was spacing out, I didn’t notice that Sol was already standing next to his seat. He was even waving his hands in front of my face.
+
+When I noticed that he’s right there, he smiled at me.
+
+Sol: “Wanna take a walk?”
+
+<<jump Scene4>>
+
+===
