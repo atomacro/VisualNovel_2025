@@ -2,9 +2,9 @@
 ---
 // Define a variable to track the player's choice
 <<declare $playerChoice = "" >>
-
 // Introduction Scene
 Guild Master: "Welcome to the adventure!"
+
 
 // Presenting a choice
 "Where do you want to go?"
