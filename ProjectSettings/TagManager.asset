@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Sample1
   - Sample2
+  - OptionsListView
   layers:
   - Default
   - TransparentFX
