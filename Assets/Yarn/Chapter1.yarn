@@ -5,15 +5,25 @@
 
 <<jump Scene1>>
 
+// //<<change SceneManager Sample Sample2>> //<<change GameObjectWithScript FromScene ToScene>>
+// <<changefade SceneManager SampleScene SampleScene2 0.5>> //<<changefade GameObjectWithScript FromScene ToScene speed>>
+
+
 ===
 
 title: Scene1
 ---
 There’s an old legend about jumping off a secret cliff in the mountains.
 
+-> Jump
+-> Jump
+-> Jump
+
 They said that if you jump, you’ll go to a different world. <br> A world where all your worries will go away.
 
 Luna: "..."
+<<changefade SceneManager SampleScene SampleScene2 0.5>> //<<changefade GameObjectWithScript FromScene ToScene speed>>
+
 
 I look around.
 
