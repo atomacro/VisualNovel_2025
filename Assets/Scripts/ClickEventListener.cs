@@ -28,12 +28,10 @@ public class ClickEventListener : MonoBehaviour
         {
             // Check if the optionsListView is active and visible
             isOptionView = optionsListView.gameObject.activeSelf && canvasGroup.alpha > 0;
-            Debug.Log("Options Active");
         }
         else
         {
             isOptionView = false;
-            Debug.Log("Options Inactive");
         }
     }
     public void ClickHandler()

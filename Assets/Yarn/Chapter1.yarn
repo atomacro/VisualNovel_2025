@@ -5,25 +5,27 @@
 
 <<jump Scene1>>
 
-// //<<change SceneManager SampleScene Sample2>> //<<change GameObjectWithScript FromScene ToScene>>
-// <<changefade SceneManager SampleScene SampleScene2 0.5>> //<<changefade GameObjectWithScript FromScene ToScene speed>>
+// //<<change SceneManager SampleBG>> //<<change GameObjectWithScript BGImage>>
+// <<changefade SceneManager SampleBG 0.5>> //<<changefade GameObjectWithScript BGImage speed>>
 
 
 ===
 
 title: Scene1
 ---
+
+
+// START
 There’s an old legend about jumping off a secret cliff in the mountains.
 
 They said that if you jump, you’ll go to a different world. <br><br>A world where all your worries will go away.
 
 Luna: "..."
-// <<changefade SceneManager SampleScene SampleScene2 0.5>> //<<changefade GameObjectWithScript FromScene ToScene speed>>
-
 
 I look around.
 
 Luna: "..."
+<<changefade SceneManager Cliffside_0 1.0>>
 
 This might be it.
 
@@ -38,6 +40,8 @@ I take a deep breath.
 Then I make the jump.
 
 // Black Screen.
+<<change SceneManager UNIVERSAL_BlackBackground_0>>
+
 
 Luna: "!!"
 
