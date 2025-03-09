@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: eb675dc8942d7fd40a8ac0fd36aa3ceb
+<<<<<<<< Updated upstream:Assets/wp desk 2.jpg.meta
+guid: eb8aac469e33c774fb9262a893e29cfe
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: -2699379860183272676
     second: wp desk 2_0
+========
+guid: 14c9abb3174a6084da18c8392443c37a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7987827507014926001
+    second: Cliffside_0
+>>>>>>>> Stashed changes:Assets/Cliffside.png.meta
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +122,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+<<<<<<<< Updated upstream:Assets/wp desk 2.jpg.meta
       name: wp desk 2_0
+========
+      name: Cliffside_0
+>>>>>>>> Stashed changes:Assets/Cliffside.png.meta
       rect:
         serializedVersion: 2
         x: 0
         y: 0
+<<<<<<<< Updated upstream:Assets/wp desk 2.jpg.meta
         width: 1920
         height: 1080
+========
+        width: 2000
+        height: 1417
+>>>>>>>> Stashed changes:Assets/Cliffside.png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +146,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
+<<<<<<<< Updated upstream:Assets/wp desk 2.jpg.meta
       spriteID: c13beefa150e98ad0800000000000000
       internalID: -2699379860183272676
+========
+      spriteID: f4108452439852190800000000000000
+      internalID: -7987827507014926001
+>>>>>>>> Stashed changes:Assets/Cliffside.png.meta
       vertices: []
       indices: 
       edges: []
