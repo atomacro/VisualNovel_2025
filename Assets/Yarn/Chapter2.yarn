@@ -1,5 +1,490 @@
-title: Scene4
+title: Scene3
 ---
 
-Chapter 2 be continued
+// BG: Town Scenery
+
+Sol: “Do you have any hobbies?”
+
+Luna: “No. I gave up on that.”
+
+Sol: “Do you have other friends?”
+
+Luna: “No. I gave up on that.”
+
+Sol: “Is there anything that interests you?”
+
+Luna: “No. I gave up on that.”
+
+Sol: “What’s your personality?”
+
+Luna: "What even is a personality?”
+
+Sol: “You’re hard to talk to.”
+
+Luna: “It was you who wanted to know me.”
+
+Sol: “But you’re making it harder on purpose!”
+
+Luna: “I’m not. This is how I’ve always been.”
+
+Sol: “Have you always shut down people who’re trying to talk to you?”
+
+Luna: “Possibly. I don’t like it when people intrude.”
+
+There was a short silence between us.
+
+Sol: “How can you do that? Always getting your alone time.”
+
+Luna: “Just be alone all the time.”
+
+Sol: “That’s not good.”
+
+Luna: “What is?”
+
+Sol: “Always being alone.”
+Sol: “Your parents must be there for you, right?”
+
+Luna: “Maybe.”
+
+There’s even more silence.
+
+Sol: “...I know! I can introduce you to my parents!”
+
+Luna: “...”
+
+I suddenly felt scared when I heard that.
+
+Luna: “A… Are you sure about that?”
+
+Sol: “Maybe, but not right now! I want to go to places with you!”
+
+I felt a little relieved.
+
+Luna: “Do you even have somewhere else in mind?”
+
+Sol: “We could go to the mall!”
+
+Luna: “We have no money.”
+
+We…?
+
+Luna: “I- I mean… should we really go?”
+
+Sol: “What are you talking about? Come on, I still have change from earlier!”
+
+// BG: Mall
+
+I keep getting dragged by this idiot everywhere.
+
+Is this what having a friend feels like? It’s rather tiring.
+
+But… it’s a little nice, I guess…
+
+Luna: “Okay, what do we do here?”
+
+Sol: “Buy stuff! Do a makeover, I don’t know. I just thought the mall had plenty of things so we went here.”
+
+I look around. There’s a lot of things sold, but barely anything we can interact with.
+
+Luna: “This is very plenty, alright.”
+
+Sol: “Shut up, I’m trying!”
+Sol: “Maybe we could look for toys?”
+
+Luna: “Toys? Seriously? Aren’t you too old enough for that?”
+
+Sol: “We’re still kids, what are you talking about?”
+
+Luna: “I was told to act…”
+Luna: “...nevermind. Right… Go wherever you want.”
+
+Sol: “Hmm… I think we can leave that for last.”
+Sol: “If you want somewhere a little older, wanna go check out the gadgets?”
+
+Luna: “Uh… I don’t know how to use them, either.”
+
+Sol: “I can teach you! I always borrow my mom’s phone to play.”
+
+Luna: “Your mom allows you to use her phone? I don’t think I can trust you with mine.”
+
+Sol: “Well, good thing you don’t have one!”
+Sol: "I’m not that suspicious, you know?!”
+
+Luna: “I think otherwise.”
+Luna: "You told me to go out with you. I didn’t even know you then.”
+
+Sol: “It’s not going out… Wait… Is it?”
+Sol: “We’re not boyfriend-girlfriend anyway. We’re just friends.”
+
+Luna: “Technically, it’s still going out.”
+
+Sol: “Erm… Actually, we’re just hanging out.”
+
+Luna: “I could punch you right here and now.”
+
+Sol: “Okay, okay, sorry!”
+Sol: “Anyways, we can try the phones out! I think it was around here somewhere…”
+
+Luna: “You better not get us lost.”
+
+<<jump Scene4>>
+
+===
+
+title: Scene4
+---
+<<declare $scene4PlayerChoice = "" >>
+
+// BG: Gadget Store or Mall
+	
+Sol: “We’re here!”
+
+It was right in front of the escalator going up.
+
+Luna: “Hey… are you sure you aren’t going to break something?”
+
+Sol: “We’re fine, I’m actually pretty gentle with things!”
+Sol: “It’s why my mom trusts me with fragile things.”
+
+Luna: “...I suppose I can’t deny that. You didn’t trip when you returned our cups.”
+
+Sol: “That’s the bare minimum…”
+
+We started looking for a good phone to use.
+
+Luna: “What about this one?”
+
+Sol: “Open it, open it!”
+
+We swiped up and were met with the homescreen.
+
+There were just a few games that we could open.
+
+We tried the one where you cross roads with a little character hopping.
+
+Sol: “This game! I like this game, I play it all the time.”
+Sol: “Whoever gets the highest points wins.”
+
+Luna: “You sure about that?”
+
+I actually used to play this game back then a lot when I could borrow my mom’s phone.
+
+I was pretty good at it since it’s the only thing I used to play.
+
+Sol might cry if I get too good. What should I do?
+
+-> Do good and make Sol cry.
+    <<set $scene4PlayerChoice = "cry">>
+-> Do bad and make Sol proud.
+    <<set $scene4PlayerChoice = "proud">>
+
+Sol: “Alright, get the other phone next to this!”
+
+<<if $scene4PlayerChoice == "cry">>
+    Luna: “Hm. Challenge accepted.”
+
+	Sol: “You’re on.”
+
+	It’s not actually a challenging game at the start.
+
+    I just played this to pass time back then.
+
+    I think I got a fairly high score when I used to try this. I’ll blow him away with my score.
+<<elseif $scene4PlayerChoice == "proud">>
+    Luna: “Just so you know, I’m not actually good at this.”
+
+    Sol: “Oh come on, don’t be such a downer to yourself. I know you’re good at this.”
+
+    It’s not actually a challenging game at the start.
+
+    I just played this to pass time back then.
+
+    I think I got a fairly high score when I used to try this, but I should probably let him win.
+<<endif>>
+
+We started playing for a short time.
+
+Honestly, I missed this game. It’s been years since I last played this.
+	
+Sol & Luna: “Nooooooo…”
+ 
+We somehow lost at the same time.
+
+Hm?
+
+Luna: “Did… Did we get the same score?”
+
+Sol: “Oh, we did!”
+
+Luna: “I guess being competitive didn’t really matter.”
+
+Sol: “Woah, were you trying to be better than me?”
+
+Sol: “I’ll have you know, I got high scores when I played this game.”
+
+Luna: “We got a tie.”
+
+Sol: “Then that means we’re the same!”
+
+“Hey, we should check the phones’ galleries!”
+
+I just looked at him.
+
+Luna: “Do you like peeping at people?”
+
+Sol recoils from me.
+
+Sol: “You’re weird!!”
+
+Store Clerk: “Quiet down please.”
+
+Luna: “Hush! You’re too loud!”
+
+Sol: "Sorry… It won’t happen again…”
+
+He says as he slowly opens the camera app.
+
+His finger’s going towards the switch camera icon.
+
+Luna: “...Oh no, you don’t.”
+
+I held onto his wrist.
+
+Sol: “Ow, ow, ow! Pleaaase, just this once?”
+
+Store Clerk: “If you’re staying loud, we’re kicking you out.”
+
+Sol: “But…!”
+
+Sigh.
+
+Luna: “Fine. Let’s do it.”
+
+Sol: “Yes!”
+
+He raises the phone’s camera up, but…
+
+Sol: “...My hands are so small, I can’t hold it still…”
+
+I take the left end of the phone.
+
+Luna: "Better?"
+
+Sol: "Smile!"
+
+Luna: "Hey, wai-"
+
+Click!
+
+I looked at him.
+
+Sol: "Hey, what’s with that look?"
+
+I’m just glaring at him, but he doesn’t seem to care.
+
+Sol:"Let’s view the picture!"
+
+Sol opens the gallery
+
+Oh…
+
+// CG: The two of them holding the camera in both ends
+
+That’s… not bad…
+
+Sol: "Do you like it?"
+
+Luna: "Uh… Let’s view the other pics…!"
+
+Sol: "Aww, you’re blushing! Is that really you, Luna?"
+
+Luna: "Just shut up, will you?"
+
+// CG ends → BG: Gadget Store or Mall
+
+Sol: "Oh, these people are so bad at taking pictures."
+
+Luna: "That’s literally just you earlier."
+
+Sol: "No, look. They’re actually bad. All the photos have their faces blurred."
+
+Luna: "Oh, that makes sense. They’re worse than you."
+
+They’re blurred? I swear I saw funny faces there.
+
+Sol: "Do you like pets?"
+
+Pets?
+
+Luna: "Where’d that come from?"
+
+Sol: "There’s a pet store near here. Wanna check it out?"
+
+…A pet store? Ah…
+
+Luna: "I mean… Okay, I guess?"
+
+I don’t know what to feel about that. I hope he didn’t see through me.
+
+We went back near the entrance. Why didn’t he think of this earlier?
+
+Actually, he’s probably fixated on the idea of a pet store too, now that he remembered where it is.
+
+Sol: "Well, let’s go!"
+
+<<jump Scene5>>
+
+===
+
+title: Scene5
+---
+
+// BG: Mall
+
+While we were going down the floor, I… 
+
+Luna: "Um…"
+
+Sol: "Hmm?"
+
+Luna: "I remember having a pet fish."
+
+Sol: "Oh? Is it a betta?"
+
+Luna: "Uh… I guess? It’s those pretty fishes with big tails. Are they called bettas? Mine was orange-ish."
+Luna: "Wait, how did you know?"
+
+Sol: "Because I actually have one at home! Its name is Mond. Mine’s blue!"
+Sol: "They’re easy to take care of. Mine’s very beautiful!"
+
+Luna: "Oh… They are, maybe…"
+
+The pet store was still cleaning up inside, so we weren’t allowed in, but some of the pets were visible outside.
+
+Luna: "A spider…"
+
+Sol: "Cute, isn’t it?"
+
+Luna: "I mean, yeah it’s cute."
+Luna: "It’s cool that it’s constantly cautious about its home."
+
+Sol: "That’s pretty normal. It’s their territory after all!"
+Sol: "Oh! Is this pet store for exotic pets or something?"
+Sol: "Nevermind, there’s a dog down there. I didn’t see."
+Sol: "I love dogs too! Listen, it’s making little noises!"
+
+Luna: "Do we actually just have the same interests?"
+
+Sol: "Hey, who wouldn’t love animals?"
+Sol: "There are parrots inside too! Do you see them?"
+
+Luna: "There are cats and hamsters too."
+Luna: "Isn’t this pet store unusually big for a mall this small?"
+
+Sol: "Hey, at least they’re being taken care of."
+
+…
+
+…What?
+
+Luna: "Uh… Sol?"
+
+Something’s wrong.
+
+Sol: "Look! There’s a…"
+
+Sol paused while pointing at one of the fishes.
+
+There’s one that seemed familiar. A little too familiar.
+
+A faint, orange-colored fish.
+
+Sol: "A… betta…?"
+Sol: "…Luna?"
+
+I’m… I don’t know how to…
+
+This looks like my betta.
+
+Sonne. In the exact shape I last saw it.
+
+All pale, tattered, and having no will to swim. It was close to its death because of neglect. It was barely even moving at the bottom of the tank.
+
+I still feel the same sense of guilt whenever I try to remember it. But when I see it right in front of me…
+
+Sol: "Hey, Luna?"
+
+Luna: "My betta… My mom threw it away."
+Luna: "It looked exactly like this before that happened."
+
+I have to keep my feelings in. I should change the subject.
+
+Luna: "Now that I think about it, all the pets here aren’t in good condition."
+
+The spider was kept in a small plain plastic container covered in its web. It’s missing two legs.
+
+I can hear the dog’s cries and whimpers behind the glass when I listen properly.
+
+The parrots are pulling their own feathers and balding.
+
+The cats are all stuffed in a single cage with no space to walk on.
+
+The hamster isn’t moving.
+
+The betta fish. The tank nearly looks empty, it barely had any decoration.
+
+People always think this fish is cheap and easy to take care of, so it probably experienced neglect from the store.
+
+No one’s going to buy any of them in such a sorry state.
+
+Sol: "What… No, maybe I shouldn’t ask."
+Sol: "…"
+Sol: "Maybe we should get out of here."
+
+Luna: "…And go where?"
+
+Sol: "Do you want to take a breather outside?"
+Sol: "We can stay by the playground. It’s not so far from here."
+
+Luna: "It’s getting late. Aren’t your parents going to look for you?"
+
+Sol: "They trust me! I’m never running away from them."
+Sol: "Besides, I’ve gone home way later than this before. It’s still early. We have time!"
+
+Luna: "Trust, huh…"
+Luna: "How do you trust people?"
+
+Sol: "My parents taught me how to be nice to people."
+Sol: "Besides, shouldn’t you trust your parents too?"
+
+Luna: "…I guess. They raised me after all."
+
+Sol: "Let’s start walking now. To the playground!"
+
+Sol started sprinting outside the mall. He’s pretty energetic.
+
+I looked back at the pet store and felt sad. Do I feel sad for the creatures?
+
+Sol: "Luna!!"
+
+Sol shouted from outside. He’s pretty loud.
+
+I should get going…
+
+…Huh?
+
+A person went past me, walking towards the store.
+
+I looked back. Again.
+
+I caught a glimpse of them looking at the creatures from outside.
+
+They entered. It seems to be accepting customers now.
+
+Sol: "Hey, what are you looking at?"
+
+I heard Sol approaching from behind.
+
+Luna: "…Nothing. Let’s go."
+
 ===
