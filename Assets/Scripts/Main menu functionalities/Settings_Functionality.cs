@@ -21,8 +21,10 @@ public class Settings_Functionality : MonoBehaviour
 
     private void Start()
     {
-
-         lineViewScript = lineView.GetComponent<LineView>();
+        if (lineView != null)
+        {
+            lineViewScript = lineView.GetComponent<LineView>();
+        }
 
         //initialize value if first time opening
         masterVolumeSlider.value = PlayerPrefs.GetFloat("MasterVolume", 1);
@@ -86,7 +88,7 @@ public class Settings_Functionality : MonoBehaviour
     {
         PlayerPrefs.SetFloat("TextSpeed", value);
         Debug.Log("Text Speed changed: " + value);
-        if(lineViewScript != null)
+        if (lineViewScript != null)
         {
             lineViewScript.typewriterEffectSpeed = value;
         }
@@ -125,6 +127,6 @@ public class Settings_Functionality : MonoBehaviour
     {
         PlayerPrefs.Save();
         gameObject.SetActive(false);
-        
+
     }
 }

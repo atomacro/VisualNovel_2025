@@ -2214,6 +2214,17 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1999865738 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3579681405068720530, guid: 7f29e5f7ffdea4a6793cefb278b61f0c, type: 3}
+  m_PrefabInstance: {fileID: 1028339049}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999865735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &12929893217625780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2714,6 +2725,7 @@ GameObject:
   - component: {fileID: 8407646022191263104}
   - component: {fileID: 1492730254082953310}
   - component: {fileID: 535192404674064772}
+  - component: {fileID: 8407646022191263105}
   m_Layer: 0
   m_Name: Skip
   m_TagString: Untagged
@@ -3847,6 +3859,7 @@ GameObject:
   - component: {fileID: 7006792397562676793}
   - component: {fileID: 3292144331268188543}
   - component: {fileID: 7989193780726038314}
+  - component: {fileID: 8333361960541573061}
   m_Layer: 0
   m_Name: Auto
   m_TagString: Untagged
@@ -3854,6 +3867,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8333361960541573061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8333361960541573060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 961928cf577d15b46afc03a7515e30fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineViewObject: {fileID: 176432317}
 --- !u!1 &8337905905884366044
 GameObject:
   m_ObjectHideFlags: 0
@@ -3910,6 +3936,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8407646022191263105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2260970342925338639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64e13541b05457c418125eefe5724c78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueRunner: {fileID: 1999865738}
 --- !u!224 &8425064935773709043
 RectTransform:
   m_ObjectHideFlags: 0

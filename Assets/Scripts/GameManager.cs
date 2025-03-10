@@ -13,13 +13,6 @@ public class GameManager : MonoBehaviour
     {
         lineView = lineViewObj.gameObject.GetComponent<LineView>();
         lineView.typewriterEffectSpeed = PlayerPrefs.GetFloat("TextSpeed", 50);
-        canvasFader.FadeIn(1.5f);
+        canvasFader.FadeIn(3f);
     }
-
-    private IEnumerator StartDialogue()
-    {
-        yield return new WaitForSeconds(1.5f);
-    }
-
-
 }
