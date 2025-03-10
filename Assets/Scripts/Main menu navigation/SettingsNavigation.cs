@@ -2,15 +2,9 @@ using UnityEngine;
 
 public class SettingsNavigation : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private GameObject settingsPanel;
+    public void OpenSettings()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        settingsPanel.SetActive(true);
     }
 }

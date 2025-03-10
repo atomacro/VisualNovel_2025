@@ -4,6 +4,8 @@ using System.Collections;
 
 public class NewGameNavigation : MonoBehaviour
 {
+
+    [SerializeField] private CanvasFader fader;
     public void NewGame()
     {
         StartCoroutine(LoadMainSceneAsync());
@@ -11,11 +13,8 @@ public class NewGameNavigation : MonoBehaviour
 
     private IEnumerator LoadMainSceneAsync()
     {
-        AsyncOperation asyncLoad = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("MainScene");
-        while (!asyncLoad.isDone)
-        {
-            Debug.Log(asyncLoad.progress);
-            yield return null;
-        }
+        fader.FadeOut(1.5f);
+        yield return new WaitForSeconds(1.5f);
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("MainScene");
     }
 }

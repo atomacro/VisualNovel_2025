@@ -59,7 +59,7 @@ public class SceneManager : MonoBehaviour
         }
     }
 
-    private IEnumerator FadeOutAndChangeImage(CanvasFader fader, Sprite newImage, float duration)
+    public IEnumerator FadeOutAndChangeImage(CanvasFader fader, Sprite newImage, float duration)
     {
         // Fade out the current image
         fader.FadeOut(duration);
