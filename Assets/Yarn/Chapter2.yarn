@@ -1,5 +1,6 @@
 title: Scene3
 ---
+<<setNextNode Skip "Scene4">>
 
 // BG: Town Scenery
 
@@ -134,6 +135,8 @@ Luna: “You better not get us lost.”
 title: Scene4
 ---
 <<declare $scene4PlayerChoice = "" >>
+<<setNextNode Skip "Scene5">>
+
 
 // BG: Gadget Store or Mall
 	
@@ -338,6 +341,7 @@ Sol: "Well, let’s go!"
 
 title: Scene5
 ---
+<<setNextNode Skip "Scene6">>
 
 // BG: Mall
 

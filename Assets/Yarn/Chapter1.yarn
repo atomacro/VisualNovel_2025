@@ -14,6 +14,8 @@
 title: Scene1
 ---
 
+<<setNextNode Skip "Scene2">>
+
 There’s an old legend about jumping off a secret cliff in the mountains.
 
 They said that if you jump, you’ll go to a different world.
@@ -159,6 +161,9 @@ title: Scene2
 <<declare $scene2PlayerChoice = "" >>
 
 <<change SceneManager UNIVERSAL_BlackBackground_0>>
+<<setNextNode Skip "Scene3">>
+
+
 
 This is so weird.
 
