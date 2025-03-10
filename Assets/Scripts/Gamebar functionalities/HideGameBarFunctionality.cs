@@ -12,7 +12,6 @@ public class HideGameBarFunctionality : MonoBehaviour
         gameObject.GetComponent<Button>().onClick.AddListener(ToggleHide);
         canvasGroup = dialogueSystem.GetComponent<CanvasGroup>();
     }
-
     private void ToggleHide()
     {
         isHidden = !isHidden;
