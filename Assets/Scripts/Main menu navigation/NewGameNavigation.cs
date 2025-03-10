@@ -14,7 +14,7 @@ public class NewGameNavigation : MonoBehaviour
     private IEnumerator LoadMainSceneAsync()
     {
         fader.FadeOut(1.5f);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(3f);
         UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("MainScene");
     }
 }

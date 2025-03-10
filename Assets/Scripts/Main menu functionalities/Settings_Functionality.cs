@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 using TMPro;
+using Yarn.Unity;
 
 public class Settings_Functionality : MonoBehaviour
 {
@@ -13,17 +14,21 @@ public class Settings_Functionality : MonoBehaviour
     [SerializeField] private Slider textSpeedSlider;
     [SerializeField] private Button backButton;
 
-    float screenHeight;
-    float screenWidth;
+
+    [SerializeField] private GameObject lineView;
+    private LineView lineViewScript;
+
 
     private void Start()
     {
+
+         lineViewScript = lineView.GetComponent<LineView>();
 
         //initialize value if first time opening
         masterVolumeSlider.value = PlayerPrefs.GetFloat("MasterVolume", 1);
         musicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1);
         sfxVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume", 1);
-        textSpeedSlider.value = PlayerPrefs.GetFloat("TextSpeed", 1);
+        textSpeedSlider.value = PlayerPrefs.GetFloat("TextSpeed", 50);
 
         int savedWidth = PlayerPrefs.GetInt("ScreenWidth", Screen.currentResolution.width);
         int savedHeight = PlayerPrefs.GetInt("ScreenHeight", Screen.currentResolution.height);
@@ -81,6 +86,10 @@ public class Settings_Functionality : MonoBehaviour
     {
         PlayerPrefs.SetFloat("TextSpeed", value);
         Debug.Log("Text Speed changed: " + value);
+        if(lineViewScript != null)
+        {
+            lineViewScript.typewriterEffectSpeed = value;
+        }
     }
 
 

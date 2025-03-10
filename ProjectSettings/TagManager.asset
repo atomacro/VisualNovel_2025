@@ -4,9 +4,8 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Sample1
-  - Sample2
   - OptionsListView
+  - LineView
   layers:
   - Default
   - TransparentFX
