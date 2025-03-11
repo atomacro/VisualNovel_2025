@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         if (lineView.useTypewriterEffect && !(lineView.lineText.maxVisibleCharacters < lineView.lineText.text.Length) && !isLogged)
         {
             string line = "";
-            if (lineView.characterNameText.text != ": " && lineView.characterNameText.text != "Character Name: ")
+            if (lineView.characterNameText.text != "" && lineView.characterNameText.text != "Character Name" && lineView.characterNameText.text != null)
             {
                 line += lineView.characterNameText.text + ": ";
             }
