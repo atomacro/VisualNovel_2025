@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     private LineView lineView => lineViewObj.gameObject.GetComponent<LineView>();
 
     private bool isLogged = false;
-
+    
     public List<string> getDialogueLog()
     {
         return DialogueLog;
@@ -34,7 +34,6 @@ public class GameManager : MonoBehaviour
             line += lineView.lineText.text;
             DialogueLog.Add(line);
             Dialogues.Add(lineView.lineText.text);
-            Debug.Log(line);
             isLogged = true;
         }
         else
@@ -44,7 +43,6 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-
         lineView.typewriterEffectSpeed = PlayerPrefs.GetFloat("TextSpeed", 50);
         canvasFader.FadeIn(3f);
     }
