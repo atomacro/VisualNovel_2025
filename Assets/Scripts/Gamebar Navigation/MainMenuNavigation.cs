@@ -4,7 +4,9 @@ using UnityEngine.UI;
 
 public class MainMenuNavigation : MonoBehaviour
 {
-    [SerializeField] private CanvasFader fader;
+    [SerializeField] private GameObject MainCanvas;
+    private CanvasFader fader => MainCanvas.GetComponent<CanvasFader>();
+
 
     private void Start()
     {
@@ -15,12 +17,13 @@ public class MainMenuNavigation : MonoBehaviour
 
     private void OnClick()
     {
+        fader.StopFade();
         StartCoroutine(OpenMainMenu());
     }
     private IEnumerator OpenMainMenu()
     {
         fader.FadeOut(1.5f);
-        yield return new WaitForSeconds(1.5f);        
+        yield return new WaitForSeconds(1.5f);
         UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("MainMenu");
 
     }

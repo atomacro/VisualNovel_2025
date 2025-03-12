@@ -15,6 +15,13 @@ public class CanvasFader : MonoBehaviour
         StartCoroutine(FadeCanvas(0f, 1f, duration));
     }
 
+    public float currentAlpha;
+    public void StopFade()
+    {
+        canvasGroup.alpha = currentAlpha;
+        StopAllCoroutines();
+    }
+
     public void FadeOut(float duration)
     {
         StartCoroutine(FadeCanvas(1f, 0f, duration));
@@ -28,6 +35,7 @@ public class CanvasFader : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
             canvasGroup.alpha = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / duration);
+            currentAlpha = canvasGroup.alpha;
             yield return null;
         }
 
