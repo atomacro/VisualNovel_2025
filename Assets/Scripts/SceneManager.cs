@@ -9,16 +9,26 @@ public class SceneManager : MonoBehaviour
     [SerializeField] private Sprite[] backgroundSprites; // Array of background images
     [SerializeField] private GameObject CanvasWithFader; // Reference to the CanvasFader component
 
+    [SerializeField] private Image[] chacacterImages;
+    [SerializeField] private Sprite[] characterSprites;
+    [SerializeField] private AudioSource[] audioObjects;
+    [SerializeField] private GameObject[] audioSources;
+
     private Sprite GetSpriteByName(string imageName)
     {
-        foreach (Sprite sprite in backgroundSprites)
+        return SearchArray(backgroundSprites, imageName);
+    }
+
+    private T SearchArray<T>(T[] array, string name) where T : Object
+    {
+        foreach (T element in array)
         {
-            if (sprite.name == imageName)
+            if (element.name == name)
             {
-                return sprite;
+                return element;
             }
         }
-        Debug.LogError($"Sprite with name '{imageName}' not found!");
+        Debug.LogError($"Element with name '{name}' not found in array!");
         return null;
     }
 
@@ -59,16 +69,170 @@ public class SceneManager : MonoBehaviour
         }
     }
 
-    public IEnumerator FadeOutAndChangeImage(CanvasFader fader, Sprite newImage, float duration)
+    private IEnumerator FadeOutAndChangeImage(CanvasFader fader, Sprite newImage, float duration)
     {
-        // Fade out the current image
         fader.FadeOut(duration);
         yield return new WaitForSeconds(duration);
-
-        // Change the image
         backgroundImage.sprite = newImage;
-
-        // Fade in the new image
         fader.FadeIn(duration);
+    }
+
+    [YarnCommand("changecharacter")]
+    public void ChangeCharacterImage(string characterObjectName, string imageName)
+    {
+        Image characterImage = SearchArray(chacacterImages, characterObjectName);
+        if (characterImage != null)
+        {
+            Sprite newImage = SearchArray(characterSprites, imageName);
+            if (newImage != null)
+            {
+                characterImage.enabled = true;
+                characterImage.sprite = newImage;
+            }
+        }
+    }
+
+    [YarnCommand("changecharacterfade")]
+    public void ChangeCharacterImageWithFade(string characterObjectName, string imageName, float fadeDuration)
+    {
+        Image characterImage = SearchArray(chacacterImages, characterObjectName);
+        if (characterImage != null)
+        {
+            Sprite newImage = SearchArray(characterSprites, imageName);
+            if (newImage != null)
+            {
+                CanvasFader fader = characterImage.GetComponent<CanvasFader>();
+
+                if (fader != null)
+                {
+                    StartCoroutine(FadeOutAndChangeCharacterImage(fader, newImage, fadeDuration, characterImage));
+                }
+                else
+                {
+                    Debug.LogError("CanvasFader component is missing on the character image.");
+                }
+            }
+        }
+    }
+
+    private IEnumerator FadeOutAndChangeCharacterImage(CanvasFader fader, Sprite newImage, float duration, Image characterImage)
+    {
+        fader.FadeOut(duration);
+        yield return new WaitForSeconds(duration);
+        characterImage.sprite = newImage;
+        fader.FadeIn(duration);
+    }
+
+    [YarnCommand("hidecharacter")]
+    public void HideCharacterImage(string characterName)
+    {
+        Image characterImage = SearchArray(chacacterImages, characterName);
+        if (characterImage != null)
+        {
+            characterImage.enabled = false;
+        }
+    }
+
+    [YarnCommand("movecharacter")]
+    public void MoveCharacterImage(string characterName, float x, float y)
+    {
+        Image characterImage = SearchArray(chacacterImages, characterName);
+        if (characterImage != null)
+        {
+            RectTransform rectTransform = characterImage.GetComponent<RectTransform>();
+            rectTransform.anchoredPosition = new Vector2(x, y);
+        }
+    }
+
+    [YarnCommand("hidecharacterfade")]
+    public void HideCharacterImageWithFade(string characterName, float fadeDuration)
+    {
+        Image characterImage = SearchArray(chacacterImages, characterName);
+        if (characterImage != null)
+        {
+            CanvasFader fader = characterImage.GetComponent<CanvasFader>();
+
+            if (fader != null)
+            {
+                StartCoroutine(FadeOutAndHideCharacterImage(fader, fadeDuration, characterImage));
+            }
+            else
+            {
+                Debug.LogError("CanvasFader component is missing on the character image.");
+            }
+        }
+    }
+
+    private IEnumerator FadeOutAndHideCharacterImage(CanvasFader fader, float duration, Image characterImage)
+    {
+        fader.FadeOut(duration);
+        yield return new WaitForSeconds(duration);
+        characterImage.enabled = false;
+    }
+
+    [YarnCommand("playaudio")]
+    public void PlayAudio(string audioType, string audioName)
+    {
+        AudioSource audioSource = SearchArray(audioObjects, audioType);
+        if (audioSource != null && audioSource.isPlaying == false)
+        {
+            audioSource.clip = SearchArray(audioSources, audioName).GetComponent<AudioSource>().clip;
+            audioSource.Play();
+        }
+    }
+
+    [YarnCommand("pauseaudio")]
+    public void PauseAudio(string audioType)
+    {
+        AudioSource audioSource = SearchArray(audioObjects, audioType);
+        if (audioSource != null)
+        {
+            audioSource.Pause();
+        }
+    }
+
+    [YarnCommand("resumeaudio")]
+    public void ResumeAudio(string audioType)
+    {
+        AudioSource audioSource = SearchArray(audioObjects, audioType);
+        if (audioSource != null)
+        {
+            audioSource.UnPause();
+        }
+    }
+
+    [YarnCommand("stopaudio")]
+    public void StopAudio(string audioType)
+    {
+        AudioSource audioSource = SearchArray(audioObjects, audioType);
+        if (audioSource != null)
+        {
+            audioSource.Stop();
+        }
+    }
+
+    [YarnCommand("fadeaudio")]
+    public void FadeAudio(string audioType, float targetVolume, float fadeDuration)
+    {
+        AudioSource audioSource = SearchArray(audioObjects, audioType);
+        if (audioSource != null)
+        {
+            StartCoroutine(FadeAudioVolume(audioSource, targetVolume, fadeDuration));
+        }
+    }
+    private IEnumerator FadeAudioVolume(AudioSource audioSource, float targetVolume, float duration, bool stopAfterFade = false)
+    {
+        float startVolume = audioSource.volume;
+
+        for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / duration)
+        {
+            audioSource.volume = Mathf.Lerp(startVolume, targetVolume, t);
+            yield return null;
+        }
+        audioSource.volume = targetVolume;
+        if (stopAfterFade && targetVolume == 0)
+        {
+            audioSource.Stop();
+        }
     }
 }

@@ -1,12 +1,39 @@
 ﻿title: Start
 ---
-// Define a variable to track the player's choice
-// <<declare $playerChoice = "" >>
+
 
 <<jump Scene1>>
 
-// //<<change SceneManager SampleBG>> //<<change GameObjectWithScript BGImage>>
-// <<changefade SceneManager SampleBG 0.5>> //<<changefade GameObjectWithScript BGImage speed>>
+
+//=====List of commands=====
+
+//>> scene commands
+//<<setNextNode Skip "Scene2">> -> set next node when current node is skipped
+//<<changefade SceneManager Cliffside_0 1.0>> -> change background with fade
+//<<change SceneManager UNIVERSAL_BlackBackground_0>> -> quick background change
+
+//>> character commands
+//>> change character commands automatically enables disabled characters
+
+//<<changecharacterfade SceneManager Character1 Luna_0 1.0>> -> change character with fade
+//<<changecharacter SceneManager Character1 Luna_0>> -> quick character change
+//<<hidecharacter SceneManager Character1>> -> hide character>
+//<<movecharacter SceneManager Character 102 203> -> move character with fade, 102 is the x position, 203 is the y position
+//<<hidecharacterfade SceneManager Character1 1.0>> -> hide character with fade
+
+
+//>> audio commands
+//<<playaudio SceneManager Music1 1.0>> -> play audio with fade
+//<<stopaudio SceneManager Music1 1.0>> -> stop audio with fade
+//<<pauseaudio SceneManager Music1 1.0>> -> pause audio with fade
+//<<resumeaudio SceneManager Music1 1.0>> -> resume audio with fade
+//<<fadeaudio SceneManager Music1 0 2 false> -> fade audio, 0 is the target volume, 2 is the duration, false is whether to stop the audio after fading
+
+
+
+
+
+
 
 
 ===
