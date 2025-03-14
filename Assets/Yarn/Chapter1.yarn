@@ -17,9 +17,11 @@
 
 //<<changecharacterfade SceneManager Character1 Luna_0 1.0>> -> change character with fade
 //<<changecharacter SceneManager Character1 Luna_0>> -> quick character change
-//<<hidecharacter SceneManager Character1>> -> hide character>
 //<<movecharacter SceneManager Character 102 203> -> move character with fade, 102 is the x position, 203 is the y position
+//<<hidecharacter SceneManager Character1>> -> hide character>
 //<<hidecharacterfade SceneManager Character1 1.0>> -> hide character with fade
+//<<showcharacter SceneManager Character1>> -> show character
+//<<showcharacterfade SceneManager Character1 1.0>> -> show character with fade
 
 
 //>> audio commands
@@ -30,11 +32,7 @@
 //<<fadeaudio SceneManager Music1 0 2 false> -> fade audio, 0 is the target volume, 2 is the duration, false is whether to stop the audio after fading
 
 
-
-
-
-
-
+//tests
 
 ===
 
@@ -43,7 +41,24 @@ title: Scene1
 
 <<setNextNode Skip "Scene2">>
 
+
 There’s an old legend about jumping off a secret cliff in the mountains.
+
+<<changecharacterfade SceneManager Character_1 SampleSprite_0 1.0>>
+Changed Character
+<<movecharacter SceneManager Character_1 0 0>>
+Moved Character
+<<changecharacter SceneManager Character_1 SampleSprite_0>>
+Changed Character Again
+<<hidecharacter SceneManager Character_1>>
+Hide character quick
+<<showcharacterfade SceneManager Character_1 1.0>>
+Show character with fade
+<<hidecharacterfade SceneManager Character_1 1.0>>
+Hide character with fade
+<<showcharacter SceneManager Character_1>>
+Show character quick
+
 
 They said that if you jump, you’ll go to a different world.
 

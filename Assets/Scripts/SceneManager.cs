@@ -123,15 +123,6 @@ public class SceneManager : MonoBehaviour
         fader.FadeIn(duration);
     }
 
-    [YarnCommand("hidecharacter")]
-    public void HideCharacterImage(string characterName)
-    {
-        Image characterImage = SearchArray(chacacterImages, characterName);
-        if (characterImage != null)
-        {
-            characterImage.enabled = false;
-        }
-    }
 
     [YarnCommand("movecharacter")]
     public void MoveCharacterImage(string characterName, float x, float y)
@@ -143,6 +134,48 @@ public class SceneManager : MonoBehaviour
             rectTransform.anchoredPosition = new Vector2(x, y);
         }
     }
+
+    [YarnCommand("showcharacter")]
+    public void ShowCharacterImage(string characterName)
+    {
+        Image characterImage = SearchArray(chacacterImages, characterName);
+        if (characterImage != null)
+        {
+            characterImage.enabled = true;
+            characterImage.GetComponent<CanvasGroup>().alpha = 1;
+        }
+    }
+
+    [YarnCommand("showcharacterfade")]
+    public void ShowCharacterImageWithFade(string characterName, float fadeDuration)
+    {
+        Image characterImage = SearchArray(chacacterImages, characterName);
+        if (characterImage != null)
+        {
+            CanvasFader fader = characterImage.GetComponent<CanvasFader>();
+            characterImage.enabled = true;
+
+            if (fader != null)
+            {
+                StartCoroutine(FadeInAndShowCharacterImage(fader, fadeDuration, characterImage));
+            }
+            else
+            {
+                Debug.LogError("CanvasFader component is missing on the character image.");
+            }
+        }
+    }
+    [YarnCommand("hidecharacter")]
+    public void HideCharacterImage(string characterName)
+    {
+        Image characterImage = SearchArray(chacacterImages, characterName);
+        if (characterImage != null)
+        {
+            characterImage.GetComponent<CanvasGroup>().alpha = 0;
+            characterImage.enabled = false;
+        }
+    }
+
 
     [YarnCommand("hidecharacterfade")]
     public void HideCharacterImageWithFade(string characterName, float fadeDuration)
@@ -168,6 +201,13 @@ public class SceneManager : MonoBehaviour
         fader.FadeOut(duration);
         yield return new WaitForSeconds(duration);
         characterImage.enabled = false;
+    }
+
+    private IEnumerator FadeInAndShowCharacterImage(CanvasFader fader, float duration, Image characterImage)
+    {
+        fader.FadeIn(duration);
+        yield return new WaitForSeconds(duration);
+        characterImage.enabled = true;
     }
 
     [YarnCommand("playaudio")]
