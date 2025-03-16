@@ -1,16 +1,17 @@
+using System;
 using UnityEngine;
 
 public class LoadSaveNavigation : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private GameObject loadMenuPanel;
+    public void OpenLoadMenu()
     {
-        
+        Console.WriteLine("Gumana!!");
+        loadMenuPanel.SetActive(true);
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    public void CloseLoadMenu()
     {
-        
+        loadMenuPanel.SetActive(false);
     }
 }
