@@ -5377,7 +5377,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!222 &743522484838839934
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9009,7 +9009,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_IsOn: 0
+  m_IsOn: 1
 --- !u!222 &5148292899885545385
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11641,7 +11641,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 87.41998, y: -101.05}
+  m_AnchoredPosition: {x: 87.41998, y: -101.04999}
   m_SizeDelta: {x: -174.85, y: -202.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8165829424776492563
@@ -11715,7 +11715,7 @@ MonoBehaviour:
   m_text: BACK
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7201209a11b7d7349b6e2eb440a55eef, type: 2}
-  m_sharedMaterial: {fileID: 3403812925025353063, guid: d1a2fd2be7b862b49a12852cd5faf5f7, type: 2}
+  m_sharedMaterial: {fileID: 1384527490860109584, guid: 7201209a11b7d7349b6e2eb440a55eef, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -11780,7 +11780,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &8311045863382301162
