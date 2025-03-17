@@ -19,14 +19,8 @@ public class Settings_Functionality : MonoBehaviour
     private LineView lineViewScript;
 
 
-    private void Start()
+    private void InitializeValues()
     {
-        if (lineView != null)
-        {
-            lineViewScript = lineView.GetComponent<LineView>();
-        }
-
-        //initialize value if first time opening
         masterVolumeSlider.value = PlayerPrefs.GetFloat("MasterVolume", 1);
         musicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1);
         sfxVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume", 1);
@@ -46,6 +40,27 @@ public class Settings_Functionality : MonoBehaviour
                 break;
             }
         }
+
+        bool isFullScreen = PlayerPrefs.GetInt("FullScreen", 1) == 1;
+        Toggle[] toggles = fullScreenToggleGroup.GetComponentsInChildren<Toggle>();
+        toggles[0].isOn = isFullScreen;
+        toggles[1].isOn = !isFullScreen;
+    }
+
+    private void Awake()
+    {
+        InitializeValues();
+    }
+
+    private void Start()
+    {
+        if (lineView != null)
+        {
+            lineViewScript = lineView.GetComponent<LineView>();
+        }
+
+        //initialize values when opening
+        InitializeValues();
 
         //attach event listeners
         masterVolumeSlider.onValueChanged.AddListener(OnMasterVolumeChanged);
@@ -101,7 +116,7 @@ public class Settings_Functionality : MonoBehaviour
         if (fullScreen != null)
         {
             string fullScreenString = fullScreen.GetComponentInChildren<TextMeshProUGUI>().text;
-            bool isFullScreen = fullScreenString == "Full Screen Mode";
+            bool isFullScreen = fullScreenString == "Fullscreen Mode";
             Screen.fullScreen = isFullScreen;
             Debug.Log("Full Screen changed: " + isFullScreen);
             PlayerPrefs.SetInt("FullScreen", isFullScreen ? 1 : 0);
