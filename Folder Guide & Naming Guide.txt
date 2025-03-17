@@ -1,14 +1,5 @@
-for Scenes with multiple sprites
+Sprite Naming
 
-ex. 
-
-Scene1.Sprite1
-Scene1.Sprite2
-Scene1.Sprite3
-
-All sprites should be placed in the folder Characters And Sprites/Scene1
-
-if a single sprite will be used place the sprite inside Character_Sprites/Single_Sprites with the name Scene2_Sprite
 
 NOTE: DO THE SAME FOR AUDIOS
 
