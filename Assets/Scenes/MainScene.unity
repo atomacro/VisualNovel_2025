@@ -1455,7 +1455,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 600144062}
+        m_TargetAssemblyTypeName: MenuNavigation, Assembly-CSharp
+        m_MethodName: CloseMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &600144061
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1473,10 +1485,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 600144057}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be9d69273c7edbf4e8822c8dfffe7dbf, type: 3}
+  m_Script: {fileID: 11500000, guid: 0462cb2d939b4d9438f98e2ee304992d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectToClose: {fileID: 218690357}
+  MenuPanel: {fileID: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -2227,6 +2239,7 @@ GameObject:
   - component: {fileID: 976543439}
   - component: {fileID: 976543438}
   - component: {fileID: 976543442}
+  - component: {fileID: 976543443}
   m_Layer: 0
   m_Name: Log
   m_TagString: Untagged
@@ -2311,13 +2324,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 976543443}
+        m_TargetAssemblyTypeName: LoadSaveNavigation, Assembly-CSharp
+        m_MethodName: OpenMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2368,12 +2381,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 976543436}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c4ac56d41b882b429131f93824eea33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   DialogueLog: {fileID: 218690357}
+--- !u!114 &976543443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976543436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0462cb2d939b4d9438f98e2ee304992d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MenuPanel: {fileID: 218690357}
 --- !u!1 &995563000
 GameObject:
   m_ObjectHideFlags: 0
@@ -3282,8 +3308,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 515.555, y: -402.435}
-  m_SizeDelta: {x: 1031.11, y: 804.87}
+  m_AnchoredPosition: {x: 515.555, y: -0}
+  m_SizeDelta: {x: 1031.11, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1771540648
 MonoBehaviour:
@@ -3308,7 +3334,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8c9a7e88b7936064f87ee0fedcd8a8b6, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -6067677858674310858, guid: 8c9a7e88b7936064f87ee0fedcd8a8b6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
