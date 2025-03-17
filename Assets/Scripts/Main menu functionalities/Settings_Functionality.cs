@@ -41,16 +41,10 @@ public class Settings_Functionality : MonoBehaviour
             }
         }
 
-        foreach (var toggle in fullScreenToggleGroup.GetComponentsInChildren<Toggle>())
-        {
-            string toggleText = toggle.GetComponentInChildren<TextMeshProUGUI>().text;
-            if (PlayerPrefs.GetInt("FullScreen", 1) == 1)
-            {
-                Screen.fullScreen = true;
-                toggle.isOn = toggleText == "Fullscreen Mode";
-                break;
-            }
-        }
+        bool isFullScreen = PlayerPrefs.GetInt("FullScreen", 1) == 1;
+        Toggle[] toggles = fullScreenToggleGroup.GetComponentsInChildren<Toggle>();
+        toggles[0].isOn = isFullScreen;
+        toggles[1].isOn = !isFullScreen;
     }
 
     private void Awake()
