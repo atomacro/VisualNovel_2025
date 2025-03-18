@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Linq;
 using TMPro;
 using Yarn.Unity;
+using Unity.VisualScripting.Antlr3.Runtime;
 
 public class Settings_Functionality : MonoBehaviour
 {
@@ -142,6 +143,13 @@ public class Settings_Functionality : MonoBehaviour
     {
         PlayerPrefs.Save();
         gameObject.SetActive(false);
+    }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            backButtonClicked();
+        }
     }
 }
