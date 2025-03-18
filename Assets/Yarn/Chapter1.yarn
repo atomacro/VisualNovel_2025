@@ -46,9 +46,9 @@ title: Scene1
 ---
 
 <<setNextNode Skip "Scene2">>
-<<movecharacter SceneManager Chracter_1 0 0>>
-<<movecharacter SceneManager Chracter_2 0 0>>
-<<movecharacter SceneManager Chracter_3 0 0>>
+<<movecharacter SceneManager Character_1 0 0>>
+<<movecharacter SceneManager Character_2 0 0>>
+<<movecharacter SceneManager Character_3 0 0>>
 
 
 
@@ -134,7 +134,7 @@ The moment I got close to hitting the ground, I started to fall slower until I w
 <<changefade SceneManager Sunrise_0 1.0>>
 <<wait 0.25>>
 
-<<movecharacter SceneManager Character_1 -326 -97>>
+<<movecharacter SceneManager Character_1 -94 -97>>
 <<changecharacterfade SceneManager Character_1 luna_surprised_0 0.5>>
 
 Luna: “Woah… That was…”
