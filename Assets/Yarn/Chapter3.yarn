@@ -1,6 +1,6 @@
 ﻿title: Scene6
 ---
-<<setNextNode Skip "Scene6">>
+<<setNextNode Skip "Scene7">>
 
 // BG: Town
 
@@ -289,12 +289,10 @@ Luna: "Say, wanna play at the monkey bars?"
 Sol: "You like monkey bars too? Let's do it!"
 ===
 
+
 title: Scene7
 ---
-
-title: Scene8
----
-<<setNextNode Skip "NextScene">>
+<<setNextNode Skip "Scene8">>
 
 // BG: Playground
 
