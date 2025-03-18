@@ -34,30 +34,40 @@
 
 //tests
 
+//<<jump test>>
+// 
+// ===
+// title: test
+// ---
+
 ===
 
 title: Scene1
 ---
 
 <<setNextNode Skip "Scene2">>
+<<movecharacter SceneManager Character_1 0 0>>
+<<movecharacter SceneManager Character_2 0 0>>
+<<movecharacter SceneManager Character_3 0 0>>
+
 
 
 There’s an old legend about jumping off a secret cliff in the mountains.
 
-<<changecharacterfade SceneManager Character_1 SampleSprite_0 1.0>>
-Changed Character
-<<movecharacter SceneManager Character_1 0 0>>
-Moved Character
-<<changecharacter SceneManager Character_1 SampleSprite_0>>
-Changed Character Again
-<<hidecharacter SceneManager Character_1>>
-Hide character quick
-<<showcharacterfade SceneManager Character_1 1.0>>
-Show character with fade
-<<hidecharacterfade SceneManager Character_1 1.0>>
-Hide character with fade
-<<showcharacter SceneManager Character_1>>
-Show character quick
+// <<changecharacterfade SceneManager Character_1 SampleSprite_0 1.0>>
+// Changed Character
+// <<movecharacter SceneManager Character_1 0 0>>
+// Moved Character
+// <<changecharacter SceneManager Character_1 SampleSprite_0>>
+// Changed Character Again
+// <<hidecharacter SceneManager Character_1>>
+// Hide character quick
+// <<showcharacterfade SceneManager Character_1 1.0>>
+// Show character with fade
+// <<hidecharacterfade SceneManager Character_1 1.0>>
+// Hide character with fade
+// <<showcharacter SceneManager Character_1>>
+// Show character quick
 
 
 They said that if you jump, you’ll go to a different world.
@@ -80,12 +90,13 @@ I can feel it. #choice
 
 I walk closer to the end of the cliff.
 
+<<changefade SceneManager Cliffside_POV 0.5>>
+
 I take a deep breath.
 
 Then I make the jump.
 
-<<change SceneManager UNIVERSAL_BlackBackground_0>>
-
+<<change SceneManager Black>>
 
 Luna: "!!"
 
@@ -109,6 +120,8 @@ Luna: “Aaaaahh!!”
 
 ?: “...don’t worry.”
 
+
+
 I hear a voice near me. Where did that come from?! I’m in mid air!
 
 ?: “Trust me, this won’t hurt. You’ll fall like a feather once you’re near the ground.”
@@ -116,6 +129,13 @@ I hear a voice near me. Where did that come from?! I’m in mid air!
 The moment I got close to hitting the ground, I started to fall slower until I was standing with my own two feet.
 
 // CG END: Luna falling from the sky -> BG: Grasslands
+
+
+<<changefade SceneManager Sunrise_0 1.0>>
+<<wait 0.25>>
+
+<<movecharacter SceneManager Character_1 -94 -97>>
+<<changecharacterfade SceneManager Character_1 luna_surprised_0 0.5>>
 
 Luna: “Woah… That was…”
 
@@ -202,7 +222,7 @@ title: Scene2
 
 <<declare $scene2PlayerChoice = "" >>
 
-<<change SceneManager UNIVERSAL_BlackBackground_0>>
+<<change SceneManager Black>>
 <<setNextNode Skip "Scene3">>
 
 

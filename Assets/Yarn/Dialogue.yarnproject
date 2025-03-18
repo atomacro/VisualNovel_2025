@@ -2,7 +2,8 @@
   "projectFileVersion": 2,
   "sourceFiles": [
     "Chapter1.yarn",
-    "Chapter2.yarn"
+    "Chapter2.yarn",
+    "Chapter3.yarn"
   ],
   "excludeFiles": [
     "**/*~/*"
