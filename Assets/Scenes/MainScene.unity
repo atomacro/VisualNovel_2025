@@ -1607,15 +1607,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgroundImage: {fileID: 340894479}
   backgroundSprites:
-  - {fileID: -7987827507014926001, guid: 14c9abb3174a6084da18c8392443c37a, type: 3}
-  - {fileID: 2786672208804535521, guid: 02a1b54c547fbee43b0899d922a5afde, type: 3}
   - {fileID: -1947736556940879737, guid: 437ac1da92067b24d80e5ae1248ff3f5, type: 3}
+  - {fileID: -7987827507014926001, guid: 95b3882b0fc76464592556b877c536d0, type: 3}
+  - {fileID: 4950064454571609229, guid: b89fbd0e34ba94a4ebdcb87236cea277, type: 3}
+  - {fileID: -5985148849461239079, guid: aabf83715673fe845be2a4a5f1945042, type: 3}
+  - {fileID: 5385648129830978985, guid: e36b4168ac6f0604297a4de662e40f53, type: 3}
   CanvasWithFader: {fileID: 195058046}
   chacacterImages:
   - {fileID: 417578238}
   - {fileID: 1126242595}
   - {fileID: 1382793226}
   characterSprites:
+  - {fileID: -2704009153626656251, guid: 8477fed595040694399360074e21e0bf, type: 3}
+  - {fileID: 3861028019454458676, guid: 911b6fad23078de47829b75d23338654, type: 3}
+  - {fileID: 9205999285410682934, guid: 0d1f80c55ca8b7a4e89819932d4ccd3a, type: 3}
+  - {fileID: -805204353273567175, guid: 17b8e8249c13d6b4591f40bf7c679566, type: 3}
+  - {fileID: -6202928447526224096, guid: 2aa98b358ffd5e441a18a0ace8e222fb, type: 3}
+  - {fileID: -4486036388014088537, guid: 59ca91bdd533ed4418d290ce4c90b3ea, type: 3}
+  - {fileID: 6053791862474433163, guid: 77fdd197c023d1343aa615aee457a6d9, type: 3}
+  - {fileID: 5388146398202729206, guid: a841edad6a41436489d21c61a6999440, type: 3}
+  - {fileID: 6703932675642682347, guid: 08e0aa47348745343b283203398ad7a3, type: 3}
   - {fileID: 6048202958411137667, guid: b516aace7642c3c46b58ba68baa53a59, type: 3}
   audioObjects: []
   audioSources:
