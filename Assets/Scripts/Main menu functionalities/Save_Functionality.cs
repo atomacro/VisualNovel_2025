@@ -8,6 +8,8 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
+using System;
+using Unity.VisualScripting;
 
 public class Save_Functionality : MonoBehaviour
 {
@@ -16,10 +18,12 @@ public class Save_Functionality : MonoBehaviour
     [SerializeField] private TextMeshProUGUI chapterInfo;
     [SerializeField] private TextMeshProUGUI dateSaved;
     private DialogueRunner dialogueRunner;
+    private SceneManager sceneManager;
 
     private void Start()
     {
         dialogueRunner = FindFirstObjectByType<DialogueRunner>();
+        InitializeData();
     }
 
     [System.Serializable]
@@ -32,9 +36,53 @@ public class Save_Functionality : MonoBehaviour
         public string date;
     }
 
-    // private void InitializeData(){
-        
-    // }
+    private void InitializeData()
+    {
+        for (int i = 1; i <= 6; i++)
+        {
+            string filePath = GetSaveFilePath(i);
+
+            if (File.Exists(filePath))
+            {
+                string json = File.ReadAllText(filePath);
+                SaveData saveData = JsonUtility.FromJson<SaveData>(json);
+                
+                DisplaySaveData(i, saveData);
+            }
+            else
+            {
+                Debug.Log($"No save file found for slot {i}");
+            }
+        }
+    }
+
+    private void DisplaySaveData(int slotIndex, SaveData saveData)
+    {
+        // Load and display background image (if applicable)
+        Sprite bgSprite = LoadBackgroundImage(saveData.backgroundImage);
+        if (bgSprite != null) backgroundImage.sprite = bgSprite;
+
+        // Set chapter and date text
+        chapterInfo.text = $"Chapter {saveData.chapterNumber}: {saveData.chapterTitle}";
+        dateSaved.text = $"Saved on: {saveData.date}";
+    }
+
+    
+
+    private Sprite LoadBackgroundImage(string backgroundPath)
+    {
+        if (string.IsNullOrEmpty(backgroundPath)) return null;
+
+        Texture2D texture = new Texture2D(2, 2);
+        byte[] imageBytes = File.ReadAllBytes(backgroundPath);
+
+        if (imageBytes.Length > 0 && texture.LoadImage(imageBytes))
+        {
+            return Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+        }
+
+        return null;
+    }
 
     public void SaveGame(int saveSlot)
     {
@@ -43,8 +91,16 @@ public class Save_Functionality : MonoBehaviour
         SaveData saveData = new SaveData();
         saveData.currentNode = dialogueRunner.CurrentNodeName;
 
+        saveData.backgroundImage = sceneManager.GetCurrentBackground();
+
+        saveData.chapterNumber = sceneManager.GetYarnVariable("$chapterNumber");
+        saveData.chapterTitle = sceneManager.GetYarnVariable("$chapterTitle");
+        saveData.date = DateTime.Now.ToString("MM/dd/yyyy");
+
         string filePath = GetSaveFilePath(saveSlot);
         File.WriteAllText(filePath, JsonUtility.ToJson(saveData, true));
+
+        
 
         Debug.Log("Saved at" + filePath);
         Debug.Log("Saving game to slot: " + saveSlot);

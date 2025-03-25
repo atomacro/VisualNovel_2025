@@ -2,6 +2,9 @@
 ---
 <<setNextNode Skip "Scene7">>
 
+<<set $chapterNumber to "3">>
+<<set $chapterTitle to "Aurora">>
+
 // BG: Town
 
 Luna: "...Um..."

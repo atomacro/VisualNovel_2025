@@ -6,6 +6,7 @@ using System.Collections.Generic;
 
 public class SceneManager : MonoBehaviour
 {
+    public VariableStorageBehaviour yarnVariableStorage;
     [SerializeField] private Image backgroundImage; // Reference to the Image component
     [SerializeField] private Sprite[] backgroundSprites; // Array of background images
     [SerializeField] private GameObject CanvasWithFader; // Reference to the CanvasFader component
@@ -282,24 +283,21 @@ public class SceneManager : MonoBehaviour
         return backgroundImage != null ? backgroundImage.sprite.name : "";
     }
 
-    // public List<CharacterData> GetDisplayedCharacters()
-    // {
-    //     List<CharacterData> displayedCharacters = new List<CharacterData>();
+    public string GetYarnVariable(string variableName)
+    {
+        if (yarnVariableStorage == null)
+        {
+            Debug.LogWarning("YarnVariableStorage is not assigned!");
+            return null;
+        }
 
-    //     foreach (Image characterImage in chacacterImages)
-    //     {
-    //         if (characterImage.enabled && characterImage.sprite != null)
-    //         {
-    //             CharacterData data = new CharacterData
-    //             {
-    //                 characterName = characterImage.name, // Use the object name
-    //                 spriteName = characterImage.sprite.name, // Save the sprite name
-    //                 position = characterImage.rectTransform.anchoredPosition // Save position
-    //             };
-    //             displayedCharacters.Add(data);
-    //         }
-    //     }
-    //     return displayedCharacters;
-    // }
+        if (yarnVariableStorage.TryGetValue(variableName, out string stringValue))
+        {
+            return stringValue;
+        }
+
+        Debug.LogWarning($"Yarn variable {variableName} not found.");
+        return null;
+    }
 
 }

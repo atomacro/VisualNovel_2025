@@ -2,6 +2,9 @@ title: Scene3
 ---
 <<setNextNode Skip "Scene4">>
 
+<<set $chapterNumber to "2">>
+<<set $chapterTitle to "Meridiem">>
+
 // BG: Town Scenery
 
 Sol: “Do you have any hobbies?”

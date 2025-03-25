@@ -45,6 +45,12 @@
 title: Scene1
 ---
 
+/// The chapter number.
+<<declare $chapterNumber = "1">>
+
+/// The chapter title.
+<<declare $chapterTitle = "Sol et Luna">>
+
 <<setNextNode Skip "Scene2">>
 <<movecharacter SceneManager Character_1 0 0>>
 <<movecharacter SceneManager Character_2 0 0>>
