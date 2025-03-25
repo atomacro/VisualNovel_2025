@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using Yarn.Unity;
 using System.Collections;
-using System.Collections.Generic;
 
 public class SceneManager : MonoBehaviour
 {
@@ -276,30 +275,4 @@ public class SceneManager : MonoBehaviour
             audioSource.Stop();
         }
     }
-
-    public string GetCurrentBackground()
-    {
-        return backgroundImage != null ? backgroundImage.sprite.name : "";
-    }
-
-    // public List<CharacterData> GetDisplayedCharacters()
-    // {
-    //     List<CharacterData> displayedCharacters = new List<CharacterData>();
-
-    //     foreach (Image characterImage in chacacterImages)
-    //     {
-    //         if (characterImage.enabled && characterImage.sprite != null)
-    //         {
-    //             CharacterData data = new CharacterData
-    //             {
-    //                 characterName = characterImage.name, // Use the object name
-    //                 spriteName = characterImage.sprite.name, // Save the sprite name
-    //                 position = characterImage.rectTransform.anchoredPosition // Save position
-    //             };
-    //             displayedCharacters.Add(data);
-    //         }
-    //     }
-    //     return displayedCharacters;
-    // }
-
 }
