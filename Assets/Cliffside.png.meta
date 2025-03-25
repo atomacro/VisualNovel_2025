@@ -1,46 +1,12 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream:Assets/Cliffside.png.meta
-<<<<<<<< Updated upstream:Assets/Cliffside.png.meta
-<<<<<<<< Updated upstream:Assets/wp desk 2.jpg.meta
 guid: e171f7d5153306c469ed1bb168876da8
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -2699379860183272676
-    second: wp desk 2_0
-=======
-<<<<<<<< Updated upstream:Assets/Nightsky.png.meta
-guid: 02a1b54c547fbee43b0899d922a5afde
-TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 2786672208804535521
-    second: Nightsky_0
->>>>>>> Stashed changes:Assets/Background Pictures/Cliffside.png.meta
-========
-guid: 14c9abb3174a6084da18c8392443c37a
-TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -7987827507014926001
-    second: Cliffside_0
->>>>>>>> Stashed changes:Assets/Cliffside.png.meta
-<<<<<<< Updated upstream:Assets/Cliffside.png.meta
-========
-guid: 0a37c3ef98b5da64d960ee211a8603a8
-TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -1947736556940879737
-    second: UNIVERSAL_BlackBackground_0
->>>>>>>> Stashed changes:Assets/UNIVERSAL_BlackBackground.jpg.meta
-=======
->>>>>>> Stashed changes:Assets/Background Pictures/Cliffside.png.meta
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -71,13 +37,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
-  nPOTScale: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 1
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 0
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -86,9 +52,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 1
+  alphaIsTransparency: 0
   spriteTessellationDetail: -1
-  textureType: 8
+  textureType: 0
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -97,16 +63,16 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   swizzle: 50462976
-  cookieLightType: 0
+  cookieLightType: 2
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -119,7 +85,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -132,7 +98,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -142,75 +108,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-<<<<<<< Updated upstream:Assets/Cliffside.png.meta
-<<<<<<<< Updated upstream:Assets/Cliffside.png.meta
-<<<<<<<< Updated upstream:Assets/wp desk 2.jpg.meta
-      name: wp desk 2_0
-========
-      name: Cliffside_0
->>>>>>>> Stashed changes:Assets/Cliffside.png.meta
-========
-      name: UNIVERSAL_BlackBackground_0
->>>>>>>> Stashed changes:Assets/UNIVERSAL_BlackBackground.jpg.meta
-=======
-<<<<<<<< Updated upstream:Assets/Nightsky.png.meta
-      name: Nightsky_0
-========
-      name: Cliffside_0
->>>>>>>> Stashed changes:Assets/Cliffside.png.meta
->>>>>>> Stashed changes:Assets/Background Pictures/Cliffside.png.meta
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-<<<<<<< Updated upstream:Assets/Cliffside.png.meta
-<<<<<<<< Updated upstream:Assets/wp desk 2.jpg.meta
-        width: 1920
-        height: 1080
-=======
-<<<<<<<< Updated upstream:Assets/Nightsky.png.meta
-        width: 2477
-        height: 1576
->>>>>>> Stashed changes:Assets/Background Pictures/Cliffside.png.meta
-========
-        width: 2000
-        height: 1417
->>>>>>>> Stashed changes:Assets/Cliffside.png.meta
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-<<<<<<< Updated upstream:Assets/Cliffside.png.meta
-<<<<<<<< Updated upstream:Assets/Cliffside.png.meta
-<<<<<<<< Updated upstream:Assets/wp desk 2.jpg.meta
-      spriteID: c13beefa150e98ad0800000000000000
-      internalID: -2699379860183272676
-=======
-<<<<<<<< Updated upstream:Assets/Nightsky.png.meta
-      spriteID: 1ec5f370c9f3ca620800000000000000
-      internalID: 2786672208804535521
->>>>>>> Stashed changes:Assets/Background Pictures/Cliffside.png.meta
-========
-      spriteID: f4108452439852190800000000000000
-      internalID: -7987827507014926001
->>>>>>>> Stashed changes:Assets/Cliffside.png.meta
-<<<<<<< Updated upstream:Assets/Cliffside.png.meta
-========
-      spriteID: 7881f77cbef38f4e0800000000000000
-      internalID: -1947736556940879737
->>>>>>>> Stashed changes:Assets/UNIVERSAL_BlackBackground.jpg.meta
-=======
->>>>>>> Stashed changes:Assets/Background Pictures/Cliffside.png.meta
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     customData: 
     physicsShape: []
