@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class SettingsNavigation : MonoBehaviour
 {
-    [SerializeField] private GameObject settingsPanel;
+    private UtilityLoader utilityLoader => GameObject.Find("UtilityLoader").GetComponent<UtilityLoader>();
+    private GameObject settingsPanel => utilityLoader.getGameObject("Settings");
     public void OpenSettings()
     {
         settingsPanel.SetActive(true);

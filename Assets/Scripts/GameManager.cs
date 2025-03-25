@@ -4,6 +4,7 @@ using Yarn.Unity;
 using System.Collections.Generic;
 using TMPro;
 using System;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,12 +12,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CanvasFader canvasFader;
     [SerializeField] private GameObject dialogueRunnerObject;
     [SerializeField] private GameObject dialogueTextObject;
+    [SerializeField] private GameObject optionsListViewObject;
     public List<string> DialogueLog = new List<string>();
     public List<string> Dialogues = new List<string>();
     private LineView lineView => lineViewObj.gameObject.GetComponent<LineView>();
+    private OptionsListView optionsListView => optionsListViewObject.gameObject.GetComponent<OptionsListView>();
+    private DialogueRunner dialogueRunner => dialogueRunnerObject.gameObject.GetComponent<DialogueRunner>();
+    private CanvasGroup optionsListViewCanvavGroup => optionsListViewObject.gameObject.GetComponent<CanvasGroup>();
 
     private bool isLogged = false;
-    
+
     public List<string> getDialogueLog()
     {
         return DialogueLog;
