@@ -3,17 +3,17 @@ using UnityEngine.UI;
 
 public class SettingsGameBarFunctionality : MonoBehaviour
 {
-    [SerializeField] private GameObject SettingsPanel;
+    private UtilityLoader utilityLoader => GameObject.Find("UtilityLoader").GetComponent<UtilityLoader>();
+    private GameObject settingsPanel => utilityLoader.getGameObject("Settings");
 
     private void Start()
     {
-        Button button = gameObject.GetComponent<Button>();
-        button.onClick.AddListener(OpenSettings);
+        gameObject.GetComponent<Button>().onClick.AddListener(OpenSettings);
     }
 
     void OpenSettings()
     {
-        SettingsPanel.SetActive(true);
+        settingsPanel.SetActive(true);
     }
 
 }

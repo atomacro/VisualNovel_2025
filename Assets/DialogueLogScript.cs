@@ -1,5 +1,4 @@
 using UnityEngine;
-using Yarn;
 using System.Collections.Generic;
 using TMPro;
 
@@ -18,6 +17,4 @@ public class DialogueLogScript : MonoBehaviour
             dialogueText.GetComponent<TextMeshProUGUI>().text += line + "\n\n";
         }
     }
-
-
 }

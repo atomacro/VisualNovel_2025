@@ -109,6 +109,8 @@ Then, a bright light seeps into my eyelids.
 I open my eyes.
 
 // CG START: Luna falling from the sky.
+<<changefade SceneManager Nightsky 1.0>>
+
 
 Luna: "Wha-?!"
 
