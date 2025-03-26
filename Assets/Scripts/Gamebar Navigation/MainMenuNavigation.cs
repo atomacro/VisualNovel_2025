@@ -24,7 +24,7 @@ public class MainMenuNavigation : MonoBehaviour
     {
         fader.FadeOut(1.5f);
         yield return new WaitForSeconds(1.5f);
-        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("MainMenu");
-
+        UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("MainScene");
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("MainMenu", UnityEngine.SceneManagement.LoadSceneMode.Additive);
     }
 }
