@@ -1005,6 +1005,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 102127478}
+  isMainMenu: 0
+  hoverClip: {fileID: 0}
 --- !u!114 &492338592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3140,6 +3142,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 1192236527333006972}
+  isMainMenu: 1
+  hoverClip: {fileID: 8300000, guid: 4201235fa37e7434e836ef5a7f3d224a, type: 3}
 --- !u!114 &172478604508521107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3237,6 +3241,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 8111526716313125945}
+        m_TargetAssemblyTypeName: MainMenuButtonHover, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 4406158516179651829}
         m_TargetAssemblyTypeName: SettingsNavigation, Assembly-CSharp
         m_MethodName: OpenSettings
@@ -3282,6 +3298,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 7115285539616714388}
+  isMainMenu: 1
+  hoverClip: {fileID: 8300000, guid: 4201235fa37e7434e836ef5a7f3d224a, type: 3}
 --- !u!114 &1192236527333006972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3535,6 +3553,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 2388282403388976308}
+  isMainMenu: 1
+  hoverClip: {fileID: 8300000, guid: 4201235fa37e7434e836ef5a7f3d224a, type: 3}
 --- !u!114 &1771963993991625410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3767,7 +3787,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3020760683856392346}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8111526716313125945}
+        m_TargetAssemblyTypeName: MainMenuButtonHover, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2917351515205083580
 GameObject:
   m_ObjectHideFlags: 0
@@ -4110,6 +4142,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 8111526716313125945}
+        m_TargetAssemblyTypeName: MainMenuButtonHover, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 3473685599651873679}
         m_TargetAssemblyTypeName: MenuNavigation, Assembly-CSharp
         m_MethodName: OpenMenu
@@ -4373,6 +4417,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 8111526716313125945}
+        m_TargetAssemblyTypeName: MainMenuButtonHover, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 4764919738762798518}
         m_TargetAssemblyTypeName: Quit, Assembly-CSharp
         m_MethodName: QuitGame
@@ -4429,6 +4485,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 8111526716313125945}
+        m_TargetAssemblyTypeName: MainMenuButtonHover, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 8828055440079101057}
         m_TargetAssemblyTypeName: MenuNavigation, Assembly-CSharp
         m_MethodName: OpenMenu
@@ -4584,6 +4652,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 9201211209055887074}
+  isMainMenu: 1
+  hoverClip: {fileID: 8300000, guid: 4201235fa37e7434e836ef5a7f3d224a, type: 3}
 --- !u!224 &7567924730216196657
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4738,6 +4808,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 7733851675258158845}
+  isMainMenu: 1
+  hoverClip: {fileID: 8300000, guid: 4201235fa37e7434e836ef5a7f3d224a, type: 3}
 --- !u!222 &8361238274770399135
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4759,6 +4831,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 5700294703483408891}
+  isMainMenu: 1
+  hoverClip: {fileID: 8300000, guid: 4201235fa37e7434e836ef5a7f3d224a, type: 3}
 --- !u!114 &8416792448845211678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4803,6 +4877,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 8111526716313125945}
+        m_TargetAssemblyTypeName: MainMenuButtonHover, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 172478604508521107}
         m_TargetAssemblyTypeName: NewGameNavigation, Assembly-CSharp
         m_MethodName: NewGame
