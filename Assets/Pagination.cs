@@ -20,6 +20,7 @@ public class Pagination : MonoBehaviour
         images.AddRange(Row1.GetComponentsInChildren<Image>());
         images.AddRange(Row2.GetComponentsInChildren<Image>());
         maxPage = sampleImages.Length / 6;
+        maxPage += sampleImages.Length % 6 == 0 ? 0 : 1;
         LoadImages(0, 5);
     }
     public void Increment()
@@ -49,18 +50,19 @@ public class Pagination : MonoBehaviour
 
     private void LoadImages(int start, int end)
     {
-        int imageCounter = 0;
-        for (int i = start; i <= end; i++, imageCounter++)
+        int imageCounter = start;
+        for (int i = 0; i < 6; i++, imageCounter++)
         {
-            if (i >= start && i <= end)
+            if (imageCounter >= start && imageCounter <= end && imageCounter < sampleImages.Length)
             {
-                images[imageCounter].sprite = sampleImages[i];
-                images[imageCounter].gameObject.SetActive(true);
+                images[i].sprite = sampleImages[imageCounter];
+                images[i].gameObject.SetActive(true);
             }
             else
             {
-                images[imageCounter].gameObject.SetActive(false);
+                images[i].gameObject.SetActive(false);
             }
         }
     }
 }
+
