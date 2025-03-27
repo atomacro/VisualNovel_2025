@@ -4,11 +4,8 @@ using UnityEngine.SceneManagement;
 public class UtilityLoader : MonoBehaviour
 {
     private Scene UtilityScene;
-
     public void Awake()
     {
-
-
         if (!UtilityScene.isLoaded)
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("Utilities", LoadSceneMode.Additive);
