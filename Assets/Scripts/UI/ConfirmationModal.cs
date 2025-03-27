@@ -5,7 +5,6 @@ using UnityEngine.Events;
 
 public class ConfirmationModal : MonoBehaviour
 {
-
     [SerializeField] private TextMeshProUGUI WarningMessage;
     private Button ConfirmButton => GameObject.Find("Confirm").GetComponent<Button>();
     private Button CancelButton => GameObject.Find("Cancel").GetComponent<Button>();
@@ -14,6 +13,7 @@ public class ConfirmationModal : MonoBehaviour
     public UnityEvent OnCancelAction;
     public void Start()
     {
+
         ConfirmButton.onClick.AddListener(OnConfirm);
         CancelButton.onClick.AddListener(OnCancel);
     }
@@ -30,7 +30,6 @@ public class ConfirmationModal : MonoBehaviour
     {
         OnCancelAction?.Invoke();
     }
-
     public void SetWarningMessage(string message)
     {
         WarningMessage.text = message;
