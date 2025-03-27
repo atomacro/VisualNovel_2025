@@ -2305,7 +2305,7 @@ GameObject:
   - component: {fileID: 1877896940}
   - component: {fileID: 1877896942}
   m_Layer: 0
-  m_Name: UNIVERSAL_BlackBackground_0
+  m_Name: Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
