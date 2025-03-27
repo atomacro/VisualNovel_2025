@@ -3,8 +3,10 @@ using UnityEngine.UI;
 using System.Linq;
 using TMPro;
 using Yarn.Unity;
-using Unity.VisualScripting.Antlr3.Runtime;
-
+using System.Collections.Generic;
+using System;
+using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 public class Settings_Functionality : MonoBehaviour
 {
     [SerializeField] private Slider masterVolumeSlider;
@@ -15,10 +17,19 @@ public class Settings_Functionality : MonoBehaviour
     [SerializeField] private Slider textSpeedSlider;
     [SerializeField] private Button backButton;
 
+    [SerializeField] private GameObject confirmModalPrefab;
 
-    [SerializeField] private GameObject lineView;
+    private GameObject SoundEffects;
+    private GameObject BackgroundMusic;
+    private GameObject UISounds;
+
+    private Scene MainScene;
+    private Scene Utilities;
+
+    private GameObject lineView;
     private LineView lineViewScript;
-
+    private Dictionary<string, int> PreviousSettings = new Dictionary<string, int>();
+    private Dictionary<string, int> DefaultSettings = new Dictionary<string, int>();
 
     private void InitializeValues()
     {
@@ -26,6 +37,15 @@ public class Settings_Functionality : MonoBehaviour
         musicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1);
         sfxVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume", 1);
         textSpeedSlider.value = PlayerPrefs.GetFloat("TextSpeed", 50);
+
+
+        PreviousSettings["MasterVolume"] = PlayerPrefs.GetInt("MasterVolume", 1);
+        PreviousSettings["MusicVolume"] = PlayerPrefs.GetInt("MusicVolume", 1);
+        PreviousSettings["SFXVolume"] = PlayerPrefs.GetInt("SFXVolume", 1);
+        PreviousSettings["TextSpeed"] = PlayerPrefs.GetInt("TextSpeed", 50);
+        PreviousSettings["FullScreen"] = PlayerPrefs.GetInt("FullScreen", 1);
+        PreviousSettings["ScreenWidth"] = PlayerPrefs.GetInt("ScreenWidth", Screen.currentResolution.width);
+        PreviousSettings["ScreenHeight"] = PlayerPrefs.GetInt("ScreenHeight", Screen.currentResolution.height);
 
         int savedWidth = PlayerPrefs.GetInt("ScreenWidth", Screen.currentResolution.width);
         int savedHeight = PlayerPrefs.GetInt("ScreenHeight", Screen.currentResolution.height);
@@ -48,18 +68,48 @@ public class Settings_Functionality : MonoBehaviour
         toggles[1].isOn = !isFullScreen;
     }
 
-    private void Awake()
+
+    private GameObject GetGameObjectFromAnotherScene(String name, Scene scene)
     {
-        InitializeValues();
+        foreach (GameObject obj in scene.GetRootGameObjects())
+        {
+            if (obj.name == name)
+            {
+                return obj;
+            }
+        }
+        return null;
     }
 
-    private void Start()
+    private void OnEnable()
     {
+        //get game objects from other scenes
+        MainScene = UnityEngine.SceneManagement.SceneManager.GetSceneByName("MainScene");
+        Utilities = UnityEngine.SceneManagement.SceneManager.GetSceneByName("Utilities");
+
+
+        if (MainScene.isLoaded)
+        {
+            lineView = GetGameObjectFromAnotherScene("LineView", MainScene);
+            Debug.Log("Main Scene Loaded");
+        }
+        if (Utilities.isLoaded)
+        {
+            BackgroundMusic = GetGameObjectFromAnotherScene("BackgroundMusic", Utilities);
+            UISounds = GetGameObjectFromAnotherScene("UISounds", Utilities);
+            SoundEffects = GetGameObjectFromAnotherScene("SoundEffects", Utilities);
+            Debug.Log("Utilities Scene Loaded");
+        }
         if (lineView != null)
         {
             lineViewScript = lineView.GetComponent<LineView>();
         }
+        Debug.Log(Utilities.isLoaded);
+        Debug.Log(MainScene.isLoaded);
 
+    }
+    private void Start()
+    {
         //initialize values when opening
         InitializeValues();
 
@@ -79,38 +129,51 @@ public class Settings_Functionality : MonoBehaviour
             toggle.onValueChanged.AddListener(OnResolutionToggleChanged);
         }
 
-        backButton.onClick.AddListener(backButtonClicked);
+        backButton.onClick.AddListener(BackButtonClicked);
 
+        //initialize Default Settings
+        DefaultSettings.Add("MasterVolume", 1);
+        DefaultSettings.Add("MusicVolume", 1);
+        DefaultSettings.Add("SFXVolume", 1);
+        DefaultSettings.Add("TextSpeed", 50);
+        DefaultSettings.Add("FullScreen", 1);
+        DefaultSettings.Add("ScreenWidth", 1920);
+        DefaultSettings.Add("ScreenHeight", 1080);
+
+        //initialize previous settings
+        foreach (var item in DefaultSettings)
+        {
+            PreviousSettings[item.Key] = PlayerPrefs.GetInt(item.Key, item.Value);
+        }
     }
     private void OnMasterVolumeChanged(float value)
     {
         PlayerPrefs.SetFloat("MasterVolume", value);
-        Debug.Log("Master Volume changed: " + value);
+        BackgroundMusic.GetComponent<AudioSource>().volume = value * PlayerPrefs.GetFloat("MusicVolume", 1);
+        SoundEffects.GetComponent<AudioSource>().volume = value * PlayerPrefs.GetFloat("SFXVolume", 1);
+        UISounds.GetComponent<AudioSource>().volume = value;
     }
 
     private void OnMusicVolumeChanged(float value)
     {
         PlayerPrefs.SetFloat("MusicVolume", value);
-        Debug.Log("Music Volume changed: " + value);
+        BackgroundMusic.GetComponent<AudioSource>().volume = value * PlayerPrefs.GetFloat("MasterVolume", 1);
     }
 
     private void OnSFXVolumeChanged(float value)
     {
         PlayerPrefs.SetFloat("SFXVolume", value);
-        Debug.Log("SFX Volume changed: " + value);
+        SoundEffects.GetComponent<AudioSource>().volume = value * PlayerPrefs.GetFloat("MasterVolume", 1);
     }
 
     private void OnTextSpeedChanged(float value)
     {
         PlayerPrefs.SetFloat("TextSpeed", value);
-        Debug.Log("Text Speed changed: " + value);
         if (lineViewScript != null)
         {
             lineViewScript.typewriterEffectSpeed = value;
         }
     }
-
-
     private void OnFullScreenToggleChanged(bool isOn)
     {
         Toggle fullScreen = fullScreenToggleGroup.ActiveToggles().FirstOrDefault();
@@ -139,17 +202,114 @@ public class Settings_Functionality : MonoBehaviour
         }
     }
 
-    private void backButtonClicked()
+    private void BackButtonClicked()
     {
-        PlayerPrefs.Save();
+        GameObject modalInstance = Instantiate(confirmModalPrefab);
+
+        if (isChanged())
+        {
+            ConfirmationModal confirmationModal = modalInstance.GetComponent<ConfirmationModal>();
+            confirmationModal.SetWarningMessage("Are you sure you want to exit without saving?");
+            confirmationModal.OnConfirmAction.AddListener(() =>
+            {
+                ExitWithoutSaving(modalInstance);
+            });
+            confirmationModal.OnCancelAction.AddListener(() => Destroy(modalInstance));
+        }
+        else
+        {
+            Destroy(modalInstance);
+            gameObject.SetActive(false);
+        }
+    }
+
+
+    private bool isChanged()
+    {
+        foreach (var item in PreviousSettings)
+        {
+            if (PlayerPrefs.GetInt(item.Key, 0) != item.Value)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private string[] getChangedSettings()
+    {
+        List<string> changedSettings = new List<string>();
+        foreach (var item in PreviousSettings)
+        {
+            if (PlayerPrefs.GetInt(item.Key, 0) != item.Value)
+            {
+                changedSettings.Add(item.Key);
+            }
+        }
+        return changedSettings.ToArray();
+    }
+
+    private void ExitWithoutSaving(GameObject modalInstance)
+    {
+        string[] changedSettings = getChangedSettings();
+        foreach (var setting in changedSettings)
+        {
+            PlayerPrefs.SetInt(setting, PreviousSettings[setting]);
+            Debug.Log(setting + PreviousSettings[setting]);
+            if (setting == "TextSpeed")
+            {
+                if (lineView != null)
+                {
+                    lineViewScript.typewriterEffectSpeed = PreviousSettings[setting];
+                }
+            }
+            if (setting == "FullScreen")
+            {
+                Screen.fullScreen = PreviousSettings[setting] == 1;
+            }
+            if (setting == "ScreenWidth" || setting == "ScreenHeight")
+            {
+                Screen.SetResolution(PreviousSettings["ScreenWidth"], PreviousSettings["ScreenHeight"], Screen.fullScreen);
+            }
+        }
+        InitializeValues();
+        Destroy(modalInstance);
         gameObject.SetActive(false);
+        PlayerPrefs.Save();
+    }
+    public void SaveButtonClicked()
+    {
+        String[] changedSettings = getChangedSettings();
+        foreach (var setting in changedSettings)
+        {
+            PreviousSettings[setting] = PlayerPrefs.GetInt(setting, 0);
+        }
+        PlayerPrefs.Save();
+    }
+
+    public void ResetValues()
+    {
+        foreach (var item in DefaultSettings)
+        {
+            PlayerPrefs.SetInt(item.Key, item.Value);
+        }
+        PlayerPrefs.Save();
+        if (lineView != null)
+        {
+            lineViewScript.typewriterEffectSpeed = PreviousSettings["TextSpeed"];
+        }
+        Screen.SetResolution(PreviousSettings["ScreenWidth"], DefaultSettings["ScreenHeight"], DefaultSettings["FullScreen"] == 1);
+        BackgroundMusic.GetComponent<AudioSource>().volume = DefaultSettings["MasterVolume"] * DefaultSettings["MusicVolume"];
+        SoundEffects.GetComponent<AudioSource>().volume = DefaultSettings["MasterVolume"] * DefaultSettings["SFXVolume"];
+        UISounds.GetComponent<AudioSource>().volume = DefaultSettings["MasterVolume"];
+        InitializeValues();
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            backButtonClicked();
+            BackButtonClicked();
         }
     }
 }
