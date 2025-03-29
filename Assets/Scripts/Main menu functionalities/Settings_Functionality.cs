@@ -90,7 +90,7 @@ public class Settings_Functionality : MonoBehaviour
 
         if (MainScene.isLoaded)
         {
-            lineView = GetGameObjectFromAnotherScene("LineView", MainScene);
+            lineView = GetGameObjectFromAnotherScene("Line View", MainScene);
             Debug.Log("Main Scene Loaded");
         }
         if (Utilities.isLoaded)
@@ -104,9 +104,10 @@ public class Settings_Functionality : MonoBehaviour
         {
             lineViewScript = lineView.GetComponent<LineView>();
         }
-        Debug.Log(Utilities.isLoaded);
-        Debug.Log(MainScene.isLoaded);
-
+        foreach (var item in DefaultSettings)
+        {
+            PreviousSettings[item.Key] = PlayerPrefs.GetInt(item.Key, item.Value);
+        }
     }
     private void Start()
     {
@@ -169,10 +170,6 @@ public class Settings_Functionality : MonoBehaviour
     private void OnTextSpeedChanged(float value)
     {
         PlayerPrefs.SetFloat("TextSpeed", value);
-        if (lineViewScript != null)
-        {
-            lineViewScript.typewriterEffectSpeed = value;
-        }
     }
     private void OnFullScreenToggleChanged(bool isOn)
     {
@@ -271,6 +268,12 @@ public class Settings_Functionality : MonoBehaviour
             {
                 Screen.SetResolution(PreviousSettings["ScreenWidth"], PreviousSettings["ScreenHeight"], Screen.fullScreen);
             }
+            if (setting == "MasterVolume" || setting == "MusicVolume" || setting == "SFXVolume")
+            {
+                BackgroundMusic.GetComponent<AudioSource>().volume = PreviousSettings["MasterVolume"] * PreviousSettings["MusicVolume"];
+                SoundEffects.GetComponent<AudioSource>().volume = PreviousSettings["MasterVolume"] * PreviousSettings["SFXVolume"];
+                UISounds.GetComponent<AudioSource>().volume = PreviousSettings["MasterVolume"];
+            }
         }
         InitializeValues();
         Destroy(modalInstance);
@@ -282,9 +285,30 @@ public class Settings_Functionality : MonoBehaviour
         String[] changedSettings = getChangedSettings();
         foreach (var setting in changedSettings)
         {
-            PreviousSettings[setting] = PlayerPrefs.GetInt(setting, 0);
+            if (setting == "TextSpeed")
+            {
+                if (lineView != null)
+                {
+                    lineViewScript.typewriterEffectSpeed = PlayerPrefs.GetInt(setting, 50);
+                }
+            }
+            if (setting == "FullScreen")
+            {
+                Screen.fullScreen = PlayerPrefs.GetInt("ScreenWidth", 1) == 1;
+            }
+            if (setting == "ScreenWidth" || setting == "ScreenHeight")
+            {
+                Screen.SetResolution(PlayerPrefs.GetInt("ScreenWidth", 1920), PlayerPrefs.GetInt("ScreenHeight", 1080), Screen.fullScreen);
+            }
+            if (setting == "MasterVolume" || setting == "MusicVolume" || setting == "SFXVolume")
+            {
+                BackgroundMusic.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("MasterVolume", 1) * PlayerPrefs.GetFloat("MusicVolume", 1);
+                SoundEffects.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("MasterVolume", 1) * PlayerPrefs.GetFloat("SFXVolume", 1);
+                UISounds.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("MasterVolume", 1);
+            }
         }
         PlayerPrefs.Save();
+
     }
 
     public void ResetValues()
