@@ -15,9 +15,9 @@
 //>> character commands
 //>> change character commands automatically enables disabled characters
 
-//<<changecharacterfade SceneManager Character1 Luna_0 1.0>> -> change character with fade
-//<<changecharacter SceneManager Character1 Luna_0>> -> quick character change
-//<<movecharacter SceneManager Character 102 203> -> move character with fade, 102 is the x position, 203 is the y position
+//<<changecharacterfade SceneManager Character1 Luna_0 1.0>> -> change character with fade, 
+//<<changecharacter SceneManager Character1 Luna_0>> -> quick character change, 
+//<<movecharacter SceneManager Character 102 203 0.5 0.5> -> move character with fade, 102 is the x position, 203 is the y position, 0.5 is scaleX, 0.5 is scaleY
 //<<hidecharacter SceneManager Character1>> -> hide character>
 //<<hidecharacterfade SceneManager Character1 1.0>> -> hide character with fade
 //<<showcharacter SceneManager Character1>> -> show character
@@ -96,7 +96,7 @@ I can feel it. #choice
 
 I walk closer to the end of the cliff.
 
-<<changefade SceneManager Cliffside_POV 0.5>>
+<<changefade SceneManager Cliffside_POV_0 0.5>>
 
 I take a deep breath.
 
@@ -115,7 +115,7 @@ Then, a bright light seeps into my eyelids.
 I open my eyes.
 
 // CG START: Luna falling from the sky.
-<<changefade SceneManager Nightsky 1.0>>
+<<changefade SceneManager Cliffside_Nightsky 1.0>>
 
 
 Luna: "Wha-?!"
@@ -129,7 +129,6 @@ Luna: “Aaaaahh!!”
 ?: “...don’t worry.”
 
 
-
 I hear a voice near me. Where did that come from?! I’m in mid air!
 
 ?: “Trust me, this won’t hurt. You’ll fall like a feather once you’re near the ground.”
@@ -138,18 +137,22 @@ The moment I got close to hitting the ground, I started to fall slower until I w
 
 // CG END: Luna falling from the sky -> BG: Grasslands
 
-
-<<changefade SceneManager Sunrise_0 1.0>>
+<<changefade SceneManager Grassland_Sunrise_0 1.0>>
 <<wait 0.25>>
 
-<<movecharacter SceneManager Character_1 -94 -97>>
+<<showcharacter SceneManager Character_1>>
 <<changecharacterfade SceneManager Character_1 luna_surprised_0 0.5>>
+<<movecharacter SceneManager Character_1 164 -97 -0.5 0.5>>
 
 Luna: “Woah… That was…”
 
 ?: “Awesome, wasn’t it?”
 
 I immediately looked behind and saw someone I don’t know.
+<<movecharacter SceneManager Character_1 164 -97 0.5 0.5>>
+<<showcharacter SceneManager Character_2>>
+<<changecharacterfade SceneManager Character_2 sol_happy_0 0.5>>
+<<movecharacter SceneManager Character_2 -192 -104 -0.5 0.5>>
 
 No… How do I look behind? I can even see myself in front of me?!
 
@@ -220,6 +223,10 @@ Luna: “...”
 Luna: “Fine.”
 
 Sol: “Let’s go! I know a place where we can start off.”
+<<hidecharacter SceneManager Character_1>>
+<<hidecharacter SceneManager Character_2>>
+<<changefade SceneManager Black 0.5>>
+<<wait 0.5>>
 
 <<jump Scene2>>
 
@@ -228,7 +235,17 @@ Sol: “Let’s go! I know a place where we can start off.”
 title: Scene2
 ---
 
+
 <<declare $scene2PlayerChoice = "" >>
+
+<<changecharacterfade SceneManager Character_1 luna_surprised_0 0.5>>
+<<movecharacter SceneManager Character_1 164 -97 0.5 0.5>>
+<<showcharacter SceneManager Character_2>>
+<<changecharacterfade SceneManager Character_2 sol_happy_0 0.5>>
+<<movecharacter SceneManager Character_2 -192 -104 -0.5 0.5>>
+<<hidecharacter SceneManager Character_1>>
+<<hidecharacter SceneManager Character_2>>
+
 
 <<change SceneManager Black>>
 <<setNextNode Skip "Scene3">>
@@ -240,6 +257,12 @@ This is so weird.
 I can see myself in front of me.
 
 Maybe I’ll find answers soon?
+
+<<changefade SceneManager TownScenery_Day_0 0.5>>
+<<showcharacter SceneManager Character_1>>
+<<showcharacter SceneManager Character_2>>
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
+<<changecharacter SceneManager Character_2 sol_tense_0>>
 
 Sol: “What are you spacing out for?”
 
@@ -253,6 +276,7 @@ Sol: “This whole world is for you! We’ll find you within you.”
 Luna: “I don’t think that’s important right now.”
 
 Sol: “It is! It’s always important! Looking for yourself is important!”
+<<changecharacter SceneManager Character_2 sol_angry_0>>
 
 Luna: “Why?”
 
@@ -262,7 +286,7 @@ Luna: “But I already do.”
 
 Sol: “It’s not just about getting to know your name and personal details. It’s way more than that.”
 Sol: “Don’t ask anymore questions, it’s my turn! Where do you want to start?”
-
+<<changecharacter SceneManager Character_2 sol_smiling_0>>
 Out of nowhere, a cat walks up to both of us. #choice
 -> Pet it.
     I slightly kneel to caress its head. The cat was completely white. Its fur is so smooth and soft.
@@ -271,7 +295,8 @@ Out of nowhere, a cat walks up to both of us. #choice
     (Nothing happens)
 
 Sol: “Oh, no wonder your name sounded familiar. You have the same name as that cat!”
-
+<<changecharacter SceneManager Character_2 sol_happy_0>>
+<<changecharacter SceneManager Character_1 luna_relaxed_0>>
 “Oddly enough, it’s purely white. If you say luna, it’s supposed to be the moon, right? So shouldn’t the cat be in a darker color?”
 
 “Actually, now that I think about it, the moon is white. It’s not so far off, isn’t it?”

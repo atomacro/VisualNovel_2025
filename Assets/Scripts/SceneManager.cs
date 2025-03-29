@@ -81,6 +81,7 @@ public class SceneManager : MonoBehaviour
 
     [YarnCommand("changecharacter")]
     public void ChangeCharacterImage(string characterObjectName, string imageName)
+
     {
         Image characterImage = SearchArray(chacacterImages, characterObjectName);
         if (characterImage != null)
@@ -90,6 +91,7 @@ public class SceneManager : MonoBehaviour
             {
                 characterImage.enabled = true;
                 characterImage.sprite = newImage;
+
             }
         }
     }
@@ -127,13 +129,14 @@ public class SceneManager : MonoBehaviour
 
 
     [YarnCommand("movecharacter")]
-    public void MoveCharacterImage(string characterName, float x, float y)
+    public void MoveCharacterImage(string characterName, float x, float y, float scaleX = 1f, float scaleY = 1f)
     {
         Image characterImage = SearchArray(chacacterImages, characterName);
         if (characterImage != null)
         {
             RectTransform rectTransform = characterImage.GetComponent<RectTransform>();
             rectTransform.anchoredPosition = new Vector2(x, y);
+            characterImage.GetComponent<RectTransform>().localScale = new Vector3(scaleX, scaleY, 1);
         }
     }
 
