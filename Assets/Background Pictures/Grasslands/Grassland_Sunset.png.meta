@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3af69df5a032ef04e868c1c0ea3c6a33
+guid: 33207108767c96547a28e65d1735e64b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8270669980927546728
-    second: Cliffside - Nightsky_0
+      213: 6152891442740889776
+    second: Grassland_Sunset_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cliffside - Nightsky_0
+      name: Grassland_Sunset_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2477
-        height: 1576
+        width: 2000
+        height: 1417
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 89aa354e87da83d80800000000000000
-      internalID: -8270669980927546728
+      spriteID: 0b88c12fa26736550800000000000000
+      internalID: 6152891442740889776
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Cliffside - Nightsky_0: -8270669980927546728
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

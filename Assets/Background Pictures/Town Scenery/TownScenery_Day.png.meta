@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: da7fe59538e785f4e8748c2351fab637
+guid: 7d7b881a1b55d4f418d96b59eba8ea65
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2088007045972171112
-    second: Grassland - Sunrise_0
+      213: -7072834136476674208
+    second: TownScenery_Day_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Grassland - Sunrise_0
+      name: TownScenery_Day_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 2000
-        height: 1417
+        height: 1213
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8691fa778571afc10800000000000000
-      internalID: 2088007045972171112
+      spriteID: 0671d0c83de38dd90800000000000000
+      internalID: -7072834136476674208
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Grassland - Sunrise_0: 2088007045972171112
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

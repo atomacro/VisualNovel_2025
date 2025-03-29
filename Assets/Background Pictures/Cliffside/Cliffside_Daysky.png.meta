@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 390d3424420abd94eb52339c6bd694a8
+guid: 78963881b8205374ca7ab2226e6d04a5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 64273446606505845
-    second: Cliifside - POV_0
+      213: -2144992041785010979
+    second: Cliffside_Daysky_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cliifside - POV_0
+      name: Cliffside_Daysky_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2000
-        height: 1417
+        width: 2477
+        height: 1576
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5778871fb5854e000800000000000000
-      internalID: 64273446606505845
+      spriteID: dd45d574a157b32e0800000000000000
+      internalID: -2144992041785010979
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Cliifside - POV_0: 64273446606505845
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

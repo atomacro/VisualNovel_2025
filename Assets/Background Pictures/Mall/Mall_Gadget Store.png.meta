@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a442bc0d12397304eb30d170f808fd36
+guid: 3a9461372f142a341b5405e9eeb4aec4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5695956388698685530
-    second: Grassland - Sunset_0
+      213: -6395676110172227396
+    second: Mall_Gadget Store_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Grassland - Sunset_0
+      name: Mall_Gadget Store_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6af7f7bc7d5e3f0b0800000000000000
-      internalID: -5695956388698685530
+      spriteID: cb87bbaa67efd37a0800000000000000
+      internalID: -6395676110172227396
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Grassland - Sunset_0: -5695956388698685530
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

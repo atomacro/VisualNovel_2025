@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a731a270d4583ae489d34067af083f5e
+guid: a505f3fdd956c6040a4fbff0c454a049
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1973330492783655009
-    second: Town Scenery - Day_0
+      213: -214340980622312641
+    second: Playground_Sunset_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Town Scenery - Day_0
+      name: Playground_Sunset_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 2000
-        height: 1213
+        height: 1417
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f970f293f525d94e0800000000000000
-      internalID: -1973330492783655009
+      spriteID: f3bb2358302860df0800000000000000
+      internalID: -214340980622312641
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Town Scenery - Day_0: -1973330492783655009
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

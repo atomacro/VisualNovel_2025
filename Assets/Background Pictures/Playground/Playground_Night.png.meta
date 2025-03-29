@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 625fbfe961ac3d84da1decc814065d66
+guid: 9b41b3196b5a357489e7ca1b3e0d740f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4979379708842230567
-    second: Grasssland - Evening_0
+      213: -2394056955395830847
+    second: Playground_Night_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Grasssland - Evening_0
+      name: Playground_Night_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 723445b967f4a1540800000000000000
-      internalID: 4979379708842230567
+      spriteID: 1cb049122e996ced0800000000000000
+      internalID: -2394056955395830847
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Grasssland - Evening_0: 4979379708842230567
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
