@@ -16,7 +16,8 @@ public class SceneManager : MonoBehaviour
     [SerializeField] private AudioSource[] audioObjects;
     [SerializeField] private GameObject[] audioSources;
 
-    private Sprite GetSpriteByName(string imageName)
+
+    public Sprite GetBackgroundByName(string imageName)
     {
         return SearchArray(backgroundSprites, imageName);
     }
@@ -37,7 +38,7 @@ public class SceneManager : MonoBehaviour
     [YarnCommand("change")]
     public void ChangeBackgroundImage(string imageName)
     {
-        Sprite newImage = GetSpriteByName(imageName);
+        Sprite newImage = GetBackgroundByName(imageName);
         if (newImage != null && backgroundImage != null)
         {
             backgroundImage.sprite = newImage;
@@ -51,7 +52,7 @@ public class SceneManager : MonoBehaviour
     [YarnCommand("changefade")]
     public void ChangeBackgroundImageWithFade(string imageName, float fadeDuration)
     {
-        Sprite newImage = GetSpriteByName(imageName);
+        Sprite newImage = GetBackgroundByName(imageName);
         if (newImage != null && backgroundImage != null && CanvasWithFader != null)
         {
             CanvasFader fader = CanvasWithFader.GetComponent<CanvasFader>();
