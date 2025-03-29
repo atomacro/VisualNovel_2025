@@ -119,12 +119,12 @@ public class SceneManager : MonoBehaviour
         }
     }
 
-    private IEnumerator FadeOutAndChangeCharacterImage(CanvasFader fader, Sprite newImage, float duration, Image characterImage, bool flipX = false, bool flipY = false)
+    private IEnumerator FadeOutAndChangeCharacterImage(CanvasFader fader, Sprite newImage, float duration, Image characterImage,  float scaleX, float scaleY 
     {
         fader.FadeOut(duration);
         yield return new WaitForSeconds(duration);
         characterImage.sprite = newImage;
-        characterImage.GetComponent<RectTransform>().localScale = new Vector3(flipX ? -1 : 1, flipY ? -1 : 1, 1);
+        characterImage.GetComponent<RectTransform>().localScale = new Vector3(flipX ? -0.5f : 0.5f, flipY ? -0.5f : 0.5f, 1);
         fader.FadeIn(duration);
     }
 
