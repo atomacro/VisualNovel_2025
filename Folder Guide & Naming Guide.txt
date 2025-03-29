@@ -1,26 +1,21 @@
-for Scenes with multiple sprites
+for sprites
 
 ex. 
 
-Scene1.Sprite1
-Scene1.Sprite2
-Scene1.Sprite3
+Luna_Sad
+Luna_Happy
+Sol_Neutral
 
-All sprites should be placed in the folder Characters And Sprites/Scene1
+All sprites should be placed in the folder Characters And Sprites/CharacterName
 
-if a single sprite will be used place the sprite inside Character_Sprites/Single_Sprites with the name Scene2_Sprite
-
-NOTE: DO THE SAME FOR AUDIOS
+NOTE: DO THE SAME FOR AUDIOS Audios/Cafe
 
 ================================================================================
-for audio naming use specific names
+for audio naming use title for names
 ex.
 
-Mall_1_2_3_4_5.mp4
-Forest_1_3_5_2.mp4
-Cliff_2_3_10_12.mp4
-
-numbers should be the index of the scene that the audio will be used
+Cafe - Ambience
+Grassland - Grasshoppers
 
 ================================================================================
 
@@ -33,10 +28,10 @@ City.png
 
 for variations
 
-Forest_V1.png
-Forest_V2.png
-City_Day.png
-City_Night.png
+Forest - V1.png
+Forest - V2.png
+City - Day.png
+City - Night.png
 
 
 
