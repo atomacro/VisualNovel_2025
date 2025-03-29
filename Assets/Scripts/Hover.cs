@@ -17,13 +17,13 @@ public class Hover : MonoBehaviour
 
     public void OnMouseEnter()
     {
-        backgroundImage.color = new Color32(255, 255, 225, 5);
-        textMeshPro.color = new Color32(255, 255, 225, 255);
+        backgroundImage.color = new Color32(0, 0, 0, 30);
+        textMeshPro.color = new Color32(255, 255, 255, 255);
     }
 
     public void OnMouseExit()
     {
-        backgroundImage.color = new Color32(255, 255, 225, 1);
-        textMeshPro.color = new Color32(255, 255, 225, 40);
+        backgroundImage.color = new Color32(0, 0, 0, 20);
+        textMeshPro.color = new Color32(255, 255, 255, 100);
     }
 }
