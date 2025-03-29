@@ -255,7 +255,8 @@ Maybe I’ll find answers soon?
 <<changefade SceneManager TownScenery_Day_0 0.5>>
 <<showcharacter SceneManager Character_1>>
 <<showcharacter SceneManager Character_2>>
-
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
+<<changecharacter SceneManager Character_2 sol_tense_0>>
 
 Sol: “What are you spacing out for?”
 
@@ -269,6 +270,7 @@ Sol: “This whole world is for you! We’ll find you within you.”
 Luna: “I don’t think that’s important right now.”
 
 Sol: “It is! It’s always important! Looking for yourself is important!”
+<<changecharacter SceneManager Character_2 sol_angry_0>>
 
 Luna: “Why?”
 
@@ -278,7 +280,7 @@ Luna: “But I already do.”
 
 Sol: “It’s not just about getting to know your name and personal details. It’s way more than that.”
 Sol: “Don’t ask anymore questions, it’s my turn! Where do you want to start?”
-
+<<changecharacter SceneManager Character_2 sol_smiling_0>>
 Out of nowhere, a cat walks up to both of us. #choice
 -> Pet it.
     I slightly kneel to caress its head. The cat was completely white. Its fur is so smooth and soft.
@@ -287,7 +289,8 @@ Out of nowhere, a cat walks up to both of us. #choice
     (Nothing happens)
 
 Sol: “Oh, no wonder your name sounded familiar. You have the same name as that cat!”
-
+<<changecharacter SceneManager Character_2 sol_happy_0>>
+<<changecharacter SceneManager Character_1 luna_relaxed_0>>
 “Oddly enough, it’s purely white. If you say luna, it’s supposed to be the moon, right? So shouldn’t the cat be in a darker color?”
 
 “Actually, now that I think about it, the moon is white. It’s not so far off, isn’t it?”

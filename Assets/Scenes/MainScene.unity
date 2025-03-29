@@ -717,6 +717,7 @@ GameObject:
   - component: {fileID: 340894480}
   - component: {fileID: 340894479}
   - component: {fileID: 340894481}
+  - component: {fileID: 340894482}
   m_Layer: 0
   m_Name: Bg_Image
   m_TagString: Untagged
@@ -756,14 +757,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7987827507014926001, guid: 14c9abb3174a6084da18c8392443c37a, type: 3}
+  m_Sprite: {fileID: -7987827507014926001, guid: 95b3882b0fc76464592556b877c536d0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -793,6 +794,19 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &340894482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340894477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eae73ec5992d9544a97d10383617adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentAlpha: 0
 --- !u!1 &417578231
 GameObject:
   m_ObjectHideFlags: 0
@@ -2568,13 +2582,15 @@ GameObject:
   - component: {fileID: 1126242596}
   - component: {fileID: 1126242595}
   - component: {fileID: 1126242597}
+  - component: {fileID: 1126242599}
+  - component: {fileID: 1126242598}
   m_Layer: 0
   m_Name: Character_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1126242594
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2646,6 +2662,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 2
+--- !u!225 &1126242598
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126242593}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &1126242599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126242593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eae73ec5992d9544a97d10383617adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentAlpha: 0
 --- !u!1 &1211653007
 GameObject:
   m_ObjectHideFlags: 0
@@ -2871,13 +2912,15 @@ GameObject:
   - component: {fileID: 1382793227}
   - component: {fileID: 1382793226}
   - component: {fileID: 1382793228}
+  - component: {fileID: 1382793230}
+  - component: {fileID: 1382793229}
   m_Layer: 0
   m_Name: Character_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1382793225
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2895,7 +2938,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -417, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1382793226
 MonoBehaviour:
@@ -2949,6 +2992,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 2
+--- !u!225 &1382793229
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382793224}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &1382793230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382793224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eae73ec5992d9544a97d10383617adb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentAlpha: 0
 --- !u!1 &1433702142
 GameObject:
   m_ObjectHideFlags: 0
@@ -5168,7 +5236,7 @@ MonoBehaviour:
   dialogueViews:
   - {fileID: 7778558435014588591}
   - {fileID: 3292657646789709147}
-  startNode: test
+  startNode: Scene2
   startAutomatically: 1
   runSelectedOptionAsLine: 0
   lineProvider: {fileID: 0}
