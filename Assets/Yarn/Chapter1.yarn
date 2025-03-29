@@ -122,9 +122,7 @@ Luna: “Aaaaahh!!”
 
 ?: “...don’t worry.”
 
-===
-title: test
----
+
 I hear a voice near me. Where did that come from?! I’m in mid air!
 
 ?: “Trust me, this won’t hurt. You’ll fall like a feather once you’re near the ground.”
@@ -133,18 +131,22 @@ The moment I got close to hitting the ground, I started to fall slower until I w
 
 // CG END: Luna falling from the sky -> BG: Grasslands
 
-
 <<changefade SceneManager Grassland_Sunrise_0 1.0>>
 <<wait 0.25>>
 
-<<movecharacter SceneManager Character_1 -94 -97>>
-<<changecharacterfade SceneManager Character_1 luna_surprised_0 0.5 0.5f 0.5f>>
+<<showcharacter SceneManager Character_1>>
+<<changecharacterfade SceneManager Character_1 luna_surprised_0 0.5>>
+<<movecharacter SceneManager Character_1 164 -97 -0.5 0.5>>
 
 Luna: “Woah… That was…”
 
 ?: “Awesome, wasn’t it?”
 
 I immediately looked behind and saw someone I don’t know.
+<<movecharacter SceneManager Character_1 164 -97 0.5 0.5>>
+<<showcharacter SceneManager Character_2>>
+<<changecharacterfade SceneManager Character_2 sol_happy_0 0.5>>
+<<movecharacter SceneManager Character_2 -192 -104 -0.5 0.5>>
 
 No… How do I look behind? I can even see myself in front of me?!
 
@@ -215,6 +217,10 @@ Luna: “...”
 Luna: “Fine.”
 
 Sol: “Let’s go! I know a place where we can start off.”
+<<hidecharacter SceneManager Character_1>>
+<<hidecharacter SceneManager Character_2>>
+<<changefade SceneManager Black 0.5>>
+<<wait 0.5>>
 
 <<jump Scene2>>
 
@@ -223,7 +229,17 @@ Sol: “Let’s go! I know a place where we can start off.”
 title: Scene2
 ---
 
+
 <<declare $scene2PlayerChoice = "" >>
+
+<<changecharacterfade SceneManager Character_1 luna_surprised_0 0.5>>
+<<movecharacter SceneManager Character_1 164 -97 0.5 0.5>>
+<<showcharacter SceneManager Character_2>>
+<<changecharacterfade SceneManager Character_2 sol_happy_0 0.5>>
+<<movecharacter SceneManager Character_2 -192 -104 -0.5 0.5>>
+<<hidecharacter SceneManager Character_1>>
+<<hidecharacter SceneManager Character_2>>
+
 
 <<change SceneManager Black>>
 <<setNextNode Skip "Scene3">>
@@ -235,6 +251,11 @@ This is so weird.
 I can see myself in front of me.
 
 Maybe I’ll find answers soon?
+
+<<changefade SceneManager TownScenery_Day_0 0.5>>
+<<showcharacter SceneManager Character_1>>
+<<showcharacter SceneManager Character_2>>
+
 
 Sol: “What are you spacing out for?”
 
