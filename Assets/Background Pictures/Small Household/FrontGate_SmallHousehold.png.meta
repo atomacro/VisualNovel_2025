@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FrontGate_SmallHousehold_0: -4791298140692561477
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

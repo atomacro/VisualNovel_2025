@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TownScenery_Night_0: -7033011835006541422
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
