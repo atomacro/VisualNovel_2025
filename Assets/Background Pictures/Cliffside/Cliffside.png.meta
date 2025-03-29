@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cliffside_0: -7987827507014926001
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

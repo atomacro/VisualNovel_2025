@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Mall - Ground floor_0: 8497030101999647509
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
