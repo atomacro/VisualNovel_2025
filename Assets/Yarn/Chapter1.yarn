@@ -15,8 +15,8 @@
 //>> character commands
 //>> change character commands automatically enables disabled characters
 
-//<<changecharacterfade SceneManager Character1 Luna_0 1.0>> -> change character with fade
-//<<changecharacter SceneManager Character1 Luna_0>> -> quick character change
+//<<changecharacterfade SceneManager Character1 Luna_0 1.0 false false>> -> change character with fade, unflipped x, unflipped y
+//<<changecharacter SceneManager Character1 Luna_0 false false>> -> quick character change, unflipped x, unflipped y
 //<<movecharacter SceneManager Character 102 203> -> move character with fade, 102 is the x position, 203 is the y position
 //<<hidecharacter SceneManager Character1>> -> hide character>
 //<<hidecharacterfade SceneManager Character1 1.0>> -> hide character with fade
@@ -90,7 +90,7 @@ I can feel it. #choice
 
 I walk closer to the end of the cliff.
 
-<<changefade SceneManager Cliffside_POV 0.5>>
+<<changefade SceneManager Cliffside_POV_0 0.5>>
 
 I take a deep breath.
 
@@ -109,7 +109,7 @@ Then, a bright light seeps into my eyelids.
 I open my eyes.
 
 // CG START: Luna falling from the sky.
-<<changefade SceneManager Nightsky 1.0>>
+<<changefade SceneManager Cliffside_Nightsky 1.0>>
 
 
 Luna: "Wha-?!"
@@ -122,8 +122,9 @@ Luna: “Aaaaahh!!”
 
 ?: “...don’t worry.”
 
-
-
+===
+title: test
+---
 I hear a voice near me. Where did that come from?! I’m in mid air!
 
 ?: “Trust me, this won’t hurt. You’ll fall like a feather once you’re near the ground.”
@@ -133,11 +134,11 @@ The moment I got close to hitting the ground, I started to fall slower until I w
 // CG END: Luna falling from the sky -> BG: Grasslands
 
 
-<<changefade SceneManager Sunrise_0 1.0>>
+<<changefade SceneManager Grassland_Sunrise_0 1.0>>
 <<wait 0.25>>
 
 <<movecharacter SceneManager Character_1 -94 -97>>
-<<changecharacterfade SceneManager Character_1 luna_surprised_0 0.5>>
+<<changecharacterfade SceneManager Character_1 luna_surprised_0 0.5 true false>>
 
 Luna: “Woah… That was…”
 

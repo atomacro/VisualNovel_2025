@@ -79,7 +79,8 @@ public class SceneManager : MonoBehaviour
     }
 
     [YarnCommand("changecharacter")]
-    public void ChangeCharacterImage(string characterObjectName, string imageName)
+    public void ChangeCharacterImage(string characterObjectName, string imageName, bool flipX = false, bool flipY = false)
+
     {
         Image characterImage = SearchArray(chacacterImages, characterObjectName);
         if (characterImage != null)
@@ -89,12 +90,14 @@ public class SceneManager : MonoBehaviour
             {
                 characterImage.enabled = true;
                 characterImage.sprite = newImage;
+                characterImage.GetComponent<RectTransform>().localScale = new Vector3(flipX ? -1 : 1, flipY ? -1 : 1, 1);
+
             }
         }
     }
 
     [YarnCommand("changecharacterfade")]
-    public void ChangeCharacterImageWithFade(string characterObjectName, string imageName, float fadeDuration)
+    public void ChangeCharacterImageWithFade(string characterObjectName, string imageName, float fadeDuration, bool flipX = false, bool flipY = false)
     {
         Image characterImage = SearchArray(chacacterImages, characterObjectName);
         if (characterImage != null)
@@ -116,11 +119,12 @@ public class SceneManager : MonoBehaviour
         }
     }
 
-    private IEnumerator FadeOutAndChangeCharacterImage(CanvasFader fader, Sprite newImage, float duration, Image characterImage)
+    private IEnumerator FadeOutAndChangeCharacterImage(CanvasFader fader, Sprite newImage, float duration, Image characterImage, bool flipX = false, bool flipY = false)
     {
         fader.FadeOut(duration);
         yield return new WaitForSeconds(duration);
         characterImage.sprite = newImage;
+        characterImage.GetComponent<RectTransform>().localScale = new Vector3(flipX ? -1 : 1, flipY ? -1 : 1, 1);
         fader.FadeIn(duration);
     }
 
