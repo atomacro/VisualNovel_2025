@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f6eece1c41a45d444bac2cef3357a0d7
+guid: b89fbd0e34ba94a4ebdcb87236cea277
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4757612567084163999
-    second: Playground - Sunset_0
+      213: -4119954993456633541
+    second: Cliifside_POV_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Playground - Sunset_0
+      name: Cliifside_POV_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 16c9300c39099fdb0800000000000000
-      internalID: -4757612567084163999
+      spriteID: b39ab6c03caf2d6c0800000000000000
+      internalID: -4119954993456633541
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Playground - Sunset_0: -4757612567084163999
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

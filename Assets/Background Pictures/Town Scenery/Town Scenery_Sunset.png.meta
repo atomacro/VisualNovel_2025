@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 721f2105ac2e0b4459c978035f61bef5
+guid: 6915d8568b69c0846b2dfe978ba1416d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5439934378203204146
-    second: Mall - Pet Store_0
+      213: -751031475646265869
+    second: Town Scenery_Sunset_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mall - Pet Store_0
+      name: Town Scenery_Sunset_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 2000
-        height: 1417
+        height: 1213
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 23acc36be778e7b40800000000000000
-      internalID: 5439934378203204146
+      spriteID: 3f587fe1adcc395f0800000000000000
+      internalID: -751031475646265869
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Mall - Pet Store_0: 5439934378203204146
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

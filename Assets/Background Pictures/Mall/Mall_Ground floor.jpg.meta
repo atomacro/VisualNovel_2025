@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ab40ba8ebff32d344a01d0caf3c6d022
+guid: c12af163dc9e6e14396e09e57d7c3445
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6979747906360650840
-    second: Cliffside - Daysky_0
+      213: 773799359445984652
+    second: Mall_Ground floor_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cliffside - Daysky_0
+      name: Mall_Ground floor_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2477
-        height: 1576
+        width: 739
+        height: 415
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 85c27649dbb0dd060800000000000000
-      internalID: 6979747906360650840
+      spriteID: c85e33bea661dba00800000000000000
+      internalID: 773799359445984652
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Cliffside - Daysky_0: 6979747906360650840
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

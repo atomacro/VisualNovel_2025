@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bae9657093ca4a14f88e5b672971cb37
+guid: 376f5e56aac813644a60a8e5902ef73e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1573153422740651239
-    second: Mall - Gadget Store_0
+      213: -4179452575261077450
+    second: Mall_Pet Store_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mall - Gadget Store_0
+      name: Mall_Pet Store_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9138a540c490b2ae0800000000000000
-      internalID: -1573153422740651239
+      spriteID: 630d8f7c60a9ff5c0800000000000000
+      internalID: -4179452575261077450
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Mall - Gadget Store_0: -1573153422740651239
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
