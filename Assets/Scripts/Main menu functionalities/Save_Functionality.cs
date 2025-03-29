@@ -1,23 +1,17 @@
 using UnityEngine;
 using System.IO;
-using System.Collections.Generic;
 using Yarn.Unity;
 using Yarn;
-using System.Drawing;
 using TMPro;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
-using Image = UnityEngine.UI.Image;
 using System;
-using Unity.VisualScripting;
-using System.Collections;
 using UnityEngine.SceneManagement;
 using VisualNovel_2025;
 
 public class Save_Functionality : MonoBehaviour
 {
     [Header("Save Slots")]
-    [SerializeField] private UnityEngine.UI.Button[] saveSlotButtons = new UnityEngine.UI.Button[6];
+    [SerializeField] private Button[] saveSlotButtons = new Button[6];
     
     [Header("UI Elements")]
     [SerializeField] private Image[] backgroundImages = new Image[6];
@@ -28,7 +22,7 @@ public class Save_Functionality : MonoBehaviour
     [SerializeField] private GameObject menuPanel;
     private Scene MainScene;
     private SceneManager sceneManager;
-    private HelperClass helper;
+    private HelperClass helper = new HelperClass();
 
     [System.Serializable]
     public class SaveData
@@ -42,7 +36,6 @@ public class Save_Functionality : MonoBehaviour
 
     private void Start()
     {
-        helper = new HelperClass();
         InitializeData();
     }
 
@@ -132,7 +125,7 @@ public class Save_Functionality : MonoBehaviour
     private void ResetSlotUI(int index)
     {
         // Set default background or make it semi-transparent
-        backgroundImages[index].color = new UnityEngine.Color(0.5f, 0.5f, 0.5f, 0.5f);
+        backgroundImages[index].color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
         chapterInfoTexts[index].text = "Empty Slot";
         dateSavedTexts[index].text = "";
     }
