@@ -189,7 +189,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6048202958411137667, guid: b516aace7642c3c46b58ba68baa53a59, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1066,15 +1066,40 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 418928916}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fffbb1f3621a27741b23d70060ade2ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveSlotButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  backgroundImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  chapterInfoTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  dateSavedTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   menuPanel: {fileID: 1145672914}
-  backgroundImage: {fileID: 612202721}
-  chapterInfo: {fileID: 202403205}
-  dateSaved: {fileID: 2139184344}
 --- !u!114 &418928922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1724,7 +1749,6 @@ GameObject:
   - component: {fileID: 591522145}
   - component: {fileID: 591522144}
   - component: {fileID: 591522143}
-  - component: {fileID: 591522147}
   - component: {fileID: 591522146}
   m_Layer: 5
   m_Name: SaveOne
@@ -1861,35 +1885,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 591522147}
-        m_TargetAssemblyTypeName: Save_Functionality, Assembly-CSharp
-        m_MethodName: SaveGame
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &591522147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 591522141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fffbb1f3621a27741b23d70060ade2ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menuPanel: {fileID: 0}
-  backgroundImage: {fileID: 0}
-  chapterInfo: {fileID: 0}
-  dateSaved: {fileID: 0}
+      m_Calls: []
 --- !u!1 &612202718
 GameObject:
   m_ObjectHideFlags: 0
@@ -2094,7 +2090,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 619772073}
-        m_TargetAssemblyTypeName: LoadSaveNavigation, Assembly-CSharp
+        m_TargetAssemblyTypeName: MenuNavigation, Assembly-CSharp
         m_MethodName: CloseMenu
         m_Mode: 1
         m_Arguments:
@@ -2562,19 +2558,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 726886365}
-        m_TargetAssemblyTypeName: Save_Functionality, Assembly-CSharp
-        m_MethodName: SaveGame
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &726886365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2582,15 +2566,40 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726886359}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fffbb1f3621a27741b23d70060ade2ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveSlotButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  backgroundImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  chapterInfoTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  dateSavedTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   menuPanel: {fileID: 0}
-  backgroundImage: {fileID: 0}
-  chapterInfo: {fileID: 0}
-  dateSaved: {fileID: 0}
 --- !u!1 &770566765
 GameObject:
   m_ObjectHideFlags: 0
@@ -3313,7 +3322,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2704009153626656251, guid: 8477fed595040694399360074e21e0bf, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3767,15 +3776,40 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1017466254}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fffbb1f3621a27741b23d70060ade2ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveSlotButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  backgroundImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  chapterInfoTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  dateSavedTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   menuPanel: {fileID: 1145672914}
-  backgroundImage: {fileID: 2145467852}
-  chapterInfo: {fileID: 833967479}
-  dateSaved: {fileID: 1555628882}
 --- !u!114 &1017466257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3909,6 +3943,7 @@ GameObject:
   - component: {fileID: 1031014554}
   - component: {fileID: 1031014553}
   - component: {fileID: 1031014552}
+  - component: {fileID: 1031014558}
   m_Layer: 5
   m_Name: Save
   m_TagString: Untagged
@@ -4040,6 +4075,47 @@ RectTransform:
   m_AnchoredPosition: {x: 0.060000274, y: 0.0013471816}
   m_SizeDelta: {x: 1924.2666, y: 1077.4828}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1031014558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031014551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fffbb1f3621a27741b23d70060ade2ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveSlotButtons:
+  - {fileID: 591522146}
+  - {fileID: 2083706474}
+  - {fileID: 726886364}
+  - {fileID: 1317622009}
+  - {fileID: 1577584318}
+  - {fileID: 179559952}
+  backgroundImages:
+  - {fileID: 10596590}
+  - {fileID: 832231008}
+  - {fileID: 116065680}
+  - {fileID: 878790149}
+  - {fileID: 2098827890}
+  - {fileID: 1173243147}
+  chapterInfoTexts:
+  - {fileID: 800070300}
+  - {fileID: 707058492}
+  - {fileID: 1678137556}
+  - {fileID: 1431525694}
+  - {fileID: 424690210}
+  - {fileID: 119013613}
+  dateSavedTexts:
+  - {fileID: 1290763244}
+  - {fileID: 802790587}
+  - {fileID: 1353366100}
+  - {fileID: 1256179959}
+  - {fileID: 1099682571}
+  - {fileID: 1624709780}
+  menuPanel: {fileID: 1031014551}
 --- !u!1 &1053730731
 GameObject:
   m_ObjectHideFlags: 0
@@ -4413,6 +4489,7 @@ GameObject:
   - component: {fileID: 1145672917}
   - component: {fileID: 1145672916}
   - component: {fileID: 1145672915}
+  - component: {fileID: 1145672921}
   m_Layer: 5
   m_Name: Load
   m_TagString: Untagged
@@ -4544,6 +4621,47 @@ RectTransform:
   m_AnchoredPosition: {x: 0.060000274, y: 0.0013471816}
   m_SizeDelta: {x: 1924.2666, y: 1077.4828}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1145672921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145672914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fffbb1f3621a27741b23d70060ade2ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveSlotButtons:
+  - {fileID: 1404173423}
+  - {fileID: 1017466257}
+  - {fileID: 1820713033}
+  - {fileID: 2005345858}
+  - {fileID: 418928922}
+  - {fileID: 1654379615}
+  backgroundImages:
+  - {fileID: 1173225574}
+  - {fileID: 2145467852}
+  - {fileID: 578653442}
+  - {fileID: 770566768}
+  - {fileID: 612202721}
+  - {fileID: 1091385634}
+  chapterInfoTexts:
+  - {fileID: 865565872}
+  - {fileID: 833967479}
+  - {fileID: 1619110915}
+  - {fileID: 1654244715}
+  - {fileID: 202403205}
+  - {fileID: 1598391550}
+  dateSavedTexts:
+  - {fileID: 672301617}
+  - {fileID: 1555628882}
+  - {fileID: 1277133425}
+  - {fileID: 1844107565}
+  - {fileID: 2139184344}
+  - {fileID: 1981637471}
+  menuPanel: {fileID: 1145672914}
 --- !u!1 &1173225571
 GameObject:
   m_ObjectHideFlags: 0
@@ -4614,7 +4732,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6048202958411137667, guid: b516aace7642c3c46b58ba68baa53a59, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5980,15 +6098,40 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1404173421}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fffbb1f3621a27741b23d70060ade2ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveSlotButtons:
+  - {fileID: 1404173423}
+  - {fileID: 1017466257}
+  - {fileID: 1820713033}
+  - {fileID: 2005345858}
+  - {fileID: 418928922}
+  - {fileID: 1654379615}
+  backgroundImages:
+  - {fileID: 1173225574}
+  - {fileID: 2145467852}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  chapterInfoTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  dateSavedTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   menuPanel: {fileID: 1145672914}
-  backgroundImage: {fileID: 1173225574}
-  chapterInfo: {fileID: 865565872}
-  dateSaved: {fileID: 672301617}
 --- !u!114 &1404173425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7613,15 +7756,40 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1654379609}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fffbb1f3621a27741b23d70060ade2ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveSlotButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  backgroundImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  chapterInfoTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  dateSavedTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   menuPanel: {fileID: 1145672914}
-  backgroundImage: {fileID: 1091385634}
-  chapterInfo: {fileID: 1598391550}
-  dateSaved: {fileID: 1981637471}
 --- !u!114 &1654379615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7940,15 +8108,40 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1820713027}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fffbb1f3621a27741b23d70060ade2ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveSlotButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  backgroundImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  chapterInfoTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  dateSavedTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   menuPanel: {fileID: 1145672914}
-  backgroundImage: {fileID: 578653442}
-  chapterInfo: {fileID: 1619110915}
-  dateSaved: {fileID: 1277133425}
 --- !u!114 &1820713033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8252,7 +8445,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &1871583180
 Canvas:
   m_ObjectHideFlags: 0
@@ -8596,15 +8789,40 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2005345853}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fffbb1f3621a27741b23d70060ade2ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveSlotButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  backgroundImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  chapterInfoTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  dateSavedTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   menuPanel: {fileID: 1145672914}
-  backgroundImage: {fileID: 770566768}
-  chapterInfo: {fileID: 1654244715}
-  dateSaved: {fileID: 1844107565}
 --- !u!1 &2083706468
 GameObject:
   m_ObjectHideFlags: 0
@@ -8617,8 +8835,8 @@ GameObject:
   - component: {fileID: 2083706472}
   - component: {fileID: 2083706471}
   - component: {fileID: 2083706470}
-  - component: {fileID: 2083706474}
   - component: {fileID: 2083706473}
+  - component: {fileID: 2083706474}
   m_Layer: 5
   m_Name: SaveTwo
   m_TagString: Untagged
@@ -8718,15 +8936,40 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2083706468}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fffbb1f3621a27741b23d70060ade2ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  saveSlotButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  backgroundImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  chapterInfoTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  dateSavedTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   menuPanel: {fileID: 0}
-  backgroundImage: {fileID: 0}
-  chapterInfo: {fileID: 0}
-  dateSaved: {fileID: 0}
 --- !u!114 &2083706474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8770,19 +9013,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2083706473}
-        m_TargetAssemblyTypeName: Save_Functionality, Assembly-CSharp
-        m_MethodName: SaveGame
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &2098827887
 GameObject:
   m_ObjectHideFlags: 0
@@ -9092,7 +9323,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2704009153626656251, guid: 8477fed595040694399360074e21e0bf, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

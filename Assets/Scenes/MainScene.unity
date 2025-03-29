@@ -1639,6 +1639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47a7b6c16d923cd49bce8b0c948bdd18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  yarnVariableStorage: {fileID: 0}
   backgroundImage: {fileID: 340894479}
   backgroundSprites:
   - {fileID: -1947736556940879737, guid: 437ac1da92067b24d80e5ae1248ff3f5, type: 3}
@@ -5236,7 +5237,7 @@ MonoBehaviour:
   dialogueViews:
   - {fileID: 7778558435014588591}
   - {fileID: 3292657646789709147}
-  startNode: Scene2
+  startNode: Start
   startAutomatically: 1
   runSelectedOptionAsLine: 0
   lineProvider: {fileID: 0}
