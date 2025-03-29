@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 95b3882b0fc76464592556b877c536d0
+guid: f6eece1c41a45d444bac2cef3357a0d7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7987827507014926001
-    second: Cliffside_0
+      213: -4757612567084163999
+    second: Playground - Sunset_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cliffside_0
+      name: Playground - Sunset_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f4108452439852190800000000000000
-      internalID: -7987827507014926001
+      spriteID: 16c9300c39099fdb0800000000000000
+      internalID: -4757612567084163999
       vertices: []
       indices: 
       edges: []

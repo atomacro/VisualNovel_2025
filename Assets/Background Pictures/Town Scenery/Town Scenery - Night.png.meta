@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 95b3882b0fc76464592556b877c536d0
+guid: 6e07ec306f5b4094286238c51634a529
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7987827507014926001
-    second: Cliffside_0
+      213: -6183182588651721928
+    second: Town Scenery - Night_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cliffside_0
+      name: Town Scenery - Night_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 2000
-        height: 1417
+        height: 1213
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f4108452439852190800000000000000
-      internalID: -7987827507014926001
+      spriteID: 83ba80e023ce03aa0800000000000000
+      internalID: -6183182588651721928
       vertices: []
       indices: 
       edges: []

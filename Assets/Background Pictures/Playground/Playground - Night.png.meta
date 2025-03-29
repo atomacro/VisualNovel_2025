@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: af55c390e84577a4ba8e7eac79e56c73
+guid: 30867849a6725124e9c4b330cef8589b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8427459051400306358
-    second: Ground floor_0
+      213: -8271985239811444327
+    second: Playground - Night_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,19 +97,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -126,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ground floor_0
+      name: Playground - Night_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 739
-        height: 415
+        width: 2000
+        height: 1417
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a416222b4a6ab0b80800000000000000
-      internalID: -8427459051400306358
+      spriteID: 991b3c15041043d80800000000000000
+      internalID: -8271985239811444327
       vertices: []
       indices: 
       edges: []
@@ -160,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Ground floor_0: -8427459051400306358
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

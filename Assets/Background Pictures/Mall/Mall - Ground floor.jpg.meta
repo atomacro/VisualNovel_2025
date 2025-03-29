@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 95b3882b0fc76464592556b877c536d0
+guid: bc0f4d870a230a14b9fb7fec51954b78
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7987827507014926001
-    second: Cliffside_0
+      213: 8497030101999647509
+    second: Mall - Ground floor_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cliffside_0
+      name: Mall - Ground floor_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2000
-        height: 1417
+        width: 739
+        height: 415
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f4108452439852190800000000000000
-      internalID: -7987827507014926001
+      spriteID: 51b7d7bcbd38be570800000000000000
+      internalID: 8497030101999647509
       vertices: []
       indices: 
       edges: []

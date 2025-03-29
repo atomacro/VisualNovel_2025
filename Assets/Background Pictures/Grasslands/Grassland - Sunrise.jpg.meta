@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 95b3882b0fc76464592556b877c536d0
+guid: da7fe59538e785f4e8748c2351fab637
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7987827507014926001
-    second: Cliffside_0
+      213: 2088007045972171112
+    second: Grassland - Sunrise_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cliffside_0
+      name: Grassland - Sunrise_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f4108452439852190800000000000000
-      internalID: -7987827507014926001
+      spriteID: 8691fa778571afc10800000000000000
+      internalID: 2088007045972171112
       vertices: []
       indices: 
       edges: []
