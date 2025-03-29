@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Grasssland_Evening_0: -4118866993920120270
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

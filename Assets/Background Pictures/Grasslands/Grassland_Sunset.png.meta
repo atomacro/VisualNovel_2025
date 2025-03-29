@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Grassland_Sunset_0: 6152891442740889776
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

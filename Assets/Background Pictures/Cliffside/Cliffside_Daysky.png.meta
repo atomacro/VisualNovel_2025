@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cliffside_Daysky_0: -2144992041785010979
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

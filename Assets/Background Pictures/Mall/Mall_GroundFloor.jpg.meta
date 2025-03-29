@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3a9461372f142a341b5405e9eeb4aec4
+guid: c12af163dc9e6e14396e09e57d7c3445
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6395676110172227396
-    second: Mall_Gadget Store_0
+      213: 773799359445984652
+    second: Mall_Ground floor_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mall_Gadget Store_0
+      name: Mall_GroundFloor_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2000
-        height: 1417
+        width: 739
+        height: 415
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cb87bbaa67efd37a0800000000000000
-      internalID: -6395676110172227396
+      spriteID: c85e33bea661dba00800000000000000
+      internalID: 773799359445984652
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6945fe833fc8fbe46a18f1fc7a9ecc2f
     internalID: 0
     vertices: []
     indices: 
@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Mall_GroundFloor_0: 773799359445984652
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

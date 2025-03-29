@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Town Scenery_Sunset_0: -751031475646265869
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
