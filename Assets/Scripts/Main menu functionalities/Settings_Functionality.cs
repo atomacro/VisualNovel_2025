@@ -302,6 +302,7 @@ public class Settings_Functionality : MonoBehaviour
                 SoundEffects.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("MasterVolume", 1) * PlayerPrefs.GetFloat("SFXVolume", 1);
                 UISounds.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("MasterVolume", 1);
             }
+            PreviousSettings[setting] = PlayerPrefs.GetInt(setting, 0);
         }
         PlayerPrefs.Save();
     }
