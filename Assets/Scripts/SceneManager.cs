@@ -79,7 +79,7 @@ public class SceneManager : MonoBehaviour
     }
 
     [YarnCommand("changecharacter")]
-    public void ChangeCharacterImage(string characterObjectName, string imageName, bool flipX = false, bool flipY = false)
+    public void ChangeCharacterImage(string characterObjectName, string imageName)
 
     {
         Image characterImage = SearchArray(chacacterImages, characterObjectName);
@@ -90,14 +90,13 @@ public class SceneManager : MonoBehaviour
             {
                 characterImage.enabled = true;
                 characterImage.sprite = newImage;
-                characterImage.GetComponent<RectTransform>().localScale = new Vector3(flipX ? -1 : 1, flipY ? -1 : 1, 1);
 
             }
         }
     }
 
     [YarnCommand("changecharacterfade")]
-    public void ChangeCharacterImageWithFade(string characterObjectName, string imageName, float fadeDuration, bool flipX = false, bool flipY = false)
+    public void ChangeCharacterImageWithFade(string characterObjectName, string imageName, float fadeDuration)
     {
         Image characterImage = SearchArray(chacacterImages, characterObjectName);
         if (characterImage != null)
@@ -119,24 +118,24 @@ public class SceneManager : MonoBehaviour
         }
     }
 
-    private IEnumerator FadeOutAndChangeCharacterImage(CanvasFader fader, Sprite newImage, float duration, Image characterImage,  float scaleX, float scaleY 
+    private IEnumerator FadeOutAndChangeCharacterImage(CanvasFader fader, Sprite newImage, float duration, Image characterImage)
     {
         fader.FadeOut(duration);
         yield return new WaitForSeconds(duration);
         characterImage.sprite = newImage;
-        characterImage.GetComponent<RectTransform>().localScale = new Vector3(flipX ? -0.5f : 0.5f, flipY ? -0.5f : 0.5f, 1);
         fader.FadeIn(duration);
     }
 
 
     [YarnCommand("movecharacter")]
-    public void MoveCharacterImage(string characterName, float x, float y)
+    public void MoveCharacterImage(string characterName, float x, float y, float scaleX = 1f, float scaleY = 1f)
     {
         Image characterImage = SearchArray(chacacterImages, characterName);
         if (characterImage != null)
         {
             RectTransform rectTransform = characterImage.GetComponent<RectTransform>();
             rectTransform.anchoredPosition = new Vector2(x, y);
+            characterImage.GetComponent<RectTransform>().localScale = new Vector3(scaleX, scaleY, 1);
         }
     }
 
