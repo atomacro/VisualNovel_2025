@@ -1239,6 +1239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a047b9653813d3642af59e8b44129443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  confirmationModalPrefab: {fileID: 0}
 --- !u!114 &582303017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1252,6 +1253,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 825836755}
+  isMainMenu: 0
+  hoverClip: {fileID: 0}
 --- !u!114 &582303018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1413,6 +1416,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 1802766499}
+  isMainMenu: 0
+  hoverClip: {fileID: 0}
 --- !u!114 &600144060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1624,10 +1629,26 @@ MonoBehaviour:
   backgroundSprites:
   - {fileID: -1947736556940879737, guid: 437ac1da92067b24d80e5ae1248ff3f5, type: 3}
   - {fileID: -7987827507014926001, guid: 95b3882b0fc76464592556b877c536d0, type: 3}
-  - {fileID: 4950064454571609229, guid: b89fbd0e34ba94a4ebdcb87236cea277, type: 3}
-  - {fileID: -5985148849461239079, guid: aabf83715673fe845be2a4a5f1945042, type: 3}
-  - {fileID: 5385648129830978985, guid: e36b4168ac6f0604297a4de662e40f53, type: 3}
-  - {fileID: 21300000, guid: 0a37c3ef98b5da64d960ee211a8603a8, type: 3}
+  - {fileID: 6979747906360650840, guid: ab40ba8ebff32d344a01d0caf3c6d022, type: 3}
+  - {fileID: -8270669980927546728, guid: 3af69df5a032ef04e868c1c0ea3c6a33, type: 3}
+  - {fileID: 64273446606505845, guid: 390d3424420abd94eb52339c6bd694a8, type: 3}
+  - {fileID: 1840822310566280322, guid: f90b9509ee7422e4d9ba34074c1e3965, type: 3}
+  - {fileID: -3018023084670670801, guid: 3c99cb0cfc8201645807debab7ba2154, type: 3}
+  - {fileID: -3018023084670670801, guid: 3c99cb0cfc8201645807debab7ba2154, type: 3}
+  - {fileID: -3018023084670670801, guid: 3c99cb0cfc8201645807debab7ba2154, type: 3}
+  - {fileID: 2088007045972171112, guid: da7fe59538e785f4e8748c2351fab637, type: 3}
+  - {fileID: -5695956388698685530, guid: a442bc0d12397304eb30d170f808fd36, type: 3}
+  - {fileID: 4979379708842230567, guid: 625fbfe961ac3d84da1decc814065d66, type: 3}
+  - {fileID: -1573153422740651239, guid: bae9657093ca4a14f88e5b672971cb37, type: 3}
+  - {fileID: 8497030101999647509, guid: bc0f4d870a230a14b9fb7fec51954b78, type: 3}
+  - {fileID: 5439934378203204146, guid: 721f2105ac2e0b4459c978035f61bef5, type: 3}
+  - {fileID: -8271985239811444327, guid: 30867849a6725124e9c4b330cef8589b, type: 3}
+  - {fileID: -4757612567084163999, guid: f6eece1c41a45d444bac2cef3357a0d7, type: 3}
+  - {fileID: 4219027706368730953, guid: e35ed369f74e43a488b5f55fdbcfa17d, type: 3}
+  - {fileID: 4219027706368730953, guid: e35ed369f74e43a488b5f55fdbcfa17d, type: 3}
+  - {fileID: -1973330492783655009, guid: a731a270d4583ae489d34067af083f5e, type: 3}
+  - {fileID: -6183182588651721928, guid: 6e07ec306f5b4094286238c51634a529, type: 3}
+  - {fileID: -4893911526464315637, guid: f84eb81d715c24041b82d2da2537ac42, type: 3}
   CanvasWithFader: {fileID: 195058046}
   chacacterImages:
   - {fileID: 417578238}
@@ -1643,6 +1664,15 @@ MonoBehaviour:
   - {fileID: 6053791862474433163, guid: 77fdd197c023d1343aa615aee457a6d9, type: 3}
   - {fileID: 5388146398202729206, guid: a841edad6a41436489d21c61a6999440, type: 3}
   - {fileID: 6703932675642682347, guid: 08e0aa47348745343b283203398ad7a3, type: 3}
+  - {fileID: 4032739202747145916, guid: d23af954a1a392e4cb5eafda2ab3accd, type: 3}
+  - {fileID: -8718875549193553508, guid: 1633e958d1c663949b9239eb174ea429, type: 3}
+  - {fileID: 7974037670886055899, guid: 70aba69a6bde5914da327d6b3539a98a, type: 3}
+  - {fileID: -7564673444813707653, guid: a22e25eb32bfe6b43a8ed92765ec49bf, type: 3}
+  - {fileID: 753310354608086304, guid: d24b3639d12ce494dac3b7e45e43d3db, type: 3}
+  - {fileID: 882972099171131096, guid: 53497afccfed72f4b97381a7772e5a44, type: 3}
+  - {fileID: -4386504134722328904, guid: 991990b7663a7f049be4b034669f14cd, type: 3}
+  - {fileID: -1441109336040257426, guid: 8fa4473ad05290d4d9be9563cf3b86b1, type: 3}
+  - {fileID: 6024925741130665702, guid: 30a8468ef53afc848a36c7ccdc174750, type: 3}
   - {fileID: 6048202958411137667, guid: b516aace7642c3c46b58ba68baa53a59, type: 3}
   audioObjects: []
   audioSources:
@@ -2295,6 +2325,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 176904441}
+  isMainMenu: 0
+  hoverClip: {fileID: 0}
 --- !u!114 &976543439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4090,6 +4122,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 2290096605540542114}
+  isMainMenu: 0
+  hoverClip: {fileID: 0}
 --- !u!224 &684513129616511601
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4242,6 +4276,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 805409301066565309}
+  isMainMenu: 0
+  hoverClip: {fileID: 0}
 --- !u!222 &1472782132036949983
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4319,6 +4355,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 3414513252458523067}
+  isMainMenu: 0
+  hoverClip: {fileID: 0}
 --- !u!222 &1944085837328327872
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5679,6 +5717,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 8138821105342342716}
+  isMainMenu: 0
+  hoverClip: {fileID: 0}
 --- !u!114 &7050509076641363504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6488,6 +6528,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 200366329551640276}
+  isMainMenu: 0
+  hoverClip: {fileID: 0}
 --- !u!114 &8138821105342342716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6780,6 +6822,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 4710105862769530100}
+  isMainMenu: 0
+  hoverClip: {fileID: 0}
 --- !u!114 &8555914753078935515
 MonoBehaviour:
   m_ObjectHideFlags: 0
