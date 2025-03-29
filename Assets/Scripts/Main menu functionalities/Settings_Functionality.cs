@@ -6,7 +6,7 @@ using Yarn.Unity;
 using System.Collections.Generic;
 using System;
 using UnityEngine.SceneManagement;
-using Unity.VisualScripting;
+using VisualNovel_2025;
 public class Settings_Functionality : MonoBehaviour
 {
     [SerializeField] private Slider masterVolumeSlider;
@@ -30,6 +30,7 @@ public class Settings_Functionality : MonoBehaviour
     private LineView lineViewScript;
     private Dictionary<string, int> PreviousSettings = new Dictionary<string, int>();
     private Dictionary<string, int> DefaultSettings = new Dictionary<string, int>();
+    private HelperClass helper = new HelperClass();
 
     private void InitializeValues()
     {
@@ -68,19 +69,6 @@ public class Settings_Functionality : MonoBehaviour
         toggles[1].isOn = !isFullScreen;
     }
 
-
-    private GameObject GetGameObjectFromAnotherScene(String name, Scene scene)
-    {
-        foreach (GameObject obj in scene.GetRootGameObjects())
-        {
-            if (obj.name == name)
-            {
-                return obj;
-            }
-        }
-        return null;
-    }
-
     private void OnEnable()
     {
         //get game objects from other scenes
@@ -90,14 +78,17 @@ public class Settings_Functionality : MonoBehaviour
 
         if (MainScene.isLoaded)
         {
-            lineView = GetGameObjectFromAnotherScene("Line View", MainScene);
+            GameObject MainCanvas = helper.GetGameObjectFromAnotherScene("MainCanvas", MainScene);
+            GameObject DialogueSystem = helper.GetChildGameObject("Dialogue System", MainCanvas);
+            GameObject Canvas = helper.GetChildGameObject("Canvas", DialogueSystem);
+            lineView = helper.GetChildGameObject("Line View", Canvas);
             Debug.Log("Main Scene Loaded");
         }
         if (Utilities.isLoaded)
         {
-            BackgroundMusic = GetGameObjectFromAnotherScene("BackgroundMusic", Utilities);
-            UISounds = GetGameObjectFromAnotherScene("UISounds", Utilities);
-            SoundEffects = GetGameObjectFromAnotherScene("SoundEffects", Utilities);
+            BackgroundMusic = helper.GetGameObjectFromAnotherScene("BackgroundMusic", Utilities);
+            UISounds = helper.GetGameObjectFromAnotherScene("UISounds", Utilities);
+            SoundEffects = helper.GetGameObjectFromAnotherScene("SoundEffects", Utilities);
             Debug.Log("Utilities Scene Loaded");
         }
         if (lineView != null)
@@ -108,9 +99,13 @@ public class Settings_Functionality : MonoBehaviour
         {
             PreviousSettings[item.Key] = PlayerPrefs.GetInt(item.Key, item.Value);
         }
+        Debug.Log(lineView == null);
     }
     private void Start()
     {
+
+        //initalize helper class
+        helper = new HelperClass();
         //initialize values when opening
         InitializeValues();
 
@@ -289,7 +284,8 @@ public class Settings_Functionality : MonoBehaviour
             {
                 if (lineView != null)
                 {
-                    lineViewScript.typewriterEffectSpeed = PlayerPrefs.GetInt(setting, 50);
+                    lineViewScript.typewriterEffectSpeed = PlayerPrefs.GetFloat(setting, 50);
+                    Debug.Log("Text Speed changed: " + lineViewScript.typewriterEffectSpeed);
                 }
             }
             if (setting == "FullScreen")
@@ -308,7 +304,6 @@ public class Settings_Functionality : MonoBehaviour
             }
         }
         PlayerPrefs.Save();
-
     }
 
     public void ResetValues()
