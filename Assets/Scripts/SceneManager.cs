@@ -284,33 +284,11 @@ public class SceneManager : MonoBehaviour
 
     public string GetCurrentBackground()
     {
-        // Debug.Log("Background: " + backgroundImage.sprite.name);
-        // return backgroundImage != null ? backgroundImage.sprite.name : "";
-
-        if (backgroundImage == null)
-        {
-            Debug.LogError("backgroundImage is NULL!");
-            return "";
-        }
-
-        if (backgroundImage.sprite == null)
-        {
-            Debug.LogError("backgroundImage.sprite is NULL!");
-            return "";
-        }
-
-        Debug.Log("Background: " + backgroundImage.sprite.name);
         return backgroundImage.sprite.name;
     }
 
     public string GetYarnVariable(string variableName)
     {
-        if (yarnVariableStorage == null)
-        {
-            Debug.LogWarning("YarnVariableStorage is not assigned!");
-            return null;
-        }
-
         if (yarnVariableStorage.TryGetValue(variableName, out string stringValue))
         {
             return stringValue;
@@ -319,5 +297,4 @@ public class SceneManager : MonoBehaviour
         Debug.LogWarning($"Yarn variable {variableName} not found.");
         return null;
     }
-
 }

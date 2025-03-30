@@ -55,7 +55,7 @@ public class Save_Functionality : MonoBehaviour
         }
         else
         {
-            Debug.Log("Main Scene not loaded.");
+            Debug.LogWarning("Main Scene not loaded.");
         }
     }
 
@@ -99,7 +99,6 @@ public class Save_Functionality : MonoBehaviour
             string json = File.ReadAllText(filePath);
             SaveData saveData = JsonUtility.FromJson<SaveData>(json);
 
-            // Set the background image if available
             if (!string.IsNullOrEmpty(saveData.backgroundImage))
             {
                 string backgroundPath = saveData.backgroundImage;
@@ -107,10 +106,7 @@ public class Save_Functionality : MonoBehaviour
                 backgroundImages[index].color = Color.white;
             }
 
-            // Set the chapter text
             chapterInfoTexts[index].text = $"Chapter {saveData.chapterNumber}: {saveData.chapterTitle}";
-
-            // Set the date text
             dateSavedTexts[index].text = $"Saved on: {saveData.date}";
         }
     }
@@ -118,7 +114,7 @@ public class Save_Functionality : MonoBehaviour
     private void ResetSlotUI(int index)
     {
         // Set default background or make it semi-transparent
-        backgroundImages[index].color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+        backgroundImages[index].color = new Color(1f, 1f, 1f, 1f);
         chapterInfoTexts[index].text = "Empty Slot";
         dateSavedTexts[index].text = "";
     }
@@ -131,10 +127,9 @@ public class Save_Functionality : MonoBehaviour
 
     public void SaveGame(int saveSlot)
     {
-        Debug.Log("Saving...");
         if (dialogueRunner == null)
         {
-            Debug.Log("No dialoguerunner");
+            Debug.LogWarning("SAVE ERROR: No dialoguerunner");
             return;
         }
 
@@ -144,7 +139,7 @@ public class Save_Functionality : MonoBehaviour
             return;
         }
 
-        string bg = sceneManager.GetCurrentBackground(); // This line is causing the error
+        string bg = sceneManager.GetCurrentBackground();
 
         if (string.IsNullOrEmpty(bg))
         {
@@ -152,10 +147,9 @@ public class Save_Functionality : MonoBehaviour
         }
 
         SaveData saveData = new SaveData();
+        // Save the data
         saveData.currentNode = dialogueRunner.CurrentNodeName;
-
         saveData.backgroundImage = sceneManager.GetCurrentBackground();
-
         saveData.chapterNumber = sceneManager.GetYarnVariable("$chapterNumber");
         saveData.chapterTitle = sceneManager.GetYarnVariable("$chapterTitle");
         saveData.date = DateTime.Now.ToString("MM/dd/yyyy");
@@ -172,14 +166,11 @@ public class Save_Functionality : MonoBehaviour
     public void LoadGame(int saveSlot)
     {
         Debug.Log("Loading...");
-        if (dialogueRunner.IsDialogueRunning)
-        {
-            dialogueRunner.Stop();
-        }
-
+        if (dialogueRunner.IsDialogueRunning) dialogueRunner.Stop();
+    
         if (dialogueRunner == null)
         {
-            Debug.Log("No dialoguerunner");
+            Debug.Log("LOAD ERROR: No dialoguerunner");
             return;
         }
 
@@ -192,7 +183,6 @@ public class Save_Functionality : MonoBehaviour
 
             dialogueRunner.StartDialogue(saveData.currentNode);
         }
-
         Debug.Log("Loading game slot: " + saveSlot);
         menuPanel.SetActive(false);
     }
@@ -213,7 +203,6 @@ public class Save_Functionality : MonoBehaviour
     {
         int index = slotNumber - 1;  // Convert to 0-based index for arrays
 
-        // Update the UI for this slot
         LoadSlotData(slotNumber);
 
         // Update the button behavior to be "load" instead of "save"
