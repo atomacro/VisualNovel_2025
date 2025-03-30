@@ -1099,6 +1099,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  isSaveScreen: 0
   menuPanel: {fileID: 1145672914}
 --- !u!114 &418928922
 MonoBehaviour:
@@ -2599,6 +2600,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  isSaveScreen: 0
   menuPanel: {fileID: 0}
 --- !u!1 &770566765
 GameObject:
@@ -3809,6 +3811,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  isSaveScreen: 0
   menuPanel: {fileID: 1145672914}
 --- !u!114 &1017466257
 MonoBehaviour:
@@ -4115,6 +4118,7 @@ MonoBehaviour:
   - {fileID: 1256179959}
   - {fileID: 1099682571}
   - {fileID: 1624709780}
+  isSaveScreen: 1
   menuPanel: {fileID: 1031014551}
 --- !u!1 &1053730731
 GameObject:
@@ -4661,6 +4665,7 @@ MonoBehaviour:
   - {fileID: 1844107565}
   - {fileID: 2139184344}
   - {fileID: 1981637471}
+  isSaveScreen: 0
   menuPanel: {fileID: 1145672914}
 --- !u!1 &1173225571
 GameObject:
@@ -6131,6 +6136,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  isSaveScreen: 0
   menuPanel: {fileID: 1145672914}
 --- !u!114 &1404173425
 MonoBehaviour:
@@ -7789,6 +7795,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  isSaveScreen: 0
   menuPanel: {fileID: 1145672914}
 --- !u!114 &1654379615
 MonoBehaviour:
@@ -8141,6 +8148,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  isSaveScreen: 0
   menuPanel: {fileID: 1145672914}
 --- !u!114 &1820713033
 MonoBehaviour:
@@ -8822,6 +8830,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  isSaveScreen: 0
   menuPanel: {fileID: 1145672914}
 --- !u!1 &2083706468
 GameObject:
@@ -8969,6 +8978,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  isSaveScreen: 0
   menuPanel: {fileID: 0}
 --- !u!114 &2083706474
 MonoBehaviour:

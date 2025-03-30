@@ -18,8 +18,10 @@ public class Save_Functionality : MonoBehaviour
     [SerializeField] private TextMeshProUGUI[] chapterInfoTexts = new TextMeshProUGUI[6];
     [SerializeField] private TextMeshProUGUI[] dateSavedTexts = new TextMeshProUGUI[6];
 
-    private DialogueRunner dialogueRunner;
+    [SerializeField] private bool isSaveScreen;
     [SerializeField] private GameObject menuPanel;
+    private DialogueRunner dialogueRunner;
+    
     private Scene MainScene;
     private SceneManager sceneManager;
     private HelperClass helper = new HelperClass();
@@ -34,11 +36,6 @@ public class Save_Functionality : MonoBehaviour
         public string date;
     }
 
-    private void Start()
-    {
-        InitializeData();
-    }
-
     private void OnEnable()
     {
         MainScene = UnityEngine.SceneManagement.SceneManager.GetSceneByName("MainScene");
@@ -47,7 +44,6 @@ public class Save_Functionality : MonoBehaviour
         {
             GameObject SceneManager = helper.GetGameObjectFromAnotherScene("SceneManager", MainScene);
             sceneManager = SceneManager.GetComponent<SceneManager>();
-            Debug.Log("Scene manager: " + sceneManager != null);
 
             GameObject MainCanvas = helper.GetGameObjectFromAnotherScene("MainCanvas", MainScene);
             GameObject DialogueSystem = helper.GetChildGameObject("Dialogue System", MainCanvas);
@@ -57,9 +53,10 @@ public class Save_Functionality : MonoBehaviour
         {
             Debug.LogWarning("Main Scene not loaded.");
         }
+        InitializeData(isSaveScreen);
     }
 
-    private void InitializeData()
+    private void InitializeData(bool isSaveScreen)
     {
         for (int i = 0; i < saveSlotButtons.Length; i++)
         {
@@ -71,21 +68,20 @@ public class Save_Functionality : MonoBehaviour
 
             if (File.Exists(GetSaveFilePath(slotNumber)))
             {
-                int slot = slotNumber;  // Create a local copy for the lambda
-                saveSlotButtons[i].onClick.AddListener(() => LoadGame(slot));
-
                 LoadSlotData(slotNumber);
             }
             else
             {
-                // If no save exists, clicking should save game
-                int slot = slotNumber;  // Create a local copy for the lambda
-                saveSlotButtons[i].onClick.AddListener(() => SaveGame(slot));
-
-                // Reset UI to show empty slot
-                Debug.Log($"No save file found for slot {i + 1}");
+                // Debug.Log($"No save file found for slot {i + 1}");
                 ResetSlotUI(i);
             }
+
+            int slot = slotNumber;
+
+            saveSlotButtons[i].onClick.AddListener(() => {
+                if(isSaveScreen) SaveGame(slot);
+                else LoadGame(slot);
+            });
         }
     }
 
@@ -119,13 +115,12 @@ public class Save_Functionality : MonoBehaviour
         dateSavedTexts[index].text = "";
     }
 
-
     private Sprite LoadBackgroundImage(string backgroundPath)
     {
         return sceneManager.GetBackgroundByName(backgroundPath);
     }
 
-    public void SaveGame(int saveSlot)
+    public void SaveGame(int slotNumber)
     {
         if (dialogueRunner == null)
         {
@@ -154,27 +149,25 @@ public class Save_Functionality : MonoBehaviour
         saveData.chapterTitle = sceneManager.GetYarnVariable("$chapterTitle");
         saveData.date = DateTime.Now.ToString("MM/dd/yyyy");
 
-        string filePath = GetSaveFilePath(saveSlot);
+        string filePath = GetSaveFilePath(slotNumber);
         File.WriteAllText(filePath, JsonUtility.ToJson(saveData, true));
 
-        RefreshAfterSave(saveSlot);
+        LoadSlotData(slotNumber);
 
         Debug.Log("Saved at" + filePath);
-        Debug.Log("Saving game to slot: " + saveSlot);
+        Debug.Log("Saving game to slot: " + slotNumber);
     }
 
-    public void LoadGame(int saveSlot)
+    public void LoadGame(int slotNumber)
     {
-        Debug.Log("Loading...");
-        if (dialogueRunner.IsDialogueRunning) dialogueRunner.Stop();
-    
         if (dialogueRunner == null)
         {
-            Debug.Log("LOAD ERROR: No dialoguerunner");
             return;
         }
 
-        string filePath = GetSaveFilePath(saveSlot);
+        if (dialogueRunner.IsDialogueRunning) dialogueRunner.Stop();
+    
+        string filePath = GetSaveFilePath(slotNumber);
 
         if (File.Exists(filePath))
         {
@@ -183,7 +176,7 @@ public class Save_Functionality : MonoBehaviour
 
             dialogueRunner.StartDialogue(saveData.currentNode);
         }
-        Debug.Log("Loading game slot: " + saveSlot);
+        Debug.Log("Loading game slot: " + slotNumber);
         menuPanel.SetActive(false);
     }
 
@@ -197,17 +190,5 @@ public class Save_Functionality : MonoBehaviour
         }
 
         return Path.Combine(directoryPath, $"save_{slotNumber}.json");
-    }
-
-    private void RefreshAfterSave(int slotNumber)
-    {
-        int index = slotNumber - 1;  // Convert to 0-based index for arrays
-
-        LoadSlotData(slotNumber);
-
-        // Update the button behavior to be "load" instead of "save"
-        saveSlotButtons[index].onClick.RemoveAllListeners();
-        int slot = slotNumber;  // Create a local copy for the lambda
-        saveSlotButtons[index].onClick.AddListener(() => LoadGame(slot));
     }
 }

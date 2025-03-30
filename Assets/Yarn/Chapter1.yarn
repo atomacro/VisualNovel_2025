@@ -44,6 +44,7 @@
 
 title: Scene1
 ---
+<<change SceneManager Cliffside_0>>
 
 /// The chapter number.
 <<declare $chapterNumber = "1">>
@@ -85,8 +86,6 @@ Luna: "..."
 I look around.
 
 Luna: "..."
-
-<<changefade SceneManager Cliffside_0 1.0>>
 
 This might be it.
 
