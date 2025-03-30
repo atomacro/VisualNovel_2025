@@ -26,6 +26,11 @@ public class GameManager : MonoBehaviour
     {
         return DialogueLog;
     }
+
+    public void setDialogueLog(List<string> dialogueLog)
+    {
+        DialogueLog = dialogueLog;
+    }
     public void Update()
     {
 

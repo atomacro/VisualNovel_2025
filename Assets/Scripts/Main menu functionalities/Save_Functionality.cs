@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using System;
 using UnityEngine.SceneManagement;
 using VisualNovel_2025;
+using System.Collections.Generic;
 
 public class Save_Functionality : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class Save_Functionality : MonoBehaviour
     [SerializeField] private bool isSaveScreen;
     [SerializeField] private GameObject menuPanel;
     [SerializeField] private GameObject confirmationModalPrefab;
+    private GameManager gameManager;
 
     private DialogueRunner dialogueRunner;
     private Scene MainScene;
@@ -36,6 +38,7 @@ public class Save_Functionality : MonoBehaviour
         public string chapterNumber;
         public string chapterTitle;
         public string date;
+        public List<string> dialogueLog;
     }
 
     private void OnEnable()
@@ -50,6 +53,9 @@ public class Save_Functionality : MonoBehaviour
             GameObject MainCanvas = helper.GetGameObjectFromAnotherScene("MainCanvas", MainScene);
             GameObject DialogueSystem = helper.GetChildGameObject("Dialogue System", MainCanvas);
             dialogueRunner = DialogueSystem.GetComponent<DialogueRunner>();
+
+            GameObject GameManager = helper.GetGameObjectFromAnotherScene("GameManager", MainScene);
+            gameManager = GameManager.GetComponent<GameManager>();
         }
         else
         {
@@ -136,6 +142,7 @@ public class Save_Functionality : MonoBehaviour
             return;
         }
 
+
         SaveData saveData = new SaveData();
         // Save the data
         saveData.currentNode = dialogueRunner.CurrentNodeName;
@@ -143,14 +150,13 @@ public class Save_Functionality : MonoBehaviour
         saveData.chapterNumber = sceneManager.GetYarnVariable("$chapterNumber");
         saveData.chapterTitle = sceneManager.GetYarnVariable("$chapterTitle");
         saveData.date = DateTime.Now.ToString("MM/dd/yyyy");
+        saveData.dialogueLog = gameManager.getDialogueLog();
 
         string filePath = GetSaveFilePath(slotNumber);
         File.WriteAllText(filePath, JsonUtility.ToJson(saveData, true));
 
         Destroy(confirmationModal);
         LoadSlotData(slotNumber);
-
-        Debug.Log($"Saved slot {slotNumber} at" + filePath);
     }
 
     private void SaveClicked(int slotNumber, bool fileExists)
@@ -158,9 +164,8 @@ public class Save_Functionality : MonoBehaviour
         GameObject modal = Instantiate(confirmationModalPrefab);
         if(fileExists)
         {
-            
             ConfirmationModal confirmationModal = modal.GetComponent<ConfirmationModal>();
-            confirmationModal.SetWarningMessage("There is already an existing save file in this slot. Would you like to overwrite this save?");
+            confirmationModal.SetWarningMessage("There is already an existing save file in this slot.\n Would you like to overwrite this save?");
             confirmationModal.OnConfirmAction.AddListener(() => SaveGame(slotNumber, modal));
 
             confirmationModal.OnCancelAction.AddListener(() => Destroy(modal));
@@ -186,6 +191,7 @@ public class Save_Functionality : MonoBehaviour
         {
             string json = File.ReadAllText(filePath);
             SaveData saveData = JsonUtility.FromJson<SaveData>(json);
+            gameManager.setDialogueLog(saveData.dialogueLog);
 
             dialogueRunner.StartDialogue(saveData.currentNode);
         }
