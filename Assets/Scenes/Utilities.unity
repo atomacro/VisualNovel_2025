@@ -1101,6 +1101,7 @@ MonoBehaviour:
   - {fileID: 0}
   isSaveScreen: 0
   menuPanel: {fileID: 1145672914}
+  confirmationModalPrefab: {fileID: 0}
 --- !u!114 &418928922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2602,6 +2603,7 @@ MonoBehaviour:
   - {fileID: 0}
   isSaveScreen: 0
   menuPanel: {fileID: 0}
+  confirmationModalPrefab: {fileID: 0}
 --- !u!1 &770566765
 GameObject:
   m_ObjectHideFlags: 0
@@ -3813,6 +3815,7 @@ MonoBehaviour:
   - {fileID: 0}
   isSaveScreen: 0
   menuPanel: {fileID: 1145672914}
+  confirmationModalPrefab: {fileID: 0}
 --- !u!114 &1017466257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4120,6 +4123,7 @@ MonoBehaviour:
   - {fileID: 1624709780}
   isSaveScreen: 1
   menuPanel: {fileID: 1031014551}
+  confirmationModalPrefab: {fileID: 6380497512061056090, guid: b9e657183832db344a982f6cf80bc321, type: 3}
 --- !u!1 &1053730731
 GameObject:
   m_ObjectHideFlags: 0
@@ -4667,6 +4671,7 @@ MonoBehaviour:
   - {fileID: 1981637471}
   isSaveScreen: 0
   menuPanel: {fileID: 1145672914}
+  confirmationModalPrefab: {fileID: 6380497512061056090, guid: b9e657183832db344a982f6cf80bc321, type: 3}
 --- !u!1 &1173225571
 GameObject:
   m_ObjectHideFlags: 0
@@ -6138,6 +6143,7 @@ MonoBehaviour:
   - {fileID: 0}
   isSaveScreen: 0
   menuPanel: {fileID: 1145672914}
+  confirmationModalPrefab: {fileID: 0}
 --- !u!114 &1404173425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7797,6 +7803,7 @@ MonoBehaviour:
   - {fileID: 0}
   isSaveScreen: 0
   menuPanel: {fileID: 1145672914}
+  confirmationModalPrefab: {fileID: 0}
 --- !u!114 &1654379615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8150,6 +8157,7 @@ MonoBehaviour:
   - {fileID: 0}
   isSaveScreen: 0
   menuPanel: {fileID: 1145672914}
+  confirmationModalPrefab: {fileID: 0}
 --- !u!114 &1820713033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8832,6 +8840,7 @@ MonoBehaviour:
   - {fileID: 0}
   isSaveScreen: 0
   menuPanel: {fileID: 1145672914}
+  confirmationModalPrefab: {fileID: 0}
 --- !u!1 &2083706468
 GameObject:
   m_ObjectHideFlags: 0
@@ -8980,6 +8989,7 @@ MonoBehaviour:
   - {fileID: 0}
   isSaveScreen: 0
   menuPanel: {fileID: 0}
+  confirmationModalPrefab: {fileID: 0}
 --- !u!114 &2083706474
 MonoBehaviour:
   m_ObjectHideFlags: 0

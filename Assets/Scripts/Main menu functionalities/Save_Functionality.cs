@@ -18,10 +18,12 @@ public class Save_Functionality : MonoBehaviour
     [SerializeField] private TextMeshProUGUI[] chapterInfoTexts = new TextMeshProUGUI[6];
     [SerializeField] private TextMeshProUGUI[] dateSavedTexts = new TextMeshProUGUI[6];
 
+    [Header("Panel Elements")]
     [SerializeField] private bool isSaveScreen;
     [SerializeField] private GameObject menuPanel;
+    [SerializeField] private GameObject confirmationModalPrefab;
+
     private DialogueRunner dialogueRunner;
-    
     private Scene MainScene;
     private SceneManager sceneManager;
     private HelperClass helper = new HelperClass();
@@ -66,20 +68,20 @@ public class Save_Functionality : MonoBehaviour
 
             string filePath = GetSaveFilePath(i);
 
-            if (File.Exists(GetSaveFilePath(slotNumber)))
+            bool fileExists = File.Exists(GetSaveFilePath(slotNumber));
+            if (fileExists)
             {
                 LoadSlotData(slotNumber);
             }
             else
             {
-                // Debug.Log($"No save file found for slot {i + 1}");
                 ResetSlotUI(i);
             }
 
             int slot = slotNumber;
 
             saveSlotButtons[i].onClick.AddListener(() => {
-                if(isSaveScreen) SaveGame(slot);
+                if(isSaveScreen) SaveClicked(slot, fileExists);
                 else LoadGame(slot);
             });
         }
@@ -120,7 +122,7 @@ public class Save_Functionality : MonoBehaviour
         return sceneManager.GetBackgroundByName(backgroundPath);
     }
 
-    public void SaveGame(int slotNumber)
+    private void SaveGame(int slotNumber, GameObject confirmationModal)
     {
         if (dialogueRunner == null)
         {
@@ -134,13 +136,6 @@ public class Save_Functionality : MonoBehaviour
             return;
         }
 
-        string bg = sceneManager.GetCurrentBackground();
-
-        if (string.IsNullOrEmpty(bg))
-        {
-            Debug.LogError("Background image is NULL or EMPTY!");
-        }
-
         SaveData saveData = new SaveData();
         // Save the data
         saveData.currentNode = dialogueRunner.CurrentNodeName;
@@ -152,13 +147,31 @@ public class Save_Functionality : MonoBehaviour
         string filePath = GetSaveFilePath(slotNumber);
         File.WriteAllText(filePath, JsonUtility.ToJson(saveData, true));
 
+        Destroy(confirmationModal);
         LoadSlotData(slotNumber);
 
-        Debug.Log("Saved at" + filePath);
-        Debug.Log("Saving game to slot: " + slotNumber);
+        Debug.Log($"Saved slot {slotNumber} at" + filePath);
     }
 
-    public void LoadGame(int slotNumber)
+    private void SaveClicked(int slotNumber, bool fileExists)
+    {
+        GameObject modal = Instantiate(confirmationModalPrefab);
+        if(fileExists)
+        {
+            
+            ConfirmationModal confirmationModal = modal.GetComponent<ConfirmationModal>();
+            confirmationModal.SetWarningMessage("There is already an existing save file in this slot. Would you like to overwrite this save?");
+            confirmationModal.OnConfirmAction.AddListener(() => SaveGame(slotNumber, modal));
+
+            confirmationModal.OnCancelAction.AddListener(() => Destroy(modal));
+        }
+        else
+        {
+            SaveGame(slotNumber, modal);
+        }
+    }
+
+    private void LoadGame(int slotNumber)
     {
         if (dialogueRunner == null)
         {
