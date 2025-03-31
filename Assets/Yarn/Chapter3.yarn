@@ -1,22 +1,42 @@
-﻿title: Scene6
+﻿title: test
 ---
 <<setNextNode Skip "Scene7">>
 
-// BG: Town
+<<changefade SceneManager Playground_Sunset_0 1>>
+<<wait 1>>
+<<changecharacter SceneManager Character_1 luna_surprised_0>>
+<<movecharacter SceneManager Character_1 164 -97 0.5 0.5>>
+<<showcharacterfade SceneManager Character_1 0.5>>
+
+<<changecharacter SceneManager Character_2 sol_happy_0>>
+<<movecharacter SceneManager Character_2 -192 -104 -0.5 0.5>>
+<<showcharacterfade SceneManager Character_2 0.5>>
 
 Luna: "...Um..."
 
-Luna: "Aurora!"
+Sol: "Aurora!"
+
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
 
 The girl heard Sol’s loud voice and looked in our direction.
 
+<<changecharacter SceneManager Character_1 luna_pissed_0>>
+
 Luna: "You stupid! I didn’t ask you to call her!"
+
+<<changecharacter SceneManager Character_2 sol_lookaway_0>>
 
 Sol: "Are you afraid of another girl?"
 
 Luna: "It’s not that! It’s-"
 
+<<changecharacter SceneManager Character_3 sol_angry_0>>
+<<movecharacter SceneManager Character_3 -332 -104 -0.5 0.5>>
+<<showcharacterfade SceneManager Character_3 0.5>>
+
 Aurora: "Luna?"
+
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
 
 I paused.
 
@@ -25,6 +45,20 @@ She still knows me?
 Aurora: "Oh my God! It IS you!"
 
 She runs in my direction. I’m frozen in place.
+
+<<hidecharacterfade SceneManager Character_1 0.5>>
+<<changecharacter SceneManager Character_1 luna_surprised_0>>
+<<movecharacter SceneManager Character_1 291 -97 0.5 0.5>>
+<<showcharacterfade SceneManager Character_1 0.5>>
+
+<<hidecharacterfade SceneManager Character_2 0.5>>
+<<changecharacter SceneManager Character_2 sol_relaxed_0>>
+<<movecharacter SceneManager Character_2 -262 -104 -0.5 0.5>>
+<<showcharacterfade SceneManager Character_2 0.5>>
+
+<<hidecharacterfade SceneManager Character_3 0.5>>
+<<movecharacter SceneManager Character_3 20 -104 -0.5 0.5>>
+<<showcharacterfade SceneManager Character_3 0.5>>
 
 She tried to hug me, but I backed away out of instinct.
 
@@ -38,19 +72,27 @@ Sol: "What?"
 
 Aurora: "You two know each other?"
 
+<<changecharacter SceneManager Character_2 sol_neutral_0>>
+
 Sol: "Well, duh! I know everyone!"
 
 Aurora: "I thought I was your only friend though?"
+
+<<changecharacter SceneManager Character_2 sol_tense_0>>
 
 Sol: "Uh… I said I knew everyone, but I didn’t say I’m friends with them."
 
 Aurora: "So you’re not friends with her?"
 Aurora: "...What’s up with you? Cat’s got your tongue?"
 
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
+
 Luna: "I…"
 Luna: "...I’m pretty sure that’s not what he meant."
 
 Aurora: "Then what is she to you, Sol?"
+
+<<changecharacter SceneManager Character_2 sol_angry_0>>
 
 Sol: "She’s a friend. Stop being pesky."
 Sol: "I could hit you right here and now."
@@ -58,15 +100,23 @@ Sol: "I could hit you right here and now."
 Aurora: "Aww, scary!"
 Aurora: "Is she your girlfriend?"
 
+<<changecharacter SceneManager Character_1 luna_angry_0>>
+<<changecharacter SceneManager Character_2 sol_angry_0>>
+
 Sol & Luna: "FRIEND!!"
 
 Aurora: "Wahahaha, jeez! I’m messing with you two!"
+
+<<changecharacter SceneManager Character_1 luna_pissed_0>>
+<<changecharacter SceneManager Character_2 sol_neutral_0>>
 
 She didn’t change one bit.
 Still annoying and ignorant.
 
 I can see why Sol would get along with her, but he isn’t the same from earlier.
 He seems a little…
+
+<<changecharacter SceneManager Character_2 sol_tense_0>>
 
 Sol: "You’re annoying."
 
@@ -287,8 +337,9 @@ It was just the two of us at the playground.
 Luna: "Say, wanna play at the monkey bars?"
 
 Sol: "You like monkey bars too? Let's do it!"
-===
 
+<<jump Scene7>>
+===
 
 title: Scene7
 ---
@@ -447,4 +498,6 @@ Sol: "Sure, they’ll be surprised I brought a girl home."
 Sol: "But they’ll understand it’s not like that!"
 
 Luna: "..."
+
+<<jump Scene8>>
 ===
