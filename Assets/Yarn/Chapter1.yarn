@@ -284,30 +284,38 @@ Sol: “Don’t ask anymore questions, it’s my turn! Where do you want to star
 Out of nowhere, a cat walks up to both of us. #choice
 -> Pet it.
     I slightly kneel to caress its head. The cat was completely white. Its fur is so smooth and soft.
+	<<changecharacter SceneManager Character_1 luna_smiling_0>>
     I stopped petting and went back to the conversation.
 -> Ignore it.
     (Nothing happens)
-
-Sol: “Oh, no wonder your name sounded familiar. You have the same name as that cat!”
 <<changecharacter SceneManager Character_2 sol_happy_0>>
 <<changecharacter SceneManager Character_1 luna_relaxed_0>>
-“Oddly enough, it’s purely white. If you say luna, it’s supposed to be the moon, right? So shouldn’t the cat be in a darker color?”
+Sol: “Oh, no wonder your name sounded familiar. You have the same name as that cat!”
 
-“Actually, now that I think about it, the moon is white. It’s not so far off, isn’t it?”
+Oddly enough, it’s purely white. If you say luna, it’s supposed to be the moon, right? So shouldn’t the cat be in a darker color?
+
+Actually, now that I think about it, the moon is white. It’s not so far off, isn’t it?
 
 Luna: “I...”
 Luna: “...”
 
 Luna: “I want to know more about this world.”
-
+<<changecharacter SceneManager Character_1 luna_smiling_0>>
+<<changecharacter SceneManager Character_2 sol_smiling_0>>
 Sol: “Oh…? Okay. In return, I want to know more about you, too.”
+
+
+<<changecharacter SceneManager Character_1 luna_pissed_0>>
+<<changecharacter SceneManager Character_2 sol_sad_0>>
 
 Luna: “I thought you already knew me?”
 
 Sol: “I told you, it’s more than just knowing your name!”
 Sol: “Okay, hold on. Maybe you’ll be able to open up more if I tell you more about me?”
-
+<<changecharacter SceneManager Character_1 luna_lookaway_0>>
+<<changecharacter SceneManager Character_2 sol_crying_0>>
 Luna: “I’m not interested.”
+
 
 Sol: “Please just hear me out, I really do want to help you.”
 
@@ -315,9 +323,17 @@ Luna: “Mom said I shouldn’t talk to strangers. I’ll get in trouble if she 
 
 Sol: “This is a world where you don’t have to worry too much about anything. Just be yourself, or find yourself.”
 Sol: “Come on, I know a place where we can talk.”
+<<hidecharacterfade SceneManager Character_1 1>>
+<<hidecharacterfade SceneManager Character_2 1>>
+<<wait 1>>
+<<changefade SceneManager Cafe_Interior_0 1.5>>
+<<wait 1.5>>
+<<showcharacterfade SceneManager Character_1 1>>
+<<showcharacterfade SceneManager Character_2 1>>
 
 // BG: Cafe Diner
-
+<<changecharacter SceneManager Character_1 luna_surprised_0>>
+<<changecharacter SceneManager Character_2 sol_happy_0>>
 Luna: “Isn’t this a little expensive?”
 
 Sol: “My treat! Get whatever you want.”
