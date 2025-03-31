@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      sol_lookaway_0: -7564673444813707653
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

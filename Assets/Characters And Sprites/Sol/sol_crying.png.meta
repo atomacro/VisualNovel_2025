@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      sol_crying_0: -8718875549193553508
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -232,15 +232,6 @@ title: Scene2
 
 <<declare $scene2PlayerChoice = "" >>
 
-<<changecharacterfade SceneManager Character_1 luna_surprised_0 0.5>>
-<<movecharacter SceneManager Character_1 164 -97 0.5 0.5>>
-<<showcharacter SceneManager Character_2>>
-<<changecharacterfade SceneManager Character_2 sol_happy_0 0.5>>
-<<movecharacter SceneManager Character_2 -192 -104 -0.5 0.5>>
-<<hidecharacter SceneManager Character_1>>
-<<hidecharacter SceneManager Character_2>>
-
-
 <<change SceneManager Black>>
 <<setNextNode Skip "Scene3">>
 
@@ -315,31 +306,51 @@ Sol: “Okay, hold on. Maybe you’ll be able to open up more if I tell you more
 <<changecharacter SceneManager Character_1 luna_lookaway_0>>
 <<changecharacter SceneManager Character_2 sol_crying_0>>
 Luna: “I’m not interested.”
+=
+<<jump test>>
 
+===
+title: test
+---
+//for test
+<<changecharacterfade SceneManager Character_1 luna_surprised_0 0.5>>
+<<movecharacter SceneManager Character_1 164 -97 0.5 0.5>>
+<<showcharacter SceneManager Character_2>>
+<<changecharacterfade SceneManager Character_2 sol_happy_0 0.5>>
+<<movecharacter SceneManager Character_2 -192 -104 -0.5 0.5>>
+<<hidecharacter SceneManager Character_1>>
+<<hidecharacter SceneManager Character_2>>
+//^^^^^^
 
 Sol: “Please just hear me out, I really do want to help you.”
 
 Luna: “Mom said I shouldn’t talk to strangers. I’ll get in trouble if she sees me, especially with a boy.”
 
-Sol: “This is a world where you don’t have to worry too much about anything. Just be yourself, or find yourself.”
-Sol: “Come on, I know a place where we can talk.”
-<<hidecharacterfade SceneManager Character_1 1>>
-<<hidecharacterfade SceneManager Character_2 1>>
-<<wait 1>>
-<<changefade SceneManager Cafe_Interior_0 1.5>>
-<<wait 1.5>>
-<<showcharacterfade SceneManager Character_1 1>>
-<<showcharacterfade SceneManager Character_2 1>>
 
+Sol: “This is a world where you don’t have to worry too much about anything. Just be yourself, or find yourself.”
+
+Sol: “Come on, I know a place where we can talk.”
+<<hidecharacterfade SceneManager Character_1 0.5>>
+<<hidecharacterfade SceneManager Character_2 0.5>>
+<<changefade SceneManager Cafe_Exterior_Morning_0 1>>
+<<wait 1.5>>
 // BG: Cafe Diner
-<<changecharacter SceneManager Character_1 luna_surprised_0>>
-<<changecharacter SceneManager Character_2 sol_happy_0>>
+==Cafe Diner==
+
 Luna: “Isn’t this a little expensive?”
 
 Sol: “My treat! Get whatever you want.”
 
 Luna: “...Okay.”
 
+
+<<changefade SceneManager Cafe_Interior_0 1>>
+<<wait 1>>
+<<changecharacter SceneManager Character_1 luna_surprised_0>>
+<<changecharacter SceneManager Character_2 sol_smiling_0>>
+<<showcharacterfade SceneManager Character_1 0.5>>
+<<showcharacterfade SceneManager Character_2 0.5>>
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
 Luna: “I want…” #choice
 -> Black Coffee
     <<set $scene2PlayerChoice = "coffee">>
@@ -350,55 +361,54 @@ Luna: “I want…” #choice
     
 <<if $scene2PlayerChoice == "coffee">>
     Luna: “I’ll get black coffee.”
-
+	<<changecharacter SceneManager Character_1 luna_relaxed_0>>
 	Sol looked at me with a raised eyebrow.
 	Sol: “Aren’t you 12?”
-
+	<<changecharacter SceneManager Character_1 luna_lookaway_0>>
+	<<changecharacter SceneManager Character_2 sol_tense_0>>
 	Luna: “You said I can get anything?”
-
 	Sol: “I was just saying-”
-
+	<<changecharacter SceneManager Character_1 luna_relaxed_0>>
 	Luna: “Okay, fine… I’ll get strawberry cake.”
 	Luna: “My mom wouldn’t allow me to drink coffee either. I just got to sneak a coffee or two behind her back and thought it tasted good.”
-	
+	<<changecharacter SceneManager Character_2 sol_smiling_0>>
+	<<changecharacter SceneManager Character_1 luna_smiling_0>>
     Sol: “Is strawberry your favorite?”
-
 	Luna: “I just like it. Is it yours?”
-
 	Sol: “No, my favorite’s chocolate. But I’ll order the same.”
 <<elseif $scene2PlayerChoice == "cake">>
+	<<changecharacter SceneManager Character_1 luna_surprised_0>>
     Sol: “Just as I expected!”
-
+	<<changecharacter SceneManager Character_2 sol_happy_0>>
 	Luna: “It tastes good.”
-
 	Sol: “Right?! I love cake, chocolate’s my favorite!”
-
 	Sol: “Their cake here tastes so good, it’ll blow you away harder than the wind when you were falling.”
-
+	<<changecharacter SceneManager Character_1 luna_happy_0>>
+	<<changecharacter SceneManager Character_2 sol_smiling_0>>
 	Luna: “Are you getting chocolate cake?”
-
 	Sol: “Nope, I’m getting the same.”
-
 	Luna: “Uh… All that talk about good cake only to not get what you want?”
 <<elseif $scene2PlayerChoice == "nothing">>
     Luna: “I’m not hungry.”
-
+	<<changecharacter SceneManager Character_2 sol_sad_0>>
 	Sol: “Aww… But you’ll be missing out.”
-
+	<<changecharacter SceneManager Character_2 sol_smiling_0>>
 	Sol: “I’ll order you strawberry cake in case you’re just too shy to ask for something.”
-
+	<<changecharacter SceneManager Character_1 luna_neutral_0>>
 	Luna: “Fine.”
-
 	Luna: “You like strawberry cake?”
-
+	<<changecharacter SceneManager Character_2 sol_happy_0>>
+	<<changecharacter SceneManager Character_1 luna_smiling_0>>
 	Sol: “My favorite’s chocolate, actually! 
 <<endif>>
-
 Sol: “...I haven’t tasted their strawberry cake yet. Chocolate might be cool, but I want to try out other flavors too!”
 
 Luna: “...”
 
 Sol: “Look for a place to sit! I’ll order first.”
+<<hidecharacterfade SceneManager Character_1 0.5>>
+<<hidecharacterfade SceneManager Character_2 0.5>>
+<<changefade SceneManager Black 1>>
 Sol went to the counter and started ordering.
 
 I looked for a table away from other people then took a seat.
@@ -410,6 +420,10 @@ There was a hanging TV near the counter. It’s playing some kind of trivia abou
 I hear distant idle chatter.
 
 …
+<<changefade SceneManager Cafe_Window_0 1>>
+<<wait 1>>
+<<showcharacterfade SceneManager Character_1 0.5>>
+
 
 No one’s looking at me today.
 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      sol_smiling_0: -1441109336040257426
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

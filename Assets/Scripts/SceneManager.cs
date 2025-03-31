@@ -6,6 +6,7 @@ using System.Collections.Generic;
 
 public class SceneManager : MonoBehaviour
 {
+    public VariableStorageBehaviour yarnVariableStorage;
     [SerializeField] private Image backgroundImage; // Reference to the Image component
     [SerializeField] private Sprite[] backgroundSprites; // Array of background images
     [SerializeField] private GameObject CanvasWithFader; // Reference to the CanvasFader component
@@ -15,7 +16,8 @@ public class SceneManager : MonoBehaviour
     [SerializeField] private AudioSource[] audioObjects;
     [SerializeField] private GameObject[] audioSources;
 
-    private Sprite GetSpriteByName(string imageName)
+
+    public Sprite GetBackgroundByName(string imageName)
     {
         return SearchArray(backgroundSprites, imageName);
     }
@@ -36,7 +38,7 @@ public class SceneManager : MonoBehaviour
     [YarnCommand("change")]
     public void ChangeBackgroundImage(string imageName)
     {
-        Sprite newImage = GetSpriteByName(imageName);
+        Sprite newImage = GetBackgroundByName(imageName);
         if (newImage != null && backgroundImage != null)
         {
             backgroundImage.sprite = newImage;
@@ -50,7 +52,7 @@ public class SceneManager : MonoBehaviour
     [YarnCommand("changefade")]
     public void ChangeBackgroundImageWithFade(string imageName, float fadeDuration)
     {
-        Sprite newImage = GetSpriteByName(imageName);
+        Sprite newImage = GetBackgroundByName(imageName);
         if (newImage != null && backgroundImage != null && CanvasWithFader != null)
         {
             CanvasFader fader = CanvasWithFader.GetComponent<CanvasFader>();
@@ -282,27 +284,40 @@ public class SceneManager : MonoBehaviour
 
     public string GetCurrentBackground()
     {
-        return backgroundImage != null ? backgroundImage.sprite.name : "";
+        // Debug.Log("Background: " + backgroundImage.sprite.name);
+        // return backgroundImage != null ? backgroundImage.sprite.name : "";
+
+        if (backgroundImage == null)
+        {
+            Debug.LogError("backgroundImage is NULL!");
+            return "";
+        }
+
+        if (backgroundImage.sprite == null)
+        {
+            Debug.LogError("backgroundImage.sprite is NULL!");
+            return "";
+        }
+
+        Debug.Log("Background: " + backgroundImage.sprite.name);
+        return backgroundImage.sprite.name;
     }
 
-    // public List<CharacterData> GetDisplayedCharacters()
-    // {
-    //     List<CharacterData> displayedCharacters = new List<CharacterData>();
+    public string GetYarnVariable(string variableName)
+    {
+        if (yarnVariableStorage == null)
+        {
+            Debug.LogWarning("YarnVariableStorage is not assigned!");
+            return null;
+        }
 
-    //     foreach (Image characterImage in chacacterImages)
-    //     {
-    //         if (characterImage.enabled && characterImage.sprite != null)
-    //         {
-    //             CharacterData data = new CharacterData
-    //             {
-    //                 characterName = characterImage.name, // Use the object name
-    //                 spriteName = characterImage.sprite.name, // Save the sprite name
-    //                 position = characterImage.rectTransform.anchoredPosition // Save position
-    //             };
-    //             displayedCharacters.Add(data);
-    //         }
-    //     }
-    //     return displayedCharacters;
-    // }
+        if (yarnVariableStorage.TryGetValue(variableName, out string stringValue))
+        {
+            return stringValue;
+        }
+
+        Debug.LogWarning($"Yarn variable {variableName} not found.");
+        return null;
+    }
 
 }
