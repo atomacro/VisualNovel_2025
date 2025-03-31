@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b89fbd0e34ba94a4ebdcb87236cea277
+guid: 48b81d70b759522408e0c87e56d486df
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4119954993456633541
-    second: Cliifside_POV_0
+      213: 8451784817861510027
+    second: chap1_falling_from_the_sky_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cliffside_POV_0
+      name: chap1_falling_from_the_sky_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2000
-        height: 1417
+        width: 1280
+        height: 720
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b39ab6c03caf2d6c0800000000000000
-      internalID: -4119954993456633541
+      spriteID: b83ccaa2385ca4570800000000000000
+      internalID: 8451784817861510027
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 7e37353375df6ef49b37e92e876b7dc6
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Cliffside_POV_0: -4119954993456633541
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

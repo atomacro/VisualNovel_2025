@@ -40,6 +40,7 @@
 // title: test
 // ---
 
+
 ===
 
 title: Scene1
@@ -49,25 +50,13 @@ title: Scene1
 <<movecharacter SceneManager Character_1 0 0>>
 <<movecharacter SceneManager Character_2 0 0>>
 <<movecharacter SceneManager Character_3 0 0>>
+<<change SceneManager Black>>
 
 
 
 There’s an old legend about jumping off a secret cliff in the mountains.
 
-// <<changecharacterfade SceneManager Character_1 SampleSprite_0 1.0>>
-// Changed Character
-// <<movecharacter SceneManager Character_1 0 0>>
-// Moved Character
-// <<changecharacter SceneManager Character_1 SampleSprite_0>>
-// Changed Character Again
-// <<hidecharacter SceneManager Character_1>>
-// Hide character quick
-// <<showcharacterfade SceneManager Character_1 1.0>>
-// Show character with fade
-// <<hidecharacterfade SceneManager Character_1 1.0>>
-// Hide character with fade
-// <<showcharacter SceneManager Character_1>>
-// Show character quick
+
 
 
 They said that if you jump, you’ll go to a different world.
@@ -108,8 +97,7 @@ Then, a bright light seeps into my eyelids.
 
 I open my eyes.
 
-// CG START: Luna falling from the sky.
-<<changefade SceneManager Cliffside_Nightsky 1.0>>
+<<changefade SceneManager chap1_falling_from_the_sky_0 1.5>>
 
 
 Luna: "Wha-?!"
@@ -132,80 +120,108 @@ The moment I got close to hitting the ground, I started to fall slower until I w
 // CG END: Luna falling from the sky -> BG: Grasslands
 
 <<changefade SceneManager Grassland_Sunrise_0 1.0>>
-<<wait 0.25>>
+<<wait 1>>
 
 <<showcharacter SceneManager Character_1>>
 <<changecharacterfade SceneManager Character_1 luna_surprised_0 0.5>>
 <<movecharacter SceneManager Character_1 164 -97 -0.5 0.5>>
+
+
 
 Luna: “Woah… That was…”
 
 ?: “Awesome, wasn’t it?”
 
 I immediately looked behind and saw someone I don’t know.
-<<movecharacter SceneManager Character_1 164 -97 0.5 0.5>>
 <<showcharacter SceneManager Character_2>>
 <<changecharacterfade SceneManager Character_2 sol_happy_0 0.5>>
 <<movecharacter SceneManager Character_2 -192 -104 -0.5 0.5>>
+<<wait 0.5>>
+<<movecharacter SceneManager Character_1 164 -97 0.5 0.5>>
+<<wait 0.5>>
 
 No… How do I look behind? I can even see myself in front of me?!
 
 Luna: “...no, it was weird. This is all weird. I’ve never experienced something like this before.”
 
 Maybe I just need to get used to this.
+<<changecharacter SceneManager Character_1 luna_smiling_0>>
 
 Luna: “My clothes changed, too! Nobody stripped me off and changed them, right?”
 
 ?: “What?! Why would you even think that?!”
 
 Luna: “I… My mom used to change my clothes… so…”
-
+<<changecharacter SceneManager Character_1 luna_relaxed_0>>
 ?: “No one’s going to do that to you here, don’t you worry!”
 
 Luna: “I wasn’t worrying?”
 
+<<changecharacter SceneManager Character_2 sol_neutral_0>>
+<<changecharacter SceneManager Character_1 luna_lookaway_0>>
+
 ?: “Okay, whatever. I’m-”
 
 Luna: “Where did you even come from? I heard you when I was still falling.”
+<<changecharacter SceneManager Character_1 luna_relaxed_0>>
 
 ?: “Y- You did? You heard me yelling all the way up there?”
+<<changecharacter SceneManager Character_2 sol_smiling_0>>
 
 Luna: “Um…”
 
 ?: “How did you end up that high anyway?”
 
 Luna: “I jumped off a cliff.”
+<<changecharacter SceneManager Character_2 sol_happy_0>>
 
 ?: “Funny. There’s no cliff nearby.”
 
+<<changecharacter SceneManager Character_1 luna_pissed_0>>
+
 Luna: “You haven’t even asked for my name yet.”
+<<changecharacter SceneManager Character_2 sol_smiling_0>>
 
 ?: “I don’t have to! I already know who you are.”
 ?: “You’re Luna, right?”
 
+<<changecharacter SceneManager Character_1 luna_angry_0>>
+
 Luna: “But I don’t know you?”
+
+<<changecharacter SceneManager Character_2 sol_tense_0>>
 
 ?: “You didn’t let me finish earlier!”
 
+<<changecharacter SceneManager Character_1 luna_lookaway_0>>
 Luna: “Eh. I don’t talk to annoying people.”
+<<changecharacter SceneManager Character_2 sol_angry_0>>
 
 ?: “You don’t talk to people at all.”
 ?: “But here, you will! This whole world is for you, and only for you.”
 
 Luna: “...”
+<<changecharacter SceneManager Character_1 luna_relaxed_0>>
+
 Luna: “Okay, but what’s your name again?”
+<<changecharacter SceneManager Character_2 sol_crying_0>>
 
 ?: “You’re hurting me.”
 
 Luna: “I literally don’t know you.”
 
+<<changecharacter SceneManager Character_2 sol_smiling_0>>
 Sol: “I’m Sol.”
+
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
 
 Luna: “And what do I do here?”
 
 Sol: “Whatever you want!”
-
+<<changecharacter SceneManager Character_1 luna_lookaway_0>>
 Luna: “Whatever I want… What do I want?”
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
+<<changecharacter SceneManager Character_2 sol_happy_0>>
 
 Sol: “Well… I found what I want. This time, I’ll help someone do the same, and that someone is you!”
 
@@ -214,8 +230,9 @@ Luna: “I don’t ask for help from other people.”
 Sol: “Then you aren’t going anywhere.”
 
 Luna: “...”
+<<changecharacter SceneManager Character_1 luna_pissed_0>>
 Luna: “Fine.”
-
+<<changecharacter SceneManager Character_2 sol_smiling_0>>
 Sol: “Let’s go! I know a place where we can start off.”
 <<hidecharacter SceneManager Character_1>>
 <<hidecharacter SceneManager Character_2>>
@@ -243,11 +260,12 @@ I can see myself in front of me.
 
 Maybe I’ll find answers soon?
 
-<<changefade SceneManager TownScenery_Day_0 0.5>>
 <<showcharacter SceneManager Character_1>>
 <<showcharacter SceneManager Character_2>>
 <<changecharacter SceneManager Character_1 luna_neutral_0>>
 <<changecharacter SceneManager Character_2 sol_tense_0>>
+<<changefade SceneManager TownScenery_Day_0 0.5>>
+
 
 Sol: “What are you spacing out for?”
 
@@ -306,21 +324,7 @@ Sol: “Okay, hold on. Maybe you’ll be able to open up more if I tell you more
 <<changecharacter SceneManager Character_1 luna_lookaway_0>>
 <<changecharacter SceneManager Character_2 sol_crying_0>>
 Luna: “I’m not interested.”
-=
-<<jump test>>
 
-===
-title: test
----
-//for test
-<<changecharacterfade SceneManager Character_1 luna_surprised_0 0.5>>
-<<movecharacter SceneManager Character_1 164 -97 0.5 0.5>>
-<<showcharacter SceneManager Character_2>>
-<<changecharacterfade SceneManager Character_2 sol_happy_0 0.5>>
-<<movecharacter SceneManager Character_2 -192 -104 -0.5 0.5>>
-<<hidecharacter SceneManager Character_1>>
-<<hidecharacter SceneManager Character_2>>
-//^^^^^^
 
 Sol: “Please just hear me out, I really do want to help you.”
 
@@ -406,6 +410,7 @@ Sol: “...I haven’t tasted their strawberry cake yet. Chocolate might be cool
 Luna: “...”
 
 Sol: “Look for a place to sit! I’ll order first.”
+
 <<hidecharacterfade SceneManager Character_1 0.5>>
 <<hidecharacterfade SceneManager Character_2 0.5>>
 <<changefade SceneManager Black 1>>
@@ -422,6 +427,8 @@ I hear distant idle chatter.
 …
 <<changefade SceneManager Cafe_Window_0 1>>
 <<wait 1>>
+<<changecharacter SceneManager Character_1 luna_smiling_0>>
+<<movecharacter SceneManager Character_1 243 -97 0.78 0.78>>
 <<showcharacterfade SceneManager Character_1 0.5>>
 
 
@@ -432,83 +439,111 @@ It makes me feel at ease, but I’m not used to it.
 It makes me feel uneasy, even though nothing bad is happening.
 
 I caught a glimpse of Sol coming towards me from the counter. He placed the table number at the center of the table.
-
+<<changecharacter SceneManager Character_2 sol_neutral_0>>
+<<movecharacter SceneManager Character_2 -368 -97 -0.78 0.78>>
+<<showcharacterfade SceneManager Character_2 0.5>>
 Sol: “There’s so many seats ahead, why’d you pick this one?”
 
 Luna: “I like it.”
 
 Sol: “Which one, exactly?”
+<<changecharacter SceneManager Character_1 luna_relaxed_0>>
 
 Luna: “I don’t like places with too many people. It bothers me.”
 Luna: “Besides, there’s a window beside us. I like the view.”
-
+...
+...
 There was a short silence between us. It seemed like Sol didn’t know what to say.
+<<changecharacter SceneManager Character_1 luna_pissed_0>>
+<<changecharacter SceneManager Character_2 sol_tense_0>>
 
 Luna: “When are we eating?”
 
 Sol: “They’re still preparing the food. It’ll come soon, don’t worry.”
 
+<<changecharacter SceneManager Character_1 luna_happy_0>>
+<<changecharacter SceneManager Character_2 sol_happy_0>>
 In the distance, we see two plates slowly floating towards our table. Plates with mini strawberry cakes. It landed in front of us.
 
 It looks so cute. They look like oversized macarons with icing on top. A strawberry on top, too.
 
 The table number also started floating on its own and moved back to the counter.
+<<changecharacter SceneManager Character_1 luna_smiling_0>>
+<<changecharacter SceneManager Character_2 sol_happy_0>>
 
 Sol: “Thank you for your service!”
 
 Luna: “But there’s no one there?”
 
 Sol: “Just think there is! It doesn’t hurt to be kind to nothing.”
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
+<<changecharacter SceneManager Character_2 sol_smiling_0>>
 
 Luna: “It does. There’s no reason to be kind to nothing. It’ll just hurt because no one understands.”
 
 I picked up the fork and dug it into the cake, then I started picking up a bit and eating it.
 
+<<changecharacter SceneManager Character_2 sol_smiling_0>>
 Sol: “It looks so good, I don’t want to ruin it…”
-
+<<changecharacter SceneManager Character_1 luna_pissed_0>>
 Luna: “It’s food. Don’t waste it.”
-
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
 Sol: “I noticed you always talk about your mom. What about your dad?”
+<<changecharacter SceneManager Character_2 sol_relaxed_0>>
+<<changecharacter SceneManager Character_1 luna_angry_0>>
 
 Luna: “I don’t like him. Don’t bring him up.”
 
 Sol: “Why not?”
 
+<<changecharacter SceneManager Character_1 luna_lookaway_0>>
 Because he’s an asshole.
+<<changecharacter SceneManager Character_1 luna_relaxed_0>>
 
 Luna: “I just don’t. At least my mom notices me and what I do.”
 
 Sol: “Is your mom a good person?”
+<<changecharacter SceneManager Character_2 sol_neutral_0>>
 
 Luna: “Maybe. She’s my mom, so she must be.”
 
 I look at Sol’s plate and it’s already empty.
 
 Luna: “...I thought you didn’t want to touch your cake?”
-
+<<changecharacter SceneManager Character_2 sol_smiling_0>>
+<<changecharacter SceneManager Character_1 luna_pissed_0>>
 Sol: “It looked cute, but I started to get hungry! I can’t control my stomach, you know?”
 
 Luna: “I barely even ate half of mine yet.”
-
+<<changecharacter SceneManager Character_2 sol_happy_0>>
 Sol: “Weren’t you the person who told me not to waste it?”
-
+<<changecharacter SceneManager Character_1 luna_pissed_0>>
+<<changecharacter SceneManager Character_2 sol_smiling_0>>
 Luna: “I- I know that. It’s just that I didn’t expect you to inhale it!”
 
 Sol: “You were just busy talking so I took the time to eat while listening.”
 
 Luna: “Weren’t you part of the conversation?”
 Luna: “Okay, whatever. That was my fault.”
-
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
+<<changecharacter SceneManager Character_2 sol_lookaway_0>>
 I continued eating more cake.
-
+...
+...
+<<changecharacter SceneManager Character_2 sol_tense_0>>
 Sol: “Hey, no one’s blaming you here. I’m sorry.”
+<<changecharacter SceneManager Character_1 luna_lookaway_0>>
+
 Sol: “...? Are you upset? Why aren’t you noticing me?”
+<<changecharacter SceneManager Character_1 luna_relaxed_0>>
 
 Luna: “*swallow* I’m eating. You don’t talk when your mouth’s full.”
 
 Sol: “You eat pretty slow.”
 
 I place the fork on the now empty plate.
+<<changecharacter SceneManager Character_2 sol_neutral_0>>
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
 
 Luna: “Actually, can you tell me more about this world? Aside from what you already told me earlier.”
 
@@ -520,14 +555,16 @@ Sol: “That’s mostly it!”
 Sol: “Hold on, I’ll return the plates to the counter.”
 
 Sol stands up and picks up the plates.
-
+<<hidecharacterfade SceneManager Character_2 0.5>>
 I could hear the TV playing a news report in the distance, but I decided to look outside the window.
 
 There are leaves falling outside.
-
+<<changecharacter SceneManager Character_1 luna_smiling_0>>
 This is… alright.
 
 TV: “--around 8PM wearing orange shorts by the gas station located near the outskirts. The mother has stated that it has been 2 days since they went missing. If you have any informa..."
+
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
 
 I’m not familiar with this environment.
 
@@ -537,6 +574,8 @@ What do I do here? What’s my objective? Is my objective to look for myself?
 
 What does that mean anyway?
 
+<<changecharacter SceneManager Character_2 sol_smiling_0>>
+<<showcharacterfade SceneManager Character_2 2>>
 Sol: “...llo. Hellooo?”
 
 I was spacing out, I didn’t notice that Sol was already standing next to his seat. He was even waving his hands in front of my face.
@@ -544,7 +583,9 @@ I was spacing out, I didn’t notice that Sol was already standing next to his s
 When I noticed that he’s right there, he smiled at me.
 
 Sol: “Wanna take a walk?”
-
+<<hidecharacterfade SceneManager Character_1 0.5>>
+<<hidecharacterfade SceneManager Character_2 0.5>>
+<<changefade SceneManager Black 1>>
 <<jump Scene3>>
 
 ===
