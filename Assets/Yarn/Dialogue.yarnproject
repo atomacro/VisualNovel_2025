@@ -3,7 +3,9 @@
   "sourceFiles": [
     "Chapter1.yarn",
     "Chapter2.yarn",
-    "Chapter3.yarn"
+    "Chapter3.yarn",
+    "Chapter4.yarn",
+    "Chapter5.yarn"
   ],
   "excludeFiles": [
     "**/*~/*"
