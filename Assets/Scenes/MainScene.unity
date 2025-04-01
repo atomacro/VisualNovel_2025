@@ -1705,7 +1705,15 @@ MonoBehaviour:
   - {fileID: 6048202958411137667, guid: b516aace7642c3c46b58ba68baa53a59, type: 3}
   audioClips:
   - {fileID: 8300000, guid: 72f60f6f18f8dc44ea098d22fc4b3479, type: 3}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: fcf3ad71a378ef0428cb4c87bad5eb33, type: 3}
+  - {fileID: 8300000, guid: ad05d5adf5b3f5041b9ae1a4625cf8b3, type: 3}
+  - {fileID: 8300000, guid: 58cad3ebe36a36a4290d9fa84a935181, type: 3}
+  - {fileID: 8300000, guid: 02eb796ed0c82c641b45437383186aa4, type: 3}
+  - {fileID: 8300000, guid: 53ac1ddf5a98d2c47b97072d91698cfd, type: 3}
+  - {fileID: 8300000, guid: 493a7d428190b314083d25e8b0fa6463, type: 3}
+  - {fileID: 8300000, guid: 9c0291f41bf69264f89eb1007af1b741, type: 3}
+  - {fileID: 8300000, guid: d55d08f22945dd544bfd15d96d390e4c, type: 3}
+  - {fileID: 8300000, guid: 89158be5cc280e54d8619b45d96ca99a, type: 3}
 --- !u!1 &651740330
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,6 +5,21 @@ title: Scene3
 <<set $chapterNumber to "2">>
 <<set $chapterTitle to "Simul">>
 
+
+<<showcharacter SceneManager Character_1>>
+<<showcharacter SceneManager Character_2>>
+<<movecharacter SceneManager Character_2 -192 -104 -0.5 0.5>>
+<<movecharacter SceneManager Character_1 164 -97 0.5 0.5>>
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
+<<changecharacter SceneManager Character_2 sol_smiling_0>>
+<<changefade SceneManager TownScenery_Day_0 0.5>>
+<<setbackgroundtrue TownScenery_Day_0>>
+<<changeaudio SceneManager BackgroundMusic LOOP_take_it_easy>>
+<<fadeaudio SceneManager BackgroundMusic 3 true>>
+
+
+// <<fadeaudio SceneManager BackgroundMusic 3 false>>
+
 // BG: Town Scenery
 
 Sol: “Do you have any hobbies?”
@@ -18,14 +33,17 @@ Luna: “No. I gave up on that.”
 Sol: “Is there anything that interests you?”
 
 Luna: “No. I gave up on that.”
-
+<<changecharacter SceneManager Character_2 sol_relaxed_0>>
 Sol: “What’s your personality?”
 
 Luna: "What even is a personality?”
 
 Sol: “You’re hard to talk to.”
+<<changecharacter SceneManager Character_1 luna_lookaway_0>>
 
 Luna: “It was you who wanted to know me.”
+<<changecharacter SceneManager Character_2 sol_sad_0>>
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
 
 Sol: “But you’re making it harder on purpose!”
 
@@ -34,12 +52,14 @@ Luna: “I’m not. This is how I’ve always been.”
 Sol: “Have you always shut down people who’re trying to talk to you?”
 
 Luna: “Possibly. I don’t like it when people intrude.”
+<<changecharacter SceneManager Character_2 sol_crying_0>>
 
 There was a short silence between us.
-
+<<changecharacter SceneManager Character_1 luna_lookaway_0>>
 Sol: “How can you do that? Always getting your alone time.”
 
 Luna: “Just be alone all the time.”
+<<changecharacter SceneManager Character_2 sol_relaxed_0>>
 
 Sol: “That’s not good.”
 
@@ -51,13 +71,15 @@ Sol: “Your parents must be there for you, right?”
 Luna: “Maybe.”
 
 There’s even more silence.
-
+<<fadeaudio SceneManager BackgroundMusic 2 false>>
+<<changecharacter SceneManager Character_2 sol_smiling_0>>
+<<changecharacter SceneManager Character_1 luna_relaxed_0>>
 Sol: “...I know! I can introduce you to my parents!”
 
 Luna: “...”
 
 I suddenly felt scared when I heard that.
-
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
 Luna: “A… Are you sure about that?”
 
 Sol: “Maybe, but not right now! I want to go to places with you!”
@@ -65,6 +87,7 @@ Sol: “Maybe, but not right now! I want to go to places with you!”
 I felt a little relieved.
 
 Luna: “Do you even have somewhere else in mind?”
+<<changecharacter SceneManager Character_2 sol_happy_0>>
 
 Sol: “We could go to the mall!”
 
@@ -75,8 +98,11 @@ We…?
 Luna: “I- I mean… should we really go?”
 
 Sol: “What are you talking about? Come on, I still have change from earlier!”
-
+<<hidecharacterfade SceneManager Character_1 0.5>>
+<<hidecharacterfade SceneManager Character_2 0.5>>
+<<changefade SceneManager Black 1>>
 // BG: Mall
+<<changefade SceneManager Mall_GroundFloor_0 0.5>>
 
 I keep getting dragged by this idiot everywhere.
 
@@ -130,7 +156,9 @@ Sol: “Okay, okay, sorry!”
 Sol: “Anyways, we can try the phones out! I think it was around here somewhere…”
 
 Luna: “You better not get us lost.”
-
+<<hidecharacterfade SceneManager Character_1 0.5>>
+<<hidecharacterfade SceneManager Character_2 0.5>>
+<<changefade SceneManager Black 1>>
 <<jump Scene4>>
 
 ===
@@ -139,6 +167,7 @@ title: Scene4
 ---
 <<declare $scene4PlayerChoice = "" >>
 <<setNextNode Skip "Scene5">>
+<<changefade SceneManager Mall_GadgetStore_0 0.5>>
 
 
 // BG: Gadget Store or Mall
