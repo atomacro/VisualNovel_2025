@@ -283,7 +283,11 @@ public class SceneManager : MonoBehaviour
     [YarnCommand("fadeaudio")]
     public void FadeAudio(string audioType, float fadeDuration, bool isFadeIn = false)
     {
-        float defaultAudio = PlayerPrefs.GetFloat("MusicVolume", 0);
+        float defaultAudio = PlayerPrefs.GetFloat("MusicVolume", 0) * PlayerPrefs.GetFloat("MasterVolume", 0);
+        if (defaultAudio == 0)
+        {
+            defaultAudio = 0.5f; // Default volume if not set in PlayerPrefs
+        }
         GameObject audioObject = SearchArray(audioObjects, audioType);
         AudioSource audioSource = audioObject.GetComponent<AudioSource>();
         float targetVolume = isFadeIn ? defaultAudio : 0;
