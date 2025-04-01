@@ -88,6 +88,7 @@ public class Pagination : MonoBehaviour
         {
             _backgrounds = GameObject.Find("Backgrounds");
             backgrounds = _backgrounds.GetComponent<Backgrounds>();
+            backgroundSprites = backgrounds.backgroundSprites.ToArray();
             if (_backgrounds == null || backgrounds == null) Debug.LogError("Backgrounds not found!");
             foreach (Sprite bg in backgroundSprites)
             {
@@ -98,6 +99,7 @@ public class Pagination : MonoBehaviour
         }
 
         var background = Images.FirstOrDefault(bg => bg.Any(kvp => kvp.Key.name == name));
+
         if (background != null)
         {
             var spriteKey = background.Keys.First(kvp => kvp.name == name);
