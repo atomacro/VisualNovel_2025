@@ -102,30 +102,47 @@ Sol: “What are you talking about? Come on, I still have change from earlier!�
 <<hidecharacterfade SceneManager Character_2 0.5>>
 <<changefade SceneManager Black 1>>
 // BG: Mall
-<<changefade SceneManager Mall_GroundFloor_0 0.5>>
+<<wait 1>>
+<<changefade SceneManager Mall_GroundFloor_0 1>>
+<<showcharacterfade SceneManager Character_1 0.5>>
+<<showcharacterfade SceneManager Character_2 0.5>>
+<<changecharacter SceneManager Character_1 luna_relaxed_0>>
+<<changecharacter SceneManager Character_2 sol_smiling_0>>
 
 I keep getting dragged by this idiot everywhere.
 
 Is this what having a friend feels like? It’s rather tiring.
 
 But… it’s a little nice, I guess…
-
+<<changeaudio SceneManager BackgroundMusic one_sunny_afternoon>>
+<<fadeaudio SceneManager BackgroundMusic 2.5 true>>
 Luna: “Okay, what do we do here?”
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
+<<changecharacter SceneManager Character_2 sol_happy_0>>
 
 Sol: “Buy stuff! Do a makeover, I don’t know. I just thought the mall had plenty of things so we went here.”
-
+<<changecharacter SceneManager Character_1 luna_lookaway_0>>
 I look around. There’s a lot of things sold, but barely anything we can interact with.
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
+<<changecharacter SceneManager Character_2 sol_neutral_0>>
 
 Luna: “This is very plenty, alright.”
+<<changecharacter SceneManager Character_2 sol_tense_0>>
 
 Sol: “Shut up, I’m trying!”
+<<changecharacter SceneManager Character_2 sol_smiling_0>>
+
 Sol: “Maybe we could look for toys?”
+<<changecharacter SceneManager Character_1 luna_lookaway_0>>
+<<changecharacter SceneManager Character_2 sol_tense_0>>
 
 Luna: “Toys? Seriously? Aren’t you too old enough for that?”
 
 Sol: “We’re still kids, what are you talking about?”
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
 
 Luna: “I was told to act…”
+<<changecharacter SceneManager Character_2 sol_smiling_0>>
 Luna: “...nevermind. Right… Go wherever you want.”
 
 Sol: “Hmm… I think we can leave that for last.”

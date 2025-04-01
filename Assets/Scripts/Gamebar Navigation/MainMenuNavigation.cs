@@ -1,10 +1,14 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using VisualNovel_2025;
 
 public class MainMenuNavigation : MonoBehaviour
 {
     [SerializeField] private GameObject MainCanvas;
+    private Scene Utility => UnityEngine.SceneManagement.SceneManager.GetSceneByName("Utilities");
+    private HelperClass helper = new HelperClass();
     private CanvasFader fader => MainCanvas.GetComponent<CanvasFader>();
 
 
@@ -19,6 +23,11 @@ public class MainMenuNavigation : MonoBehaviour
     {
         fader.StopFade();
         StartCoroutine(OpenMainMenu());
+        AudioSource BackgroundMusic = helper.GetGameObjectFromAnotherScene("BackgroundMusic", Utility).GetComponent<AudioSource>();
+        if (BackgroundMusic != null)
+        {
+            BackgroundMusic.Stop();
+        }
     }
     private IEnumerator OpenMainMenu()
     {
