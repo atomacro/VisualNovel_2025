@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Cafe_Exterior_Evening_0: 4969454257308086452
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
