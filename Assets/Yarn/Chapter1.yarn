@@ -45,7 +45,8 @@
 
 title: Scene1
 ---
-
+<<declare $chapterNumber to "1">>
+<<declare $chapterTitle to "Casus">>
 <<setNextNode Skip "Scene2">>
 <<movecharacter SceneManager Character_1 0 0>>
 <<movecharacter SceneManager Character_2 0 0>>
@@ -102,6 +103,9 @@ I open my eyes.
 <<changefade SceneManager chap1_falling_from_the_sky_0 1.5>>
 <<setbackgroundtrue chap1_falling_from_the_sky_0>>
 
+<<changeaudio SceneManager BackgroundMusic one_sunny_afternoon>>
+<<playaudio SceneManager BackgroundMusic 0>>
+<<fadeaudio SceneManager BackgroundMusic 1.0 1 0 true>>
 
 Luna: "Wha-?!"
 

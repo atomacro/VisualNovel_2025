@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using VisualNovel_2025;
 using UnityEngine.SceneManagement;
 using System.Linq;
+using UnityEditor.Playables;
 public class SceneManager : MonoBehaviour
 {
     public VariableStorageBehaviour yarnVariableStorage;
@@ -15,10 +16,14 @@ public class SceneManager : MonoBehaviour
 
     [SerializeField] private Image[] characterImages;
     [SerializeField] private Sprite[] characterSprites;
-    [SerializeField] private AudioSource[] audioObjects;
-    [SerializeField] private GameObject[] audioSources;
+    private GameObject[] audioObjects;
+    [SerializeField] private AudioClip[] audioClips;
 
-
+    public void Start()
+    {
+        Scene Utility = UnityEngine.SceneManagement.SceneManager.GetSceneByName("Utilities");
+        audioObjects = Utility.GetRootGameObjects().Where(obj => obj.GetComponent<AudioSource>() != null).ToArray();
+    }
     public Sprite GetBackgroundByName(string imageName)
     {
         return SearchArray(backgroundSprites, imageName);
@@ -219,21 +224,34 @@ public class SceneManager : MonoBehaviour
         characterImage.enabled = true;
     }
 
-    [YarnCommand("playaudio")]
-    public void PlayAudio(string audioType, string audioName)
+    [YarnCommand("changeaudio")]
+    public void ChangeAudio(string audioType, string audioName)
     {
-        AudioSource audioSource = SearchArray(audioObjects, audioType);
+        GameObject audioObject = SearchArray(audioObjects, audioType);
+        AudioSource audioSource = audioObject.GetComponent<AudioSource>();
         if (audioSource != null && audioSource.isPlaying == false)
         {
-            audioSource.clip = SearchArray(audioSources, audioName).GetComponent<AudioSource>().clip;
+            audioSource.clip = SearchArray(audioClips, audioName);
+        }
+    }
+    [YarnCommand("playaudio")]
+    public void PlayAudio(string audioType, float volume, bool loop = false)
+    {
+        GameObject audioObject = SearchArray(audioObjects, audioType);
+        AudioSource audioSource = audioObject.GetComponent<AudioSource>();
+        if (audioSource != null && audioSource.isPlaying == false)
+        {
+            audioSource.loop = loop;
             audioSource.Play();
+            audioSource.volume = volume;
         }
     }
 
     [YarnCommand("pauseaudio")]
     public void PauseAudio(string audioType)
     {
-        AudioSource audioSource = SearchArray(audioObjects, audioType);
+        GameObject audioObject = SearchArray(audioObjects, audioType);
+        AudioSource audioSource = audioObject.GetComponent<AudioSource>();
         if (audioSource != null)
         {
             audioSource.Pause();
@@ -243,7 +261,8 @@ public class SceneManager : MonoBehaviour
     [YarnCommand("resumeaudio")]
     public void ResumeAudio(string audioType)
     {
-        AudioSource audioSource = SearchArray(audioObjects, audioType);
+        GameObject audioObject = SearchArray(audioObjects, audioType);
+        AudioSource audioSource = audioObject.GetComponent<AudioSource>();
         if (audioSource != null)
         {
             audioSource.UnPause();
@@ -253,7 +272,8 @@ public class SceneManager : MonoBehaviour
     [YarnCommand("stopaudio")]
     public void StopAudio(string audioType)
     {
-        AudioSource audioSource = SearchArray(audioObjects, audioType);
+        GameObject audioObject = SearchArray(audioObjects, audioType);
+        AudioSource audioSource = audioObject.GetComponent<AudioSource>();
         if (audioSource != null)
         {
             audioSource.Stop();
@@ -261,17 +281,18 @@ public class SceneManager : MonoBehaviour
     }
 
     [YarnCommand("fadeaudio")]
-    public void FadeAudio(string audioType, float targetVolume, float fadeDuration)
+    public void FadeAudio(string audioType, float targetVolume, float fadeDuration, float startVolume = 1f, bool stopAfterFade = false)
     {
-        AudioSource audioSource = SearchArray(audioObjects, audioType);
+        GameObject audioObject = SearchArray(audioObjects, audioType);
+        AudioSource audioSource = audioObject.GetComponent<AudioSource>();
         if (audioSource != null)
         {
-            StartCoroutine(FadeAudioVolume(audioSource, targetVolume, fadeDuration));
+            StartCoroutine(FadeAudioVolume(audioSource, targetVolume, fadeDuration, startVolume, stopAfterFade));
         }
     }
-    private IEnumerator FadeAudioVolume(AudioSource audioSource, float targetVolume, float duration, bool stopAfterFade = false)
+    private IEnumerator FadeAudioVolume(AudioSource audioSource, float targetVolume, float duration, float startVol, bool stopAfterFade)
     {
-        float startVolume = audioSource.volume;
+        float startVolume = startVol;
 
         for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / duration)
         {

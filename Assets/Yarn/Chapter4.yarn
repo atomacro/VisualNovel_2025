@@ -1,7 +1,8 @@
 ﻿title: Scene8
 ---
 <<setNextNode Skip "Scene9">>
-
+<<set $chapterNumber to "4">>
+<<set $chapterTitle to "Home">>
 …
 
 Sol: “How are you doing?”

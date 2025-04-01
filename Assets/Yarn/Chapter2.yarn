@@ -3,7 +3,7 @@ title: Scene3
 <<setNextNode Skip "Scene4">>
 
 <<set $chapterNumber to "2">>
-<<set $chapterTitle to "Meridiem">>
+<<set $chapterTitle to "Simul">>
 
 // BG: Town Scenery
 

@@ -1699,10 +1699,9 @@ MonoBehaviour:
   - {fileID: 6566128957819748068, guid: 18c94849c440140409187b4b2ef258b8, type: 3}
   - {fileID: 5968129194548709401, guid: 73498b5691ce5dc41b615e715b91f1b3, type: 3}
   - {fileID: 6048202958411137667, guid: b516aace7642c3c46b58ba68baa53a59, type: 3}
-  audioObjects: []
-  audioSources:
-  - {fileID: 1444477052}
-  - {fileID: 868025478}
+  audioClips:
+  - {fileID: 8300000, guid: 72f60f6f18f8dc44ea098d22fc4b3479, type: 3}
+  - {fileID: 0}
 --- !u!1 &651740330
 GameObject:
   m_ObjectHideFlags: 0
