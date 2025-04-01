@@ -1,4 +1,4 @@
-﻿title: test
+﻿title: Scene6
 ---
 <<setNextNode Skip "Scene7">>
 
@@ -30,41 +30,49 @@ Sol: "Are you afraid of another girl?"
 
 Luna: "It’s not that! It’s-"
 
-<<changecharacter SceneManager Character_3 sol_angry_0>>
-<<movecharacter SceneManager Character_3 -332 -104 -0.5 0.5>>
+<<changecharacter SceneManager Character_3 aurora_wonder_0>>
+<<movecharacter SceneManager Character_3 -412 -104 -0.5 0.5>>
 <<showcharacterfade SceneManager Character_3 0.5>>
 
 Aurora: "Luna?"
 
+<<changecharacter SceneManager Character_3 aurora_neutral_0>>
 <<changecharacter SceneManager Character_1 luna_neutral_0>>
 
 I paused.
 
 She still knows me?
 
+<<changecharacter SceneManager Character_3 aurora_happy_0>>
+
 Aurora: "Oh my God! It IS you!"
 
 She runs in my direction. I’m frozen in place.
 
-<<hidecharacterfade SceneManager Character_1 0.5>>
+// <<hidecharacterfade SceneManager Character_1 0.5>>
 <<changecharacter SceneManager Character_1 luna_surprised_0>>
 <<movecharacter SceneManager Character_1 291 -97 0.5 0.5>>
 <<showcharacterfade SceneManager Character_1 0.5>>
 
-<<hidecharacterfade SceneManager Character_2 0.5>>
+// <<hidecharacterfade SceneManager Character_2 0.5>>
 <<changecharacter SceneManager Character_2 sol_relaxed_0>>
 <<movecharacter SceneManager Character_2 -262 -104 -0.5 0.5>>
 <<showcharacterfade SceneManager Character_2 0.5>>
 
-<<hidecharacterfade SceneManager Character_3 0.5>>
+<<changecharacter SceneManager Character_3 aurora_smile_0>>
 <<movecharacter SceneManager Character_3 20 -104 -0.5 0.5>>
 <<showcharacterfade SceneManager Character_3 0.5>>
 
 She tried to hug me, but I backed away out of instinct.
 
+<<changecharacter SceneManager Character_3 aurora_neutral_0>>
+
 Aurora: "Huh…?"
 Aurora: "I… Look, I’m sorry! Please listen to me."
 Aurora: "I understand now! I want to apologize for what I did. I reacted too quickly back then…"
+
+<<movecharacter SceneManager Character_3 20 -104 0.5 0.5>>
+
 Aurora: "...eh?"
 Aurora: "Sol?"
 
@@ -82,13 +90,20 @@ Aurora: "I thought I was your only friend though?"
 
 Sol: "Uh… I said I knew everyone, but I didn’t say I’m friends with them."
 
+<<changecharacter SceneManager Character_3 aurora_neutral_0>>
+
 Aurora: "So you’re not friends with her?"
+
+<<changecharacter SceneManager Character_3 aurora_mock_0>>
+
 Aurora: "...What’s up with you? Cat’s got your tongue?"
 
 <<changecharacter SceneManager Character_1 luna_neutral_0>>
 
 Luna: "I…"
 Luna: "...I’m pretty sure that’s not what he meant."
+
+<<changecharacter SceneManager Character_3 aurora_lookaway_0>>
 
 Aurora: "Then what is she to you, Sol?"
 
@@ -97,6 +112,8 @@ Aurora: "Then what is she to you, Sol?"
 Sol: "She’s a friend. Stop being pesky."
 Sol: "I could hit you right here and now."
 
+<<changecharacter SceneManager Character_3 aurora_mock_0>>
+
 Aurora: "Aww, scary!"
 Aurora: "Is she your girlfriend?"
 
@@ -104,6 +121,8 @@ Aurora: "Is she your girlfriend?"
 <<changecharacter SceneManager Character_2 sol_angry_0>>
 
 Sol & Luna: "FRIEND!!"
+
+<<changecharacter SceneManager Character_3 aurora_happy_0>>
 
 Aurora: "Wahahaha, jeez! I’m messing with you two!"
 
@@ -123,29 +142,50 @@ Sol: "You’re annoying."
 Aurora: "Whaaat! You always say that! The both of you do!"
 Aurora: "Are you two the same person or something?"
 
+<<changecharacter SceneManager Character_1 luna_relaxed_0>>
+<<movecharacter SceneManager Character_3 20 -104 -0.5 0.5>>
+
 Luna: "It’s been a long time since I last talked to you though?"
 Luna: "Don’t you remember the last time we did?"
 
+<<changecharacter SceneManager Character_3 aurora_neutral_0>>
+
 Aurora: "I told you, I was sorry! Please forgive me for that…"
 Aurora: "What can I do for you to make it up to you?"
+
+<<changecharacter SceneManager Character_1 luna_pissed_0>>
 
 Luna: "You can shut up, if you can even do that."
 
 Aurora: "Mhhmp! Mmmfffpmmff!!"
 
+<<changecharacter SceneManager Character_2 sol_sad_0>>
+
 Sol: "Don’t you think this is more annoying?"
+
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
 
 Luna: "Maybe."
 
+<<changecharacter SceneManager Character_3 aurora_mock_0>>
+
 Aurora: "Oh, come on! Teaming up on me is super unfair!"
+
+<<changecharacter SceneManager Character_1 luna_pissed_0>>
 
 Luna: "Mouth."
 
+<<changecharacter SceneManager Character_3 aurora_neutral_0>>
+
 Aurora: "Mm!"
+
+<<changecharacter SceneManager Character_1 luna_relaxed_0>>
 
 Luna: "What are you doing here?"
 
 Aurora: "Mmmmgff. Mmmnn!"
+
+<<changecharacter SceneManager Character_2 sol_relaxed_0>>
 
 Sol: "You should probably just let her talk."
 
@@ -153,14 +193,24 @@ Sigh.
 
 Luna: "Fine. Open your mouth. Say aah."
 
+<<changecharacter SceneManager Character_3 aurora_happy_0>>
+
 Aurora: "Aaai live nearby, why wouldn’t I be here?"
 
 Luna: "What? I thought you moved out?"
 
 Aurora: "Teehee. My parents got lazy to move our stuff, so we’re staying a little longer."
+
+<<changecharacter SceneManager Character_3 aurora_lookaway_0>>
+
 Aurora: "Little Sol right here’s going to miss me when we move out!"
 
+<<changecharacter SceneManager Character_2 sol_neutral_0>>
+
 Sol: "Don’t get too confident now. I can just make another friend."
+
+<<movecharacter SceneManager Character_3 20 -104 0.5 0.5>>
+<<changecharacter SceneManager Character_3 aurora_mock_0>>
 
 Aurora: "Hmp! Not with that attitude!"
 Aurora: "You have to respect girls, you know?"
@@ -169,7 +219,13 @@ Sol: "I couldn’t care less."
 
 Aurora: "If I tell this to your parents, will you care more?"
 
+<<changecharacter SceneManager Character_1 luna_pissed_0>>
+
 Luna: "Don’t."
+
+<<changecharacter SceneManager Character_2 sol_relaxed_0>>
+<<movecharacter SceneManager Character_3 20 -104 -0.5 0.5>>
+<<changecharacter SceneManager Character_3 aurora_wonder_0>>
 
 Sol: "Huh?"
 
@@ -182,22 +238,43 @@ Aurora: "You should feel special now that I’m treating you differently."
 
 I feel my teeth gritting.
 
+<<changecharacter SceneManager Character_2 sol_neutral_0>>
+
 Sol: "Don’t get yourself too worked up, Luna."
 Sol: "My parents never really cared much about what I think of people."
 Sol: "Besides, she’s always been like this."
 
+<<changecharacter SceneManager Character_3 aurora_happy_0>>
+
 Aurora: "Yep yep! You get it."
 Aurora: "I’m here for both of you. You should be glad!"
 
+<<changecharacter SceneManager Character_1 luna_angry_0>>
+
 Luna: "Always been an asshole?"
+
+<<changecharacter SceneManager Character_2 sol_relaxed_0>>
+<<changecharacter SceneManager Character_3 aurora_wonder_0>>
 
 Both of them were surprised.
 
+<<changecharacter SceneManager Character_1 luna_pissed_0>>
+
 Aurora: "...huh? Heh? You’ve gotten brave."
+
+<<changecharacter SceneManager Character_3 aurora_mock_0>>
+
 Aurora: "Got a little boyfie to back you up?"
+
+<<changecharacter SceneManager Character_1 luna_angry_0>>
+<<changecharacter SceneManager Character_2 sol_tense_0>>
+<<changecharacter SceneManager Character_3 aurora_wonder_0>>
 
 Luna: "Are you illiterate?"
 Luna: "I don’t need a friend like you if you’re just going to use me."
+
+<<changecharacter SceneManager Character_1 luna_pissed_0>>
+<<changecharacter SceneManager Character_3 aurora_mock_0>>
 
 Aurora: "What are you talking about?"
 Aurora: "First of all, if I’m not your friend then you’d have no friends."
@@ -207,27 +284,51 @@ Aurora: "Now that I remember, you’ve always started fights for the little thin
 Aurora: "In that case, you’re practically just friends with yourself."
 Aurora: "You probably have the same parents too."
 
+<<changecharacter SceneManager Character_1 luna_angry_0>>
+
 Luna: "The fuck are you on?"
 
+<<changecharacter SceneManager Character_3 aurora_wonder_0>>
+
 Aurora: "Wha-?!"
+
+<<changecharacter SceneManager Character_3 aurora_mock_0>>
+
 Aurora: "Gee, you can’t even take jokes anymore…!"
 Aurora: "What’s gotten into you?"
 Aurora: "Don’t get yourself worked up. Sol told you that earlier, right?"
+
+<<changecharacter SceneManager Character_3 aurora_smile_0>>
+
 Aurora: "I’m not as evil as you think I am. I apologized because I did something wrong."
 
+<<changecharacter SceneManager Character_1 luna_pissed_0>>
+
 I look at Sol.
+
+<<changecharacter SceneManager Character_2 sol_tense_0>>
 
 He shrugs.
 
 Sol: "You should’ve at least tried to apologize for what you just said."
 
+<<changecharacter SceneManager Character_3 aurora_happy_0>>
+
 Aurora: "Right. I’m sorry, okay?"
 Aurora: "I didn’t mean to start a fight."
 
+<<changecharacter SceneManager Character_3 aurora_smile_0>>
+<<changecharacter SceneManager Character_2 sol_neutral_0>>
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
+
 Luna: "Right."
+
+<<changecharacter SceneManager Character_3 aurora_happy_0>>
 
 Aurora: "How did the two of you get along, anyway? How did you meet?"
 Aurora: "The world can’t be that big. If Luna was friends with you, I would’ve known long ago!"
+
+<<changecharacter SceneManager Character_2 sol_sad_0>>
 
 Sol: "It’s because I just met her earlier."
 
@@ -235,16 +336,29 @@ Aurora: "How?"
 
 Luna: "I was a little lost. Sol was the one who-"
 
+<<changecharacter SceneManager Character_1 luna_pissed_0>>
+<<changecharacter SceneManager Character_3 aurora_wonder_0>>
+
 Aurora: "Really now? Is that true, Sol?"
 
 Sol: "Yeah."
+
+<<changecharacter SceneManager Character_3 aurora_smile_0>>
 
 Aurora: "Hmm…"
 
 Luna: "What are you plotting?"
 
+<<changecharacter SceneManager Character_3 aurora_lookaway_0>>
+
 Aurora: "You see…"
+
+<<changecharacter SceneManager Character_3 aurora_mock_0>>
+
 Aurora: "I’m intrigued."
+
+<<movecharacter SceneManager Character_3 89 -104 -0.5 0.5>>
+<<showcharacterfade SceneManager Character_3 0.5>>
 
 She leaned closer onto me.
 
@@ -260,21 +374,38 @@ Aurora: “You didn’t even cheer me up.”
 Aurora: “I was nice enough to apologize to you.”
 Aurora: “Now I see you hanging out with one of my friends when you wouldn’t even try to get closer to me.”
 
+<<movecharacter SceneManager Character_3 20 -104 -0.5 0.5>>
+<<showcharacterfade SceneManager Character_3 0.5>>
+
+<<changecharacter SceneManager Character_1 luna_angry_0>>
+
 Luna: “Who are you to force me to ‘hangout’ with you anyway?”
+
+<<changecharacter SceneManager Character_3 aurora_mock_0>>
+
 Aurora: "Your friend!”
+
+<<changecharacter SceneManager Character_1 luna_pissed_0>>
 
 Kill yourself.
 
+<<changecharacter SceneManager Character_2 sol_angry_0>>
+
 Sol: "Hey, what the hell?"
+
+<<changecharacter SceneManager Character_3 aurora_happy_0>>
 
 Aurora: "Kidding!"
 
+<<changecharacter SceneManager Character_3 aurora_smile_0>>
+
 She recoiled from me with a smile.
 
+<<changecharacter SceneManager Character_2 sol_tense_0>>
+<<changecharacter SceneManager Character_3 aurora_happy_0>>
+
 Aurora: "It’s a girls’ thing!"
-
 Aurora: "While I did say I’m going to treat you differently, you have to keep this in mind:"
-
 Aurora: "It’s not the way you think it is."
 
 ?: "Aurora! Time to eat!"
@@ -287,15 +418,22 @@ She’s the spoiled, obnoxious brat that tried to be friends with me because she
 
 She’d look great to other people.
 
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
+
 I wonder if it’s the same for Sol.
 
 …
 
+<<changecharacter SceneManager Character_3 aurora_lookaway_0>>
+
 Aurora glares at me.
 
-Aurora: "Well, it’s getting late! It was nice seeing you again, Luna!"
+<<changecharacter SceneManager Character_3 aurora_happy_0>>
 
+Aurora: "Well, it’s getting late! It was nice seeing you again, Luna!"
 Aurora: "I hope my cats treat you well~"
+
+<<hidecharacterfade SceneManager Character_3 1.0>>
 
 She went to her other friends to say goodbye, then went to her mom.
 
@@ -303,26 +441,32 @@ She told something to her mom, but I couldn’t quite hear.
 
 Her mom glared at me the way Aurora did.
 
+<<movecharacter SceneManager Character_1 164 -97 0.5 0.5>>
+<<showcharacterfade SceneManager Character_1 0.5>>
+
+<<movecharacter SceneManager Character_2 -192 -104 -0.5 0.5>>
+<<showcharacterfade SceneManager Character_2 0.5>>
 
 Sol: "...What’s up with her today?"
 
 Luna: "Must be because I’m also a girl."
 
 Sol: "Is this kind of thing normal with girls?"
-
 Sol: "I thought girls always got along?"
 
 Luna: "Maybe if it was another girl, it would’ve gone alright."
-
 Luna: "I expected she’d be nicer. Guess I was wrong. I’ll never understand you gals."
-
 Luna: "You were oddly different earlier, too. Did she press your buttons?"
 
 Sol: "She always does. She has no concept of personal space. No one does."
 
 Luna: "I met you with that same behavior though."
 
+<<changecharacter SceneManager Character_2 sol_lookaway_0>>
+
 Sol: "Well…! I was trying to look different to people I barely know!"
+
+<<changecharacter SceneManager Character_2 sol_sad_0>>
 
 Sol: "But it seems useless now that you’ve seen how I act towards other kids."
 
@@ -330,22 +474,41 @@ Luna: "Hey, I don’t mind."
 
 Short silence.
 
+<<changecharacter SceneManager Character_2 sol_neutral_0>>
+
 The faceless kids running around earlier were called home by their parents.
 
 It was just the two of us at the playground.
 
+<<changecharacter SceneManager Character_1 luna_lookaway_0>>
+
 Luna: "Say, wanna play at the monkey bars?"
+
+<<changecharacter SceneManager Character_1 luna_relaxed_0>>
+<<changecharacter SceneManager Character_2 sol_happy_0>>
 
 Sol: "You like monkey bars too? Let's do it!"
 
+<<hidecharacterfade SceneManager Character_1 0.5>>
+<<hidecharacterfade SceneManager Character_2 0.5>>
+<<changefade SceneManager Black 1>>
 <<jump Scene7>>
+
 ===
 
 title: Scene7
 ---
 <<setNextNode Skip "Scene8">>
 
-// BG: Playground
+<<changefade SceneManager Playground_Sunset_0 1>>
+<<wait 1>>
+<<changecharacter SceneManager Character_1 luna_relaxed_0>>
+<<movecharacter SceneManager Character_1 164 -97 0.5 0.5>>
+<<showcharacterfade SceneManager Character_1 0.5>>
+
+<<changecharacter SceneManager Character_2 sol_relaxed_0>>
+<<movecharacter SceneManager Character_2 -192 -104 -0.5 0.5>>
+<<showcharacterfade SceneManager Character_2 0.5>>
 
 We played a bit on the playground.
 
@@ -353,55 +516,53 @@ It’s quiet.
 
 There’s only us.
 
-Sol: "..."
+<<changecharacter SceneManager Character_2 sol_sad_0>>
 
+Sol: "..."
 Sol: "Sorry."
 
 Luna: "For what?"
 
 Sol: "I brought you here so we can cool off."
-
 Sol: "Then, well, Aurora happened."
 
-Luna: "Hey, not your fault."
-
+Luna: "Hey, it's not your fault."
 Luna: "There will always be that one person."
-
 Luna: "Besides, we’ll probably stay by the bench the whole time regardless if Aurora was there or not."
-
 Luna: "Both of us don’t like too many people."
 
 Sol: "...I mentioned earlier that she’s my only friend."
-
 Sol: "It’s just that I didn’t see any need to have more friends than her."
-
 Sol: "It doesn’t feel lonely in her company."
 
 Luna: "Didn’t you say she gets annoying?"
 
+<<changecharacter SceneManager Character_2 sol_relaxed_0>>
+
 Sol: "She does."
-
 Sol: "The way she treated me was the same way I did to you when you first arrived."
-
 Sol: "Everyone I cared for, everyone that cared for me… They all helped me to be like this."
 
 Luna: "..."
-
 Luna: "You said she’s your only friend."
-
 Luna: "Who are you referring to with ‘everyone?’"
 
+<<changecharacter SceneManager Character_2 sol_smiling_0>>
+
 Sol: "Mom and dad!"
-
 Sol: "They trust me and shower me with love."
-
 Sol: "Well, I get scolded sometimes. But that’s because I’m stubborn!"
 
 Luna: "..."
 
+<<changecharacter SceneManager Character_1 luna_lookaway_0>>
+
 I remember what Aurora told me.
 
 Me and Sol, the same people? Don’t make me laugh.
+
+<<changecharacter SceneManager Character_1 luna_relaxed_0>>
+<<changecharacter SceneManager Character_2 sol_relaxed_0>>
 
 Sol: "Can I ask?"
 
@@ -409,64 +570,69 @@ Luna: "What is it?"
 
 Sol: "What was Aurora apologizing for?"
 
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
+
 Luna: "..."
 
 Luna: "It was some kind of gossip back then."
-
 Luna: "She was my friend for a long time too, but…"
-
 Luna: "She’s not the best."
-
 Luna: "She saw me talking to a boy one time. I think it was her crush."
-
 Luna: "It was for something school related."
-
 Luna: "But she went on and told my mom, then…"
 
 Luna: "..."
 
 Luna: "Ever since then, I started ignoring her."
-
 Luna: "She isolated me and spread rumors about me."
-
 Luna: "Because I ignored her."
+
+<<changecharacter SceneManager Character_2 sol_sad_0>>
 
 Sol: "Seriously? Why can’t I remember anything about that happening?"
 
 Luna: "It’s because I went to a different school."
-
 Luna: "I transferred out after that incident because my parents got really mad about the mess."
 
+<<changecharacter SceneManager Character_2 sol_lookaway_0>>
+
 Sol: "The rumors didn’t even reach me… Am I that out of touch with reality?"
+
+<<changecharacter SceneManager Character_1 luna_smiling_0>>
 
 I chuckled.
 
 Luna: "Well, you probably are."
 
+<<changecharacter SceneManager Character_2 sol_relaxed_0>>
+
 More silence.
+
+<<changecharacter SceneManager Character_2 sol_smiling_0>>
 
 Sol: "Hey Luna?"
 
 Luna: "Hmm?"
 
-//CG: Sol looking at the camera with the sunset behind him
+<<hidecharacterfade SceneManager Character_1 1.0>>
+<<hidecharacterfade SceneManager Character_2 1.0>>
+<<changefade SceneManager chap3_looking_1_0 1.0>>
 
 Sol: "Are you having fun?"
 
 Luna: "Where’d that come from?"
 
 Sol: "No reason."
-
 Sol: "That fits you, you know?"
 
 I noticed that I’ve been smiling for a while now.
 
 Luna: "Gee."
+Luna: "You’re annoying."
 
-Sol: "You’re annoying."
+<<changefade SceneManager chap3_looking_2_0 0.5>>
 
 Sol: "I’m aware."
-
 Sol: "Is this nice?"
 
 It really is.
@@ -475,7 +641,9 @@ I wish it could last forever.
 
 I said nothing and just looked down at the ground smiling.
 
-//CG Ends
+<<changefade SceneManager Playground_Sunset_0 1>>
+<<showcharacterfade SceneManager Character_1 1>>
+<<showcharacterfade SceneManager Character_2 1>>
 
 Sol: "We should get going."
 
@@ -485,17 +653,21 @@ Sol: "Wanna come over?"
 
 Huh…
 
+<<changecharacter SceneManager Character_1 luna_surprised_0>>
+
 Luna: "What…? Aren’t your parents going to get mad?"
+
+<<changecharacter SceneManager Character_2 sol_happy_0>>
 
 Sol: "It’s fine! I want you to meet them, too!"
 
 Luna: "But…"
-
 Luna: "It’s not… I’m not…"
 
 Sol: "Sure, they’ll be surprised I brought a girl home."
-
 Sol: "But they’ll understand it’s not like that!"
+
+<<changecharacter SceneManager Character_1 luna_relaxed_0>>
 
 Luna: "..."
 

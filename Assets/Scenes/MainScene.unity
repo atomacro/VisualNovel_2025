@@ -1666,6 +1666,8 @@ MonoBehaviour:
   - {fileID: -7033011835006541422, guid: ca070e75a4dcad9469979e80dab5517b, type: 3}
   - {fileID: 8451784817861510027, guid: 48b81d70b759522408e0c87e56d486df, type: 3}
   - {fileID: -4412434034099939799, guid: 3b36d40b0b4240e4a8078d924f94fd03, type: 3}
+  - {fileID: 2028331429980845377, guid: 9b1ddfbf3fd43e14d944133075896407, type: 3}
+  - {fileID: -2555096287491253485, guid: a41fdc95d39e024439408dcd4256fa88, type: 3}
   CanvasWithFader: {fileID: 195058046}
   chacacterImages:
   - {fileID: 417578238}
@@ -1690,6 +1692,12 @@ MonoBehaviour:
   - {fileID: -4386504134722328904, guid: 991990b7663a7f049be4b034669f14cd, type: 3}
   - {fileID: -1441109336040257426, guid: 8fa4473ad05290d4d9be9563cf3b86b1, type: 3}
   - {fileID: 6024925741130665702, guid: 30a8468ef53afc848a36c7ccdc174750, type: 3}
+  - {fileID: -3474124125314957309, guid: 248ccf2c4d1f6504d95c82a096a6eee0, type: 3}
+  - {fileID: -7143116577154674544, guid: c3091ab8a6f8ce04a93bc7e36f969dc0, type: 3}
+  - {fileID: -3378455461380298774, guid: 8ee5889b1f62b68499de446b78bb66ac, type: 3}
+  - {fileID: -2700637332907115260, guid: be7ca5fc045fdfe49a90790faffbfcad, type: 3}
+  - {fileID: 6566128957819748068, guid: 18c94849c440140409187b4b2ef258b8, type: 3}
+  - {fileID: 5968129194548709401, guid: 73498b5691ce5dc41b615e715b91f1b3, type: 3}
   - {fileID: 6048202958411137667, guid: b516aace7642c3c46b58ba68baa53a59, type: 3}
   audioObjects: []
   audioSources:
@@ -5239,7 +5247,7 @@ MonoBehaviour:
   dialogueViews:
   - {fileID: 7778558435014588591}
   - {fileID: 3292657646789709147}
-  startNode: Scene1
+  startNode: Start
   startAutomatically: 1
   runSelectedOptionAsLine: 0
   lineProvider: {fileID: 0}
