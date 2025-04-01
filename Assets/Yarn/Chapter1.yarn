@@ -80,6 +80,8 @@ I can feel it. #choice
 I walk closer to the end of the cliff.
 
 <<changefade SceneManager Cliffside_POV_0 0.5>>
+<<setbackgroundtrue "Cliffside_POV_0">>
+
 
 I take a deep breath.
 
@@ -98,6 +100,7 @@ Then, a bright light seeps into my eyelids.
 I open my eyes.
 
 <<changefade SceneManager chap1_falling_from_the_sky_0 1.5>>
+<<setbackgroundtrue chap1_falling_from_the_sky_0>>
 
 
 Luna: "Wha-?!"
@@ -120,6 +123,8 @@ The moment I got close to hitting the ground, I started to fall slower until I w
 // CG END: Luna falling from the sky -> BG: Grasslands
 
 <<changefade SceneManager Grassland_Sunrise_0 1.0>>
+<<setbackgroundtrue Grassland_Sunrise_0>>
+
 <<wait 1>>
 
 <<showcharacter SceneManager Character_1>>
@@ -265,11 +270,11 @@ Maybe I’ll find answers soon?
 <<changecharacter SceneManager Character_1 luna_neutral_0>>
 <<changecharacter SceneManager Character_2 sol_tense_0>>
 <<changefade SceneManager TownScenery_Day_0 0.5>>
+<<setbackgroundtrue TownScenery_Day_0>>
 
 
 Sol: “What are you spacing out for?”
 
-// BG: Town Scenery
 
 Another weird thing is, this all looks too familiar.
 
@@ -337,6 +342,8 @@ Sol: “Come on, I know a place where we can talk.”
 <<hidecharacterfade SceneManager Character_1 0.5>>
 <<hidecharacterfade SceneManager Character_2 0.5>>
 <<changefade SceneManager Cafe_Exterior_Morning_0 1>>
+<<setbackgroundtrue Cafe_Exterior_0>>
+
 <<wait 1.5>>
 // BG: Cafe Diner
 ==Cafe Diner==
@@ -349,6 +356,8 @@ Luna: “...Okay.”
 
 
 <<changefade SceneManager Cafe_Interior_0 1>>
+<<setbackgroundtrue Cafe_Interior_0>>
+
 <<wait 1>>
 <<changecharacter SceneManager Character_1 luna_surprised_0>>
 <<changecharacter SceneManager Character_2 sol_smiling_0>>
@@ -426,6 +435,8 @@ I hear distant idle chatter.
 
 …
 <<changefade SceneManager Cafe_Window_0 1>>
+<<setbackgroundtrue Cafe_Window_0>>
+
 <<wait 1>>
 <<changecharacter SceneManager Character_1 luna_smiling_0>>
 <<movecharacter SceneManager Character_1 243 -97 0.78 0.78>>
