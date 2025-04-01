@@ -8167,7 +8167,7 @@ GameObject:
   - component: {fileID: 1861867482}
   - component: {fileID: 1861867481}
   m_Layer: 0
-  m_Name: BackgroundAndSprites
+  m_Name: Backgrounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8208,7 +8208,6 @@ MonoBehaviour:
   - {fileID: -751031475646265869, guid: 6915d8568b69c0846b2dfe978ba1416d, type: 3}
   - {fileID: -7072834136476674208, guid: 7d7b881a1b55d4f418d96b59eba8ea65, type: 3}
   - {fileID: -7033011835006541422, guid: ca070e75a4dcad9469979e80dab5517b, type: 3}
-  _characterSprites: []
 --- !u!4 &1861867482
 Transform:
   m_ObjectHideFlags: 0
