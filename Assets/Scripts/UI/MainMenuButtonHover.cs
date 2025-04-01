@@ -3,6 +3,8 @@ using TMPro;
 using UnityEngine.EventSystems;
 using VisualNovel_2025;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class MainMenuButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -10,6 +12,8 @@ public class MainMenuButtonHover : MonoBehaviour, IPointerEnterHandler, IPointer
     [SerializeField] private bool isMainMenu = false;
     private AudioSource hoverSound;
     [SerializeField] private AudioClip hoverClip;
+    [SerializeField] private AudioClip clickClip;
+
     private HelperClass helper;
 
     private Scene Utilities;
@@ -23,9 +27,11 @@ public class MainMenuButtonHover : MonoBehaviour, IPointerEnterHandler, IPointer
         helper = new HelperClass();
         textMeshPro.color = new Color32(255, 255, 225, 100); // Dim color
         if (isMainMenu)
-        {
+        {        
             hoverSound = helper.GetGameObjectFromAnotherScene("UISounds", Utilities).GetComponent<AudioSource>();
         }
+
+
 
     }
     private void Awake()
@@ -47,6 +53,15 @@ public class MainMenuButtonHover : MonoBehaviour, IPointerEnterHandler, IPointer
     }
 
     public void OnClick()
+    {
+        if (isMainMenu)
+        {
+            hoverSound.clip = clickClip;
+            hoverSound.Play();
+        }
+    }
+
+    public void OnPointerEnter()
     {
         if (isMainMenu)
         {

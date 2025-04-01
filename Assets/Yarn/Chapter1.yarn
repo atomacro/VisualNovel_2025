@@ -80,10 +80,6 @@ I can feel it. #choice
 
 I walk closer to the end of the cliff.
 
-<<changefade SceneManager Cliffside_POV_0 0.5>>
-<<setbackgroundtrue "Cliffside_POV_0">>
-
-
 I take a deep breath.
 
 Then I make the jump.
@@ -102,10 +98,9 @@ I open my eyes.
 
 <<changefade SceneManager chap1_falling_from_the_sky_0 1.5>>
 <<setbackgroundtrue chap1_falling_from_the_sky_0>>
-
 <<changeaudio SceneManager BackgroundMusic one_sunny_afternoon>>
 <<playaudio SceneManager BackgroundMusic 0>>
-<<fadeaudio SceneManager BackgroundMusic 1.0 1 0 true>>
+<<fadeaudio SceneManager BackgroundMusic 1.0 1.5 0 false>>
 
 Luna: "Wha-?!"
 
@@ -134,8 +129,6 @@ The moment I got close to hitting the ground, I started to fall slower until I w
 <<showcharacter SceneManager Character_1>>
 <<changecharacterfade SceneManager Character_1 luna_surprised_0 0.5>>
 <<movecharacter SceneManager Character_1 164 -97 -0.5 0.5>>
-
-
 
 Luna: “Woah… That was…”
 
@@ -185,7 +178,7 @@ Luna: “I jumped off a cliff.”
 <<changecharacter SceneManager Character_2 sol_happy_0>>
 
 ?: “Funny. There’s no cliff nearby.”
-
+<<fadeaudio SceneManager BackgroundMusic 0 3 1 true>>
 <<changecharacter SceneManager Character_1 luna_pissed_0>>
 
 Luna: “You haven’t even asked for my name yet.”

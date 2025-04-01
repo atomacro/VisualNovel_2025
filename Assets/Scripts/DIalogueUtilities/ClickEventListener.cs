@@ -1,6 +1,7 @@
 using UnityEngine;
 using Yarn.Unity;
-
+using VisualNovel_2025;
+using UnityEngine.SceneManagement;
 public class ClickEventListener : MonoBehaviour
 {
     private bool isOptionView = false;
@@ -8,11 +9,17 @@ public class ClickEventListener : MonoBehaviour
     [SerializeField] LineView lineView;
     [SerializeField] CanvasGroup canvasGroup;
     [SerializeField] GameObject optionsListViewObject;
-
+    [SerializeField] AudioClip DialogueClip;
+    private HelperClass helper = new HelperClass();
+    private Scene Utilities;
+    private AudioSource UISounds;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Utilities = UnityEngine.SceneManagement.SceneManager.GetSceneByName("Utilities");
         optionsListView = optionsListViewObject.GetComponent<OptionsListView>();
+        UISounds = helper.GetGameObjectFromAnotherScene("UISounds", Utilities).GetComponent<AudioSource>();
+        UISounds.clip = DialogueClip;
     }
 
     // Update is called once per frame
@@ -49,6 +56,7 @@ public class ClickEventListener : MonoBehaviour
         }
         else
         {
+            UISounds.Play();
             lineView.UserRequestedViewAdvancement();
         }
     }

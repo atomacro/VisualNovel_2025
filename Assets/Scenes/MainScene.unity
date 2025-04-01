@@ -190,6 +190,7 @@ MonoBehaviour:
   lineView: {fileID: 7778558435014588591}
   canvasGroup: {fileID: 3292657646789709144}
   optionsListViewObject: {fileID: 3292657646789709124}
+  DialogueClip: {fileID: 0}
 --- !u!114 &176432329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -703,6 +704,7 @@ MonoBehaviour:
   dialogueRunnerObject: {fileID: 2753718019791537286}
   dialogueTextObject: {fileID: 7778558435022557983}
   optionsListViewObject: {fileID: 0}
+  newGameClip: {fileID: 8300000, guid: ce841a277d829a54cac138ca23ffaa8f, type: 3}
   DialogueLog: []
   Dialogues: []
 --- !u!1 &340894477
@@ -1269,6 +1271,7 @@ MonoBehaviour:
   textMeshPro: {fileID: 825836755}
   isMainMenu: 0
   hoverClip: {fileID: 0}
+  clickClip: {fileID: 0}
 --- !u!114 &582303018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1432,6 +1435,7 @@ MonoBehaviour:
   textMeshPro: {fileID: 1802766499}
   isMainMenu: 0
   hoverClip: {fileID: 0}
+  clickClip: {fileID: 0}
 --- !u!114 &600144060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1649,8 +1653,8 @@ MonoBehaviour:
   - {fileID: -4119954993456633541, guid: b89fbd0e34ba94a4ebdcb87236cea277, type: 3}
   - {fileID: -5890039071889593507, guid: 89ee10cc3e5336940b6c0b5498ab1faf, type: 3}
   - {fileID: -5138161074549273509, guid: f73ed8a1d3952214c8eb939821b99a5c, type: 3}
-  - {fileID: -1559635642643474359, guid: 28fbf732b912d044fb2114065ac340fe, type: 3}
-  - {fileID: 4969454257308086452, guid: bcf031039af151f46943cc7612d1c01c, type: 3}
+  - {fileID: -1559635642643474359, guid: 8bfc6f72577c8964ca3adf74ac348014, type: 3}
+  - {fileID: 4969454257308086452, guid: 038ff53ce27f2724d8eba42dfb50231f, type: 3}
   - {fileID: -4245433558376564326, guid: 98dd07d6632832b46891cdffa555addc, type: 3}
   - {fileID: 6152891442740889776, guid: 33207108767c96547a28e65d1735e64b, type: 3}
   - {fileID: -4118866993920120270, guid: a831b88d3f20d24419a91386719433f7, type: 3}
@@ -2351,6 +2355,7 @@ MonoBehaviour:
   textMeshPro: {fileID: 176904441}
   isMainMenu: 0
   hoverClip: {fileID: 0}
+  clickClip: {fileID: 0}
 --- !u!114 &976543439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4232,6 +4237,7 @@ MonoBehaviour:
   textMeshPro: {fileID: 2290096605540542114}
   isMainMenu: 0
   hoverClip: {fileID: 0}
+  clickClip: {fileID: 0}
 --- !u!224 &684513129616511601
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4386,6 +4392,7 @@ MonoBehaviour:
   textMeshPro: {fileID: 805409301066565309}
   isMainMenu: 0
   hoverClip: {fileID: 0}
+  clickClip: {fileID: 0}
 --- !u!222 &1472782132036949983
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4465,6 +4472,7 @@ MonoBehaviour:
   textMeshPro: {fileID: 3414513252458523067}
   isMainMenu: 0
   hoverClip: {fileID: 0}
+  clickClip: {fileID: 0}
 --- !u!222 &1944085837328327872
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5827,6 +5835,7 @@ MonoBehaviour:
   textMeshPro: {fileID: 8138821105342342716}
   isMainMenu: 0
   hoverClip: {fileID: 0}
+  clickClip: {fileID: 0}
 --- !u!114 &7050509076641363504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6028,7 +6037,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 255985044}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: addDialogueToLog
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6638,6 +6647,7 @@ MonoBehaviour:
   textMeshPro: {fileID: 200366329551640276}
   isMainMenu: 0
   hoverClip: {fileID: 0}
+  clickClip: {fileID: 0}
 --- !u!114 &8138821105342342716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6932,6 +6942,7 @@ MonoBehaviour:
   textMeshPro: {fileID: 4710105862769530100}
   isMainMenu: 0
   hoverClip: {fileID: 0}
+  clickClip: {fileID: 0}
 --- !u!114 &8555914753078935515
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,12 +12,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject dialogueRunnerObject;
     [SerializeField] private GameObject dialogueTextObject;
     [SerializeField] private GameObject optionsListViewObject;
+    [SerializeField] private AudioClip newGameClip;
     public List<string> DialogueLog = new List<string>();
     public List<string> Dialogues = new List<string>();
     private LineView lineView => lineViewObj.gameObject.GetComponent<LineView>();
     private OptionsListView optionsListView => optionsListViewObject.gameObject.GetComponent<OptionsListView>();
     private DialogueRunner dialogueRunner => dialogueRunnerObject.gameObject.GetComponent<DialogueRunner>();
     private CanvasGroup optionsListViewCanvavGroup => optionsListViewObject.gameObject.GetComponent<CanvasGroup>();
+    private HelperClass helper = new HelperClass();
+    private Scene Utilities;
+
 
     private Pagination pagination;
 
@@ -79,15 +83,17 @@ public class GameManager : MonoBehaviour
         lineView.typewriterEffectSpeed = PlayerPrefs.GetFloat("TextSpeed", 50);
         canvasFader.FadeIn(3f);
         StartCoroutine(StartDialogueAfterDelay());
-        HelperClass helper = new HelperClass();
-        Scene Utility = UnityEngine.SceneManagement.SceneManager.GetSceneByName("Utilities");
-        GameObject gallery = helper.GetGameObjectFromAnotherScene("Gallery", Utility);
+        Utilities = UnityEngine.SceneManagement.SceneManager.GetSceneByName("Utilities");
+        GameObject gallery = helper.GetGameObjectFromAnotherScene("Gallery", Utilities);
         GameObject pagination = helper.GetChildGameObject("Pagination", gallery);
         this.pagination = pagination.GetComponent<Pagination>();
     }
 
     private void Awake()
     {
+        AudioSource UISounds = helper.GetGameObjectFromAnotherScene("UISounds", Utilities).GetComponent<AudioSource>();
+        UISounds.clip = newGameClip;
+        UISounds.Play();
         dialogueRunner.AddCommandHandler<string>("setbackgroundtrue", (name) => pagination.SetBackgroundValueTrue(name));
     }
 }
