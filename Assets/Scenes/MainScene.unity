@@ -1649,8 +1649,8 @@ MonoBehaviour:
   - {fileID: -4119954993456633541, guid: b89fbd0e34ba94a4ebdcb87236cea277, type: 3}
   - {fileID: -5890039071889593507, guid: 89ee10cc3e5336940b6c0b5498ab1faf, type: 3}
   - {fileID: -5138161074549273509, guid: f73ed8a1d3952214c8eb939821b99a5c, type: 3}
-  - {fileID: -5138161074549273509, guid: f73ed8a1d3952214c8eb939821b99a5c, type: 3}
-  - {fileID: -5138161074549273509, guid: f73ed8a1d3952214c8eb939821b99a5c, type: 3}
+  - {fileID: -1559635642643474359, guid: 28fbf732b912d044fb2114065ac340fe, type: 3}
+  - {fileID: 4969454257308086452, guid: bcf031039af151f46943cc7612d1c01c, type: 3}
   - {fileID: -4245433558376564326, guid: 98dd07d6632832b46891cdffa555addc, type: 3}
   - {fileID: 6152891442740889776, guid: 33207108767c96547a28e65d1735e64b, type: 3}
   - {fileID: -4118866993920120270, guid: a831b88d3f20d24419a91386719433f7, type: 3}
@@ -1664,6 +1664,8 @@ MonoBehaviour:
   - {fileID: -751031475646265869, guid: 6915d8568b69c0846b2dfe978ba1416d, type: 3}
   - {fileID: -7072834136476674208, guid: 7d7b881a1b55d4f418d96b59eba8ea65, type: 3}
   - {fileID: -7033011835006541422, guid: ca070e75a4dcad9469979e80dab5517b, type: 3}
+  - {fileID: 8451784817861510027, guid: 48b81d70b759522408e0c87e56d486df, type: 3}
+  - {fileID: -4412434034099939799, guid: 3b36d40b0b4240e4a8078d924f94fd03, type: 3}
   CanvasWithFader: {fileID: 195058046}
   chacacterImages:
   - {fileID: 417578238}
@@ -4782,7 +4784,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -339.25, y: -89.36}
+  m_AnchoredPosition: {x: -328, y: -99}
   m_SizeDelta: {x: 1430.21, y: 268.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3292657646712517803
@@ -4817,14 +4819,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.2509804}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -4210340406916365396, guid: 59c6f879ea146914fb0b3572516b0349, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5237,7 +5239,7 @@ MonoBehaviour:
   dialogueViews:
   - {fileID: 7778558435014588591}
   - {fileID: 3292657646789709147}
-  startNode: test
+  startNode: Scene1
   startAutomatically: 1
   runSelectedOptionAsLine: 0
   lineProvider: {fileID: 0}
