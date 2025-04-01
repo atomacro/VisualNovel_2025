@@ -44,7 +44,8 @@
 
 title: Scene1
 ---
-
+<<declare $chapterNumber to "1">>
+<<declare $chapterTitle to "Casus">>
 <<setNextNode Skip "Scene2">>
 <<movecharacter SceneManager Character_1 0 0>>
 <<movecharacter SceneManager Character_2 0 0>>
