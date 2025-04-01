@@ -3,20 +3,28 @@ using UnityEngine.UI;
 using Yarn.Unity;
 using System.Collections;
 using System.Collections.Generic;
-
+using VisualNovel_2025;
+using UnityEngine.SceneManagement;
+using System.Linq;
 public class SceneManager : MonoBehaviour
 {
     public VariableStorageBehaviour yarnVariableStorage;
     [SerializeField] private Image backgroundImage; // Reference to the Image component
-    [SerializeField] private Sprite[] backgroundSprites; // Array of background images
+    private Sprite[] backgroundSprites; // Array of background images
     [SerializeField] private GameObject CanvasWithFader; // Reference to the CanvasFader component
 
     [SerializeField] private Image[] chacacterImages;
-    [SerializeField] private Sprite[] characterSprites;
+    private Sprite[] characterSprites;
     [SerializeField] private AudioSource[] audioObjects;
     [SerializeField] private GameObject[] audioSources;
 
-
+    private void Start()
+    {
+        HelperClass helper = new HelperClass();
+        Scene Utilities = UnityEngine.SceneManagement.SceneManager.GetSceneByName("Utilities");
+        GameObject BackgroundAndSprites = helper.GetGameObjectFromAnotherScene("BackgroundAndSprites", Utilities);
+        backgroundSprites = BackgroundAndSprites.GetComponent<Backgrounds>().backgroundSprites.ToArray();
+    }
     public Sprite GetBackgroundByName(string imageName)
     {
         return SearchArray(backgroundSprites, imageName);
@@ -284,11 +292,33 @@ public class SceneManager : MonoBehaviour
 
     public string GetCurrentBackground()
     {
+        // Debug.Log("Background: " + backgroundImage.sprite.name);
+        // return backgroundImage != null ? backgroundImage.sprite.name : "";
+
+        if (backgroundImage == null)
+        {
+            Debug.LogError("backgroundImage is NULL!");
+            return "";
+        }
+
+        if (backgroundImage.sprite == null)
+        {
+            Debug.LogError("backgroundImage.sprite is NULL!");
+            return "";
+        }
+
+        Debug.Log("Background: " + backgroundImage.sprite.name);
         return backgroundImage.sprite.name;
     }
 
     public string GetYarnVariable(string variableName)
     {
+        if (yarnVariableStorage == null)
+        {
+            Debug.LogWarning("YarnVariableStorage is not assigned!");
+            return null;
+        }
+
         if (yarnVariableStorage.TryGetValue(variableName, out string stringValue))
         {
             return stringValue;
@@ -297,4 +327,5 @@ public class SceneManager : MonoBehaviour
         Debug.LogWarning($"Yarn variable {variableName} not found.");
         return null;
     }
+
 }
