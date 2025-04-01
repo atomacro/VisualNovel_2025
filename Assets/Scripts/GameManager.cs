@@ -1,6 +1,9 @@
 using UnityEngine;
 using Yarn.Unity;
 using System.Collections.Generic;
+using System.Collections;
+using UnityEngine.SceneManagement;
+using VisualNovel_2025;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +18,8 @@ public class GameManager : MonoBehaviour
     private OptionsListView optionsListView => optionsListViewObject.gameObject.GetComponent<OptionsListView>();
     private DialogueRunner dialogueRunner => dialogueRunnerObject.gameObject.GetComponent<DialogueRunner>();
     private CanvasGroup optionsListViewCanvavGroup => optionsListViewObject.gameObject.GetComponent<CanvasGroup>();
+
+    private Pagination pagination;
 
     private bool isLogged = false;
 
@@ -47,9 +52,43 @@ public class GameManager : MonoBehaviour
             isLogged = Dialogues.FindIndex(x => x == lineView.lineText.text) != -1;
         }
     }
+
+    private IEnumerator StartDialogueAfterDelay()
+    {
+        // Wait a frame to ensure DialogueRunner is initialized
+        yield return null;
+
+        string startNode = "Scene1";
+
+        if (PlayerPrefs.HasKey("LoadScene"))
+        {
+            startNode = PlayerPrefs.GetString("LoadScene", "Scene1");
+            PlayerPrefs.SetString("LoadScene", "Scene1");
+            PlayerPrefs.Save();
+        }
+
+
+        // Double-check that the DialogueRunner has nodes loaded
+        if (dialogueRunner.NodeExists(startNode))
+        {
+            dialogueRunner.Stop();
+            dialogueRunner.StartDialogue(startNode);
+        }
+    }
     private void Start()
     {
         lineView.typewriterEffectSpeed = PlayerPrefs.GetFloat("TextSpeed", 50);
         canvasFader.FadeIn(3f);
+        StartCoroutine(StartDialogueAfterDelay());
+        HelperClass helper = new HelperClass();
+        Scene Utility = UnityEngine.SceneManagement.SceneManager.GetSceneByName("Utilities");
+        GameObject gallery = helper.GetGameObjectFromAnotherScene("Gallery", Utility);
+        GameObject pagination = helper.GetChildGameObject("Pagination", gallery);
+        this.pagination = pagination.GetComponent<Pagination>();
+    }
+
+    private void Awake()
+    {
+        dialogueRunner.AddCommandHandler<string>("setbackgroundtrue", (name) => this.pagination.SetBackgroundValueTrue(name));
     }
 }

@@ -44,13 +44,6 @@
 
 title: Scene1
 ---
-<<change SceneManager Cliffside_0>>
-
-/// The chapter number.
-<<declare $chapterNumber = "1">>
-
-/// The chapter title.
-<<declare $chapterTitle = "Sol et Luna">>
 
 <<setNextNode Skip "Scene2">>
 <<movecharacter SceneManager Character_1 0 0>>
@@ -87,6 +80,8 @@ I look around.
 
 Luna: "..."
 
+<<changefade SceneManager Cliffside_0 1.0>>
+<<setbackgroundtrue "Cliffside_0">>
 This might be it.
 
 I can feel it. #choice
