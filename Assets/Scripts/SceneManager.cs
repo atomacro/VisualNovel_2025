@@ -224,6 +224,7 @@ public class SceneManager : MonoBehaviour
         characterImage.enabled = true;
     }
 
+
     [YarnCommand("changeaudio")]
     public void ChangeAudio(string audioType, string audioName)
     {
@@ -235,7 +236,7 @@ public class SceneManager : MonoBehaviour
         }
     }
     [YarnCommand("playaudio")]
-    public void PlayAudio(string audioType, float volume, bool loop = false)
+    public void PlayAudio(string audioType, bool loop = false)
     {
         GameObject audioObject = SearchArray(audioObjects, audioType);
         AudioSource audioSource = audioObject.GetComponent<AudioSource>();
@@ -243,7 +244,6 @@ public class SceneManager : MonoBehaviour
         {
             audioSource.loop = loop;
             audioSource.Play();
-            audioSource.volume = volume;
         }
     }
 
@@ -281,16 +281,24 @@ public class SceneManager : MonoBehaviour
     }
 
     [YarnCommand("fadeaudio")]
-    public void FadeAudio(string audioType, float targetVolume, float fadeDuration, float startVolume = 1f, bool stopAfterFade = false)
+    public void FadeAudio(string audioType, float fadeDuration, bool isFadeIn = false)
     {
+        float defaultAudio = PlayerPrefs.GetFloat("MusicVolume", 0);
         GameObject audioObject = SearchArray(audioObjects, audioType);
         AudioSource audioSource = audioObject.GetComponent<AudioSource>();
+        float targetVolume = isFadeIn ? defaultAudio : 0;
+        float startVolume = isFadeIn ? 0 : defaultAudio;
+
+        if (audioSource.isPlaying == false)
+        {
+            audioSource.Play();
+        }
         if (audioSource != null)
         {
-            StartCoroutine(FadeAudioVolume(audioSource, targetVolume, fadeDuration, startVolume, stopAfterFade));
+            StartCoroutine(FadeAudioVolume(audioSource, targetVolume, fadeDuration, startVolume));
         }
     }
-    private IEnumerator FadeAudioVolume(AudioSource audioSource, float targetVolume, float duration, float startVol, bool stopAfterFade)
+    private IEnumerator FadeAudioVolume(AudioSource audioSource, float targetVolume, float duration, float startVol)
     {
         float startVolume = startVol;
 
@@ -300,10 +308,6 @@ public class SceneManager : MonoBehaviour
             yield return null;
         }
         audioSource.volume = targetVolume;
-        if (stopAfterFade && targetVolume == 0)
-        {
-            audioSource.Stop();
-        }
     }
 
     public string GetCurrentBackground()

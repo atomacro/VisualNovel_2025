@@ -9,7 +9,7 @@ public class Hover : MonoBehaviour
     [SerializeField] private GameObject background;
     [SerializeField] private GameObject text;
     private HelperClass helper = new HelperClass();
-    private Scene Utilities;
+    private Scene Utilities => UnityEngine.SceneManagement.SceneManager.GetSceneByName("Utilities");
 
     private Image backgroundImage;
     private TextMeshProUGUI textMeshPro;

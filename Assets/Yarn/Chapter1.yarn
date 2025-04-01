@@ -25,12 +25,12 @@
 
 
 //>> audio commands
-//<<playaudio SceneManager Music1 1.0>> -> play audio with fade
-//<<stopaudio SceneManager Music1 1.0>> -> stop audio with fade
-//<<pauseaudio SceneManager Music1 1.0>> -> pause audio with fade
-//<<resumeaudio SceneManager Music1 1.0>> -> resume audio with fade
-//<<fadeaudio SceneManager Music1 0 2 false> -> fade audio, 0 is the target volume, 2 is the duration, false is whether to stop the audio after fading
-
+//<<playaudio SceneManager Music1>> -> play audio 
+//<<stopaudio SceneManager Music1>> -> stop audio
+//<<pauseaudio SceneManager Music1>> -> pause audio
+//<<resumeaudio SceneManager Music1>> -> resume audio
+//<<fadeaudio SceneManager Music1 2 true false> -> fade audio, 0 is the target volume, 2 is the duration, true isFadeIn, false is whether to stop the audio after fading
+//changeaudio SceneManager BackgroundMusic one_sunny_afternoon> -> change audio, one_sunny_afternoon is the name of the audio file
 
 //tests
 
@@ -99,8 +99,7 @@ I open my eyes.
 <<changefade SceneManager chap1_falling_from_the_sky_0 1.5>>
 <<setbackgroundtrue chap1_falling_from_the_sky_0>>
 <<changeaudio SceneManager BackgroundMusic one_sunny_afternoon>>
-<<playaudio SceneManager BackgroundMusic 0>>
-<<fadeaudio SceneManager BackgroundMusic 1.0 1.5 0 false>>
+<<fadeaudio SceneManager BackgroundMusic 3 true>>
 
 Luna: "Wha-?!"
 
@@ -178,7 +177,7 @@ Luna: “I jumped off a cliff.”
 <<changecharacter SceneManager Character_2 sol_happy_0>>
 
 ?: “Funny. There’s no cliff nearby.”
-<<fadeaudio SceneManager BackgroundMusic 0 3 1 true>>
+<<fadeaudio SceneManager BackgroundMusic 3 false>>
 <<changecharacter SceneManager Character_1 luna_pissed_0>>
 
 Luna: “You haven’t even asked for my name yet.”
@@ -275,8 +274,11 @@ Sol: “What are you spacing out for?”
 
 Another weird thing is, this all looks too familiar.
 
+<<changeaudio SceneManager BackgroundMusic LOOP_take_it_easy>>
+<<fadeaudio SceneManager BackgroundMusic 3 true>>
 Sol: “If you think this looks familiar, I told you earlier.”
 Sol: “This whole world is for you! We’ll find you within you.”
+
 
 Luna: “I don’t think that’s important right now.”
 
@@ -329,6 +331,7 @@ Luna: “I’m not interested.”
 
 
 Sol: “Please just hear me out, I really do want to help you.”
+<<fadeaudio SceneManager BackgroundMusic 3 false>>
 
 Luna: “Mom said I shouldn’t talk to strangers. I’ll get in trouble if she sees me, especially with a boy.”
 
@@ -341,12 +344,14 @@ Sol: “Come on, I know a place where we can talk.”
 <<changefade SceneManager Cafe_Exterior_Morning_0 1>>
 <<setbackgroundtrue Cafe_Exterior_0>>
 
+
 <<wait 1.5>>
 // BG: Cafe Diner
 ==Cafe Diner==
 
 Luna: “Isn’t this a little expensive?”
-
+<<changeaudio SceneManager BackgroundMusic LOOP_Green_Cafe>>
+<<fadeaudio SceneManager BackgroundMusic 3 true>>
 Sol: “My treat! Get whatever you want.”
 
 Luna: “...Okay.”
@@ -424,6 +429,7 @@ Sol went to the counter and started ordering.
 
 I looked for a table away from other people then took a seat.
 
+<<fadeaudio SceneManager BackgroundMusic 3 false>>
 Normally, at times like these, people would stare at me with judgmental eyes.
 
 There was a hanging TV near the counter. It’s playing some kind of trivia about how the method of parenting affects a child.
@@ -465,6 +471,7 @@ There was a short silence between us. It seemed like Sol didn’t know what to s
 <<changecharacter SceneManager Character_1 luna_pissed_0>>
 <<changecharacter SceneManager Character_2 sol_tense_0>>
 
+<<fadeaudio SceneManager BackgroundMusic 3 true>>
 Luna: “When are we eating?”
 
 Sol: “They’re still preparing the food. It’ll come soon, don’t worry.”
@@ -573,7 +580,7 @@ This is… alright.
 TV: “--around 8PM wearing orange shorts by the gas station located near the outskirts. The mother has stated that it has been 2 days since they went missing. If you have any informa..."
 
 <<changecharacter SceneManager Character_1 luna_neutral_0>>
-
+<<fadeaudio SceneManager BackgroundMusic 3 false>>
 I’m not familiar with this environment.
 
 Besides that, I can see myself. It feels like I’m in some sort of story book.

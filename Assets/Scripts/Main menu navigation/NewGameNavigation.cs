@@ -1,11 +1,22 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using VisualNovel_2025;
 
 public class NewGameNavigation : MonoBehaviour
 {
 
     [SerializeField] private CanvasFader fader;
+    [SerializeField] private AudioClip newGameClip;
+    private Scene Utilities => UnityEngine.SceneManagement.SceneManager.GetSceneByName("Utilities");
+    private HelperClass helper = new HelperClass();
+
+    public void onClick()
+    {
+        AudioSource UISounds = helper.GetGameObjectFromAnotherScene("UISounds", Utilities).GetComponent<AudioSource>();
+        UISounds.clip = newGameClip;
+        UISounds.Play();
+    }
     public void NewGame()
     {
         PlayerPrefs.SetString("LoadScene", "Scene1");

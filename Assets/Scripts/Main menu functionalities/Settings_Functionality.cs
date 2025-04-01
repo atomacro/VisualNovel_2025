@@ -28,7 +28,7 @@ public class Settings_Functionality : MonoBehaviour
 
     private GameObject lineView;
     private LineView lineViewScript;
-    private Dictionary<string, int> PreviousSettings = new Dictionary<string, int>();
+    private Dictionary<string, float> PreviousSettings = new Dictionary<string, float>();
     private Dictionary<string, int> DefaultSettings = new Dictionary<string, int>();
     private HelperClass helper = new HelperClass();
 
@@ -40,16 +40,16 @@ public class Settings_Functionality : MonoBehaviour
         textSpeedSlider.value = PlayerPrefs.GetFloat("TextSpeed", 50);
 
 
-        PreviousSettings["MasterVolume"] = PlayerPrefs.GetInt("MasterVolume", 1);
-        PreviousSettings["MusicVolume"] = PlayerPrefs.GetInt("MusicVolume", 1);
-        PreviousSettings["SFXVolume"] = PlayerPrefs.GetInt("SFXVolume", 1);
-        PreviousSettings["TextSpeed"] = PlayerPrefs.GetInt("TextSpeed", 50);
-        PreviousSettings["FullScreen"] = PlayerPrefs.GetInt("FullScreen", 1);
-        PreviousSettings["ScreenWidth"] = PlayerPrefs.GetInt("ScreenWidth", Screen.currentResolution.width);
-        PreviousSettings["ScreenHeight"] = PlayerPrefs.GetInt("ScreenHeight", Screen.currentResolution.height);
+        PreviousSettings["MasterVolume"] = PlayerPrefs.GetFloat("MasterVolume", 1);
+        PreviousSettings["MusicVolume"] = PlayerPrefs.GetFloat("MusicVolume", 1);
+        PreviousSettings["SFXVolume"] = PlayerPrefs.GetFloat("SFXVolume", 1);
+        PreviousSettings["TextSpeed"] = PlayerPrefs.GetFloat("TextSpeed", 50);
+        PreviousSettings["FullScreen"] = PlayerPrefs.GetFloat("FullScreen", 1);
+        PreviousSettings["ScreenWidth"] = PlayerPrefs.GetFloat("ScreenWidth", Screen.currentResolution.width);
+        PreviousSettings["ScreenHeight"] = PlayerPrefs.GetFloat("ScreenHeight", Screen.currentResolution.height);
 
-        int savedWidth = PlayerPrefs.GetInt("ScreenWidth", Screen.currentResolution.width);
-        int savedHeight = PlayerPrefs.GetInt("ScreenHeight", Screen.currentResolution.height);
+        int savedWidth = (int)PlayerPrefs.GetFloat("ScreenWidth", Screen.currentResolution.width);
+        int savedHeight = (int)PlayerPrefs.GetFloat("ScreenHeight", Screen.currentResolution.height);
         foreach (var toggle in resolutionToggleGroup.GetComponentsInChildren<Toggle>())
         {
             string toggleText = toggle.GetComponentInChildren<TextMeshProUGUI>().text;
@@ -63,7 +63,7 @@ public class Settings_Functionality : MonoBehaviour
             }
         }
 
-        bool isFullScreen = PlayerPrefs.GetInt("FullScreen", 1) == 1;
+        bool isFullScreen = PlayerPrefs.GetFloat("FullScreen", 1) == 1;
         Toggle[] toggles = fullScreenToggleGroup.GetComponentsInChildren<Toggle>();
         toggles[0].isOn = isFullScreen;
         toggles[1].isOn = !isFullScreen;
@@ -97,7 +97,7 @@ public class Settings_Functionality : MonoBehaviour
         }
         foreach (var item in DefaultSettings)
         {
-            PreviousSettings[item.Key] = PlayerPrefs.GetInt(item.Key, item.Value);
+            PreviousSettings[item.Key] = PlayerPrefs.GetFloat(item.Key, item.Value);
         }
         Debug.Log(lineView == null);
     }
@@ -139,7 +139,7 @@ public class Settings_Functionality : MonoBehaviour
         //initialize previous settings
         foreach (var item in DefaultSettings)
         {
-            PreviousSettings[item.Key] = PlayerPrefs.GetInt(item.Key, item.Value);
+            PreviousSettings[item.Key] = PlayerPrefs.GetFloat(item.Key, item.Value);
         }
     }
     private void OnMasterVolumeChanged(float value)
@@ -175,7 +175,7 @@ public class Settings_Functionality : MonoBehaviour
             bool isFullScreen = fullScreenString == "Fullscreen Mode";
             Screen.fullScreen = isFullScreen;
             Debug.Log("Full Screen changed: " + isFullScreen);
-            PlayerPrefs.SetInt("FullScreen", isFullScreen ? 1 : 0);
+            PlayerPrefs.SetFloat("FullScreen", isFullScreen ? 1 : 0);
         }
     }
     private void OnResolutionToggleChanged(bool isOn)
@@ -189,8 +189,8 @@ public class Settings_Functionality : MonoBehaviour
             int height = int.Parse(resolutionValues[1]);
             Screen.SetResolution(width, height, Screen.fullScreen);
             Debug.Log("Resolution changed: " + width + "x" + height);
-            PlayerPrefs.SetInt("ScreenWidth", width);
-            PlayerPrefs.SetInt("ScreenHeight", height);
+            PlayerPrefs.SetFloat("ScreenWidth", width);
+            PlayerPrefs.SetFloat("ScreenHeight", height);
         }
     }
 
@@ -220,7 +220,7 @@ public class Settings_Functionality : MonoBehaviour
     {
         foreach (var item in PreviousSettings)
         {
-            if (PlayerPrefs.GetInt(item.Key, 0) != item.Value)
+            if (PlayerPrefs.GetFloat(item.Key, 0) != item.Value)
             {
                 return true;
             }
@@ -233,7 +233,7 @@ public class Settings_Functionality : MonoBehaviour
         List<string> changedSettings = new List<string>();
         foreach (var item in PreviousSettings)
         {
-            if (PlayerPrefs.GetInt(item.Key, 0) != item.Value)
+            if (PlayerPrefs.GetFloat(item.Key, 0) != item.Value)
             {
                 changedSettings.Add(item.Key);
             }
@@ -246,7 +246,7 @@ public class Settings_Functionality : MonoBehaviour
         string[] changedSettings = getChangedSettings();
         foreach (var setting in changedSettings)
         {
-            PlayerPrefs.SetInt(setting, PreviousSettings[setting]);
+            PlayerPrefs.SetFloat(setting, PreviousSettings[setting]);
             Debug.Log(setting + PreviousSettings[setting]);
             if (setting == "TextSpeed")
             {
@@ -261,7 +261,7 @@ public class Settings_Functionality : MonoBehaviour
             }
             if (setting == "ScreenWidth" || setting == "ScreenHeight")
             {
-                Screen.SetResolution(PreviousSettings["ScreenWidth"], PreviousSettings["ScreenHeight"], Screen.fullScreen);
+                Screen.SetResolution((int)PreviousSettings["ScreenWidth"], (int)PreviousSettings["ScreenHeight"], Screen.fullScreen);
             }
             if (setting == "MasterVolume" || setting == "MusicVolume" || setting == "SFXVolume")
             {
@@ -290,11 +290,11 @@ public class Settings_Functionality : MonoBehaviour
             }
             if (setting == "FullScreen")
             {
-                Screen.fullScreen = PlayerPrefs.GetInt("ScreenWidth", 1) == 1;
+                Screen.fullScreen = PlayerPrefs.GetFloat("ScreenWidth", 1) == 1;
             }
             if (setting == "ScreenWidth" || setting == "ScreenHeight")
             {
-                Screen.SetResolution(PlayerPrefs.GetInt("ScreenWidth", 1920), PlayerPrefs.GetInt("ScreenHeight", 1080), Screen.fullScreen);
+                Screen.SetResolution((int)PlayerPrefs.GetFloat("ScreenWidth", 1920), (int)PlayerPrefs.GetFloat("ScreenHeight", 1080), Screen.fullScreen);
             }
             if (setting == "MasterVolume" || setting == "MusicVolume" || setting == "SFXVolume")
             {
@@ -302,7 +302,7 @@ public class Settings_Functionality : MonoBehaviour
                 SoundEffects.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("MasterVolume", 1) * PlayerPrefs.GetFloat("SFXVolume", 1);
                 UISounds.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("MasterVolume", 1);
             }
-            PreviousSettings[setting] = PlayerPrefs.GetInt(setting, 0);
+            PreviousSettings[setting] = PlayerPrefs.GetFloat(setting, 0);
         }
         PlayerPrefs.Save();
     }
@@ -311,14 +311,14 @@ public class Settings_Functionality : MonoBehaviour
     {
         foreach (var item in DefaultSettings)
         {
-            PlayerPrefs.SetInt(item.Key, item.Value);
+            PlayerPrefs.SetFloat(item.Key, item.Value);
         }
         PlayerPrefs.Save();
         if (lineView != null)
         {
             lineViewScript.typewriterEffectSpeed = PreviousSettings["TextSpeed"];
         }
-        Screen.SetResolution(PreviousSettings["ScreenWidth"], DefaultSettings["ScreenHeight"], DefaultSettings["FullScreen"] == 1);
+        Screen.SetResolution((int)PreviousSettings["ScreenWidth"], (int)DefaultSettings["ScreenHeight"], (int)DefaultSettings["FullScreen"] == 1);
         BackgroundMusic.GetComponent<AudioSource>().volume = DefaultSettings["MasterVolume"] * DefaultSettings["MusicVolume"];
         SoundEffects.GetComponent<AudioSource>().volume = DefaultSettings["MasterVolume"] * DefaultSettings["SFXVolume"];
         UISounds.GetComponent<AudioSource>().volume = DefaultSettings["MasterVolume"];

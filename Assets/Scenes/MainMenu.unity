@@ -1047,6 +1047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fader: {fileID: 469361012}
+  newGameClip: {fileID: 8300000, guid: ce841a277d829a54cac138ca23ffaa8f, type: 3}
 --- !u!1 &362278371652582874
 GameObject:
   m_ObjectHideFlags: 0
@@ -3032,6 +3033,22 @@ MonoBehaviour:
         - m_Target: {fileID: 7427606535881722308}
           m_TargetAssemblyTypeName: MainMenuButtonHover, Assembly-CSharp
           m_MethodName: OnPointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 172478604508521107}
+          m_TargetAssemblyTypeName: NewGameNavigation, Assembly-CSharp
+          m_MethodName: onClick
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

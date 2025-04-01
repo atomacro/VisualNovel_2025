@@ -8,8 +8,7 @@ using System;
 using UnityEngine.SceneManagement;
 using VisualNovel_2025;
 using System.Collections.Generic;
-using System.Collections;
-using Unity.VisualScripting;
+
 
 public class Save_Functionality : MonoBehaviour
 {
@@ -26,6 +25,7 @@ public class Save_Functionality : MonoBehaviour
     [SerializeField] private bool isSaveScreen;
     [SerializeField] private GameObject menuPanel;
     [SerializeField] private GameObject confirmationModalPrefab;
+    [SerializeField] private AudioClip newGameClip;
 
     private SceneManager sceneManager;
     private GameManager gameManager;
@@ -33,6 +33,7 @@ public class Save_Functionality : MonoBehaviour
     private DialogueRunner dialogueRunner;
     private Scene MainScene;
     private Scene MainMenu;
+    private Scene Utilities => UnityEngine.SceneManagement.SceneManager.GetSceneByName("Utilities");
 
     private HelperClass helper = new HelperClass();
 
@@ -179,6 +180,10 @@ public class Save_Functionality : MonoBehaviour
 
     private void LoadGame(int slotNumber)
     {
+
+        AudioSource UISounds = helper.GetGameObjectFromAnotherScene("UISounds", Utilities).GetComponent<AudioSource>();
+        UISounds.clip = newGameClip;
+        UISounds.Play();
 
         string filePath = GetSaveFilePath(slotNumber);
         Debug.Log("Loading game slot: " + slotNumber);

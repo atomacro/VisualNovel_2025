@@ -1593,6 +1593,7 @@ MonoBehaviour:
   isSaveScreen: 0
   menuPanel: {fileID: 1145672914}
   confirmationModalPrefab: {fileID: 0}
+  newGameClip: {fileID: 0}
 --- !u!114 &418928922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2688,6 +2689,7 @@ MonoBehaviour:
   textMeshPro: {fileID: 506915054}
   isMainMenu: 0
   hoverClip: {fileID: 0}
+  clickClip: {fileID: 0}
 --- !u!114 &619772075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3382,6 +3384,7 @@ MonoBehaviour:
   isSaveScreen: 0
   menuPanel: {fileID: 0}
   confirmationModalPrefab: {fileID: 0}
+  newGameClip: {fileID: 0}
 --- !u!1 &770566765
 GameObject:
   m_ObjectHideFlags: 0
@@ -3670,6 +3673,7 @@ MonoBehaviour:
   textMeshPro: {fileID: 1389187164}
   isMainMenu: 0
   hoverClip: {fileID: 0}
+  clickClip: {fileID: 0}
 --- !u!114 &777227650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4942,6 +4946,7 @@ MonoBehaviour:
   isSaveScreen: 0
   menuPanel: {fileID: 1145672914}
   confirmationModalPrefab: {fileID: 0}
+  newGameClip: {fileID: 0}
 --- !u!114 &1017466257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5270,6 +5275,7 @@ MonoBehaviour:
   isSaveScreen: 1
   menuPanel: {fileID: 1031014551}
   confirmationModalPrefab: {fileID: 6380497512061056090, guid: b9e657183832db344a982f6cf80bc321, type: 3}
+  newGameClip: {fileID: 0}
 --- !u!1 &1053730731
 GameObject:
   m_ObjectHideFlags: 0
@@ -5700,6 +5706,7 @@ MonoBehaviour:
   textMeshPro: {fileID: 1231054674}
   isMainMenu: 0
   hoverClip: {fileID: 0}
+  clickClip: {fileID: 0}
 --- !u!114 &1131376841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5973,6 +5980,7 @@ MonoBehaviour:
   isSaveScreen: 0
   menuPanel: {fileID: 1145672914}
   confirmationModalPrefab: {fileID: 6380497512061056090, guid: b9e657183832db344a982f6cf80bc321, type: 3}
+  newGameClip: {fileID: 8300000, guid: ce841a277d829a54cac138ca23ffaa8f, type: 3}
 --- !u!1 &1153513266
 GameObject:
   m_ObjectHideFlags: 0
@@ -7783,6 +7791,7 @@ MonoBehaviour:
   isSaveScreen: 0
   menuPanel: {fileID: 1145672914}
   confirmationModalPrefab: {fileID: 0}
+  newGameClip: {fileID: 0}
 --- !u!114 &1404173425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9519,6 +9528,7 @@ MonoBehaviour:
   isSaveScreen: 0
   menuPanel: {fileID: 1145672914}
   confirmationModalPrefab: {fileID: 0}
+  newGameClip: {fileID: 0}
 --- !u!114 &1654379615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9938,6 +9948,7 @@ MonoBehaviour:
   isSaveScreen: 0
   menuPanel: {fileID: 1145672914}
   confirmationModalPrefab: {fileID: 0}
+  newGameClip: {fileID: 0}
 --- !u!114 &1820713033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10911,6 +10922,7 @@ MonoBehaviour:
   isSaveScreen: 0
   menuPanel: {fileID: 1145672914}
   confirmationModalPrefab: {fileID: 0}
+  newGameClip: {fileID: 0}
 --- !u!1 &2010241816
 GameObject:
   m_ObjectHideFlags: 0
@@ -11211,6 +11223,7 @@ MonoBehaviour:
   isSaveScreen: 0
   menuPanel: {fileID: 0}
   confirmationModalPrefab: {fileID: 0}
+  newGameClip: {fileID: 0}
 --- !u!114 &2083706474
 MonoBehaviour:
   m_ObjectHideFlags: 0
