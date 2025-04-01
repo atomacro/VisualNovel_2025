@@ -10,21 +10,15 @@ public class SceneManager : MonoBehaviour
 {
     public VariableStorageBehaviour yarnVariableStorage;
     [SerializeField] private Image backgroundImage; // Reference to the Image component
-    private Sprite[] backgroundSprites; // Array of background images
+    [SerializeField] private Sprite[] backgroundSprites; // Array of background images
     [SerializeField] private GameObject CanvasWithFader; // Reference to the CanvasFader component
 
-    [SerializeField] private Image[] chacacterImages;
-    private Sprite[] characterSprites;
+    [SerializeField] private Image[] characterImages;
+    [SerializeField] private Sprite[] characterSprites;
     [SerializeField] private AudioSource[] audioObjects;
     [SerializeField] private GameObject[] audioSources;
 
-    private void Start()
-    {
-        HelperClass helper = new HelperClass();
-        Scene Utilities = UnityEngine.SceneManagement.SceneManager.GetSceneByName("Utilities");
-        GameObject BackgroundAndSprites = helper.GetGameObjectFromAnotherScene("BackgroundAndSprites", Utilities);
-        backgroundSprites = BackgroundAndSprites.GetComponent<Backgrounds>().backgroundSprites.ToArray();
-    }
+
     public Sprite GetBackgroundByName(string imageName)
     {
         return SearchArray(backgroundSprites, imageName);
@@ -39,6 +33,7 @@ public class SceneManager : MonoBehaviour
                 return element;
             }
         }
+        Debug.LogError("name " + array == null);
         Debug.LogError($"Element with name '{name}' not found in array!");
         return null;
     }
@@ -92,7 +87,7 @@ public class SceneManager : MonoBehaviour
     public void ChangeCharacterImage(string characterObjectName, string imageName)
 
     {
-        Image characterImage = SearchArray(chacacterImages, characterObjectName);
+        Image characterImage = SearchArray(characterImages, characterObjectName);
         if (characterImage != null)
         {
             Sprite newImage = SearchArray(characterSprites, imageName);
@@ -108,7 +103,7 @@ public class SceneManager : MonoBehaviour
     [YarnCommand("changecharacterfade")]
     public void ChangeCharacterImageWithFade(string characterObjectName, string imageName, float fadeDuration)
     {
-        Image characterImage = SearchArray(chacacterImages, characterObjectName);
+        Image characterImage = SearchArray(characterImages, characterObjectName);
         if (characterImage != null)
         {
             Sprite newImage = SearchArray(characterSprites, imageName);
@@ -140,7 +135,7 @@ public class SceneManager : MonoBehaviour
     [YarnCommand("movecharacter")]
     public void MoveCharacterImage(string characterName, float x, float y, float scaleX = 1f, float scaleY = 1f)
     {
-        Image characterImage = SearchArray(chacacterImages, characterName);
+        Image characterImage = SearchArray(characterImages, characterName);
         if (characterImage != null)
         {
             RectTransform rectTransform = characterImage.GetComponent<RectTransform>();
@@ -152,7 +147,7 @@ public class SceneManager : MonoBehaviour
     [YarnCommand("showcharacter")]
     public void ShowCharacterImage(string characterName)
     {
-        Image characterImage = SearchArray(chacacterImages, characterName);
+        Image characterImage = SearchArray(characterImages, characterName);
         if (characterImage != null)
         {
             characterImage.enabled = true;
@@ -163,7 +158,7 @@ public class SceneManager : MonoBehaviour
     [YarnCommand("showcharacterfade")]
     public void ShowCharacterImageWithFade(string characterName, float fadeDuration)
     {
-        Image characterImage = SearchArray(chacacterImages, characterName);
+        Image characterImage = SearchArray(characterImages, characterName);
         if (characterImage != null)
         {
             CanvasFader fader = characterImage.GetComponent<CanvasFader>();
@@ -182,7 +177,7 @@ public class SceneManager : MonoBehaviour
     [YarnCommand("hidecharacter")]
     public void HideCharacterImage(string characterName)
     {
-        Image characterImage = SearchArray(chacacterImages, characterName);
+        Image characterImage = SearchArray(characterImages, characterName);
         if (characterImage != null)
         {
             characterImage.GetComponent<CanvasGroup>().alpha = 0;
@@ -194,7 +189,7 @@ public class SceneManager : MonoBehaviour
     [YarnCommand("hidecharacterfade")]
     public void HideCharacterImageWithFade(string characterName, float fadeDuration)
     {
-        Image characterImage = SearchArray(chacacterImages, characterName);
+        Image characterImage = SearchArray(characterImages, characterName);
         if (characterImage != null)
         {
             CanvasFader fader = characterImage.GetComponent<CanvasFader>();

@@ -8,6 +8,8 @@ public class NewGameNavigation : MonoBehaviour
     [SerializeField] private CanvasFader fader;
     public void NewGame()
     {
+        PlayerPrefs.SetString("LoadScene", "Scene1");
+        PlayerPrefs.Save();
         StartCoroutine(LoadMainSceneAsync());
     }
 

@@ -1,24 +1,30 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
+using VisualNovel_2025;
+using UnityEngine.SceneManagement;
 
 public class MainMenuButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private TextMeshProUGUI textMeshPro; // Directly reference the text component
     [SerializeField] private bool isMainMenu = false;
-    private GameObject utilityLoader => GameObject.Find("UtilityLoader");
-    private UtilityLoader utilityLoaderScript => utilityLoader.GetComponent<UtilityLoader>();
     private AudioSource hoverSound;
     [SerializeField] private AudioClip hoverClip;
+    private HelperClass helper;
+
+    private Scene Utilities;
+
 
 
 
     private void Start()
     {
+        Utilities = UnityEngine.SceneManagement.SceneManager.GetSceneByName("Utilities");
+        helper = new HelperClass();
         textMeshPro.color = new Color32(255, 255, 225, 100); // Dim color
         if (isMainMenu)
         {
-            hoverSound = utilityLoaderScript.getGameObject("UISounds").GetComponent<AudioSource>();
+            hoverSound = helper.GetGameObjectFromAnotherScene("UISounds", Utilities).GetComponent<AudioSource>();
         }
 
     }

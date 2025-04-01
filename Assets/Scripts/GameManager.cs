@@ -59,7 +59,6 @@ public class GameManager : MonoBehaviour
         yield return null;
 
         string startNode = "Scene1";
-
         if (PlayerPrefs.HasKey("LoadScene"))
         {
             startNode = PlayerPrefs.GetString("LoadScene", "Scene1");
@@ -92,3 +91,24 @@ public class GameManager : MonoBehaviour
         dialogueRunner.AddCommandHandler<string>("setbackgroundtrue", (name) => this.pagination.SetBackgroundValueTrue(name));
     }
 }
+// private void Awake()
+// {
+//     // string startNode = "";
+//     // if (PlayerPrefs.HasKey("LoadScene"))
+//     // {
+//     //     startNode = PlayerPrefs.GetString("LoadScene", "Scene1");
+//     //     PlayerPrefs.DeleteKey("LoadScene");
+//     //     PlayerPrefs.Save();
+//     // }
+//     // else
+//     // {
+//     //     startNode = "Scene1";
+//     // }
+
+//     // dialogueRunner.Stop();
+//     // dialogueRunner.StartDialogue(startNode);
+
+// }
+
+
+

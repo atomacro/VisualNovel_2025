@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 using VisualNovel_2025;
 using System.Collections.Generic;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class Save_Functionality : MonoBehaviour
 {
@@ -31,7 +32,8 @@ public class Save_Functionality : MonoBehaviour
 
     private DialogueRunner dialogueRunner;
     private Scene MainScene;
-    
+    private Scene MainMenu;
+
     private HelperClass helper = new HelperClass();
 
     [System.Serializable]
@@ -45,9 +47,11 @@ public class Save_Functionality : MonoBehaviour
         public List<string> dialogueLog;
     }
 
+
     private void OnEnable()
     {
         MainScene = UnityEngine.SceneManagement.SceneManager.GetSceneByName("MainScene");
+        MainMenu = UnityEngine.SceneManagement.SceneManager.GetSceneByName("MainMenu");
 
         if (MainScene.isLoaded)
         {
@@ -96,8 +100,9 @@ public class Save_Functionality : MonoBehaviour
 
             int slot = slotNumber;
 
-            saveSlotButtons[i].onClick.AddListener(() => {
-                if(isSaveScreen) SaveClicked(slot, fileExists);
+            saveSlotButtons[i].onClick.AddListener(() =>
+            {
+                if (isSaveScreen) SaveClicked(slot, fileExists);
                 else LoadGame(slot);
             });
         }
@@ -159,7 +164,7 @@ public class Save_Functionality : MonoBehaviour
     private void SaveClicked(int slotNumber, bool fileExists)
     {
         GameObject modal = Instantiate(confirmationModalPrefab);
-        if(fileExists)
+        if (fileExists)
         {
             ConfirmationModal confirmationModal = modal.GetComponent<ConfirmationModal>();
             confirmationModal.SetWarningMessage("There is already an existing save file in this slot.\n Would you like to overwrite this save?");
@@ -174,42 +179,43 @@ public class Save_Functionality : MonoBehaviour
 
     private void LoadGame(int slotNumber)
     {
+
+        string filePath = GetSaveFilePath(slotNumber);
+        Debug.Log("Loading game slot: " + slotNumber);
+
+        if (!File.Exists(filePath))
+        {
+            return;
+        }
+
+        Debug.Log("file exist");
         Debug.Log("Load scene");
 
 
-        if (!MainScene.isLoaded)
+        if (MainMenu.isLoaded)
         {
             Debug.Log("Loading Main Scene");
             UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("MainMenu");
-            // UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("Utilities");        
-            
-            UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("MainScene");
-            // StartCoroutine(LoadMainSceneAsync());            
+            UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("MainScene", LoadSceneMode.Additive);
+            menuPanel.SetActive(false);
         }
+
+        string json = File.ReadAllText(filePath);
+        SaveData saveData = JsonUtility.FromJson<SaveData>(json);
 
         if (dialogueRunner == null)
         {
-            Debug.Log("Null dialogrunner");
+            PlayerPrefs.SetString("LoadScene", saveData.currentNode);
+            PlayerPrefs.Save();
             return;
         }
 
         if (dialogueRunner.IsDialogueRunning) dialogueRunner.Stop();
-    
-        string filePath = GetSaveFilePath(slotNumber);
-
-        if (File.Exists(filePath))
-        {
-            Debug.Log("file exist");
-            string json = File.ReadAllText(filePath);
-            SaveData saveData = JsonUtility.FromJson<SaveData>(json);
-            PlayerPrefs.SetString("LoadScene", saveData.currentNode);
-            gameManager.setDialogueLog(saveData.dialogueLog);
-
-            dialogueRunner.StartDialogue(saveData.currentNode);
-            menuPanel.SetActive(false);
-        }
-        Debug.Log("Loading game slot: " + slotNumber);
+        gameManager.setDialogueLog(saveData.dialogueLog);
+        dialogueRunner.StartDialogue(saveData.currentNode);
+        menuPanel.SetActive(false);
     }
+
 
     string GetSaveFilePath(int slotNumber)
     {
