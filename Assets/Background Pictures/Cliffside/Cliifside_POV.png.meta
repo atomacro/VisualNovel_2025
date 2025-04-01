@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cliifside_POV_0
+      name: Cliffside_POV_0
       rect:
         serializedVersion: 2
         x: 0
@@ -121,7 +121,7 @@ TextureImporter:
         width: 2000
         height: 1417
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c664b7194414d284b8b0042faf1a2f39
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Cliifside_POV_0: -4119954993456633541
+      Cliffside_POV_0: -4119954993456633541
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
