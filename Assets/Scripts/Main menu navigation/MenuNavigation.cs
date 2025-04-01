@@ -1,21 +1,28 @@
-using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using VisualNovel_2025;
 
 public class MenuNavigation : MonoBehaviour
 {
     [SerializeField] private GameObject MenuPanel;
     [SerializeField] private bool isFromOtherScene = false;
     [SerializeField] private string objectName;
-    private UtilityLoader utilityLoader;
+    private Scene Utilities;
+    private HelperClass helper;
     private void Awake()
     {
+        if (helper == null)
+        {
+            helper = new HelperClass();
+        }
+        Utilities = UnityEngine.SceneManagement.SceneManager.GetSceneByName("Utilities");
+
+
         if (isFromOtherScene)
         {
-            utilityLoader = GameObject.Find("UtilityLoader").GetComponent<UtilityLoader>();
-            MenuPanel = utilityLoader.getGameObject(objectName);
+            MenuPanel = helper.GetGameObjectFromAnotherScene(objectName, Utilities);
         }
     }
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -27,7 +34,7 @@ public class MenuNavigation : MonoBehaviour
     {
         MenuPanel.SetActive(true);
     }
-    
+
     public void CloseMenu()
     {
         MenuPanel.SetActive(false);
