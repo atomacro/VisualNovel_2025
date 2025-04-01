@@ -3,18 +3,15 @@ using UnityEngine.SceneManagement;
 
 public class UtilityLoader : MonoBehaviour
 {
-    private Scene UtilityScene;
-    public void Awake()
+    private Scene UtilityScene => UnityEngine.SceneManagement.SceneManager.GetSceneByName("Utilities");
+    
+    public GameObject getGameObject(string gameObjectName)
     {
-        UtilityScene = UnityEngine.SceneManagement.SceneManager.GetSceneByName("Utilities");
-
         if (!UtilityScene.isLoaded)
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("Utilities", LoadSceneMode.Additive);
         }
-    }
-    public GameObject getGameObject(string gameObjectName)
-    {
+
         foreach (GameObject obj in UtilityScene.GetRootGameObjects())
         {
             if (obj.name == gameObjectName)

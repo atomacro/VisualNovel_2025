@@ -16,7 +16,6 @@ public class SceneManager : MonoBehaviour
     [SerializeField] private AudioSource[] audioObjects;
     [SerializeField] private GameObject[] audioSources;
 
-
     public Sprite GetBackgroundByName(string imageName)
     {
         return SearchArray(backgroundSprites, imageName);

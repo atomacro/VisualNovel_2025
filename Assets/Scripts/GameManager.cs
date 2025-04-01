@@ -1,10 +1,6 @@
 using UnityEngine;
-using Yarn;
 using Yarn.Unity;
 using System.Collections.Generic;
-using TMPro;
-using System;
-using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {

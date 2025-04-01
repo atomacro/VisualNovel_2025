@@ -8,6 +8,7 @@ using System;
 using UnityEngine.SceneManagement;
 using VisualNovel_2025;
 using System.Collections.Generic;
+using System.Collections;
 
 public class Save_Functionality : MonoBehaviour
 {
@@ -18,16 +19,19 @@ public class Save_Functionality : MonoBehaviour
     [SerializeField] private Image[] backgroundImages = new Image[6];
     [SerializeField] private TextMeshProUGUI[] chapterInfoTexts = new TextMeshProUGUI[6];
     [SerializeField] private TextMeshProUGUI[] dateSavedTexts = new TextMeshProUGUI[6];
+    [SerializeField] private Sprite[] backgroundSprites;
 
     [Header("Panel Elements")]
     [SerializeField] private bool isSaveScreen;
     [SerializeField] private GameObject menuPanel;
     [SerializeField] private GameObject confirmationModalPrefab;
+
+    private SceneManager sceneManager;
     private GameManager gameManager;
 
     private DialogueRunner dialogueRunner;
     private Scene MainScene;
-    private SceneManager sceneManager;
+    
     private HelperClass helper = new HelperClass();
 
     [System.Serializable]
@@ -61,6 +65,12 @@ public class Save_Functionality : MonoBehaviour
         {
             Debug.LogWarning("Main Scene not loaded.");
         }
+
+        for (int i = 0; i < saveSlotButtons.Length; i++)
+        {
+            saveSlotButtons[i].onClick.RemoveAllListeners();
+        }
+
         InitializeData(isSaveScreen);
     }
 
@@ -70,7 +80,7 @@ public class Save_Functionality : MonoBehaviour
         {
             int slotNumber = i + 1;
 
-            saveSlotButtons[i].onClick.RemoveAllListeners();
+            // saveSlotButtons[i].onClick.RemoveAllListeners();
 
             string filePath = GetSaveFilePath(i);
 
@@ -125,24 +135,11 @@ public class Save_Functionality : MonoBehaviour
 
     private Sprite LoadBackgroundImage(string backgroundPath)
     {
-        return sceneManager.GetBackgroundByName(backgroundPath);
+        return GetBackgroundByName(backgroundPath);
     }
 
     private void SaveGame(int slotNumber, GameObject confirmationModal)
     {
-        if (dialogueRunner == null)
-        {
-            Debug.LogWarning("SAVE ERROR: No dialoguerunner");
-            return;
-        }
-
-        if (sceneManager == null)
-        {
-            Debug.LogError("SceneManager is NULL! Make sure it's assigned.");
-            return;
-        }
-
-
         SaveData saveData = new SaveData();
         // Save the data
         saveData.currentNode = dialogueRunner.CurrentNodeName;
@@ -167,7 +164,6 @@ public class Save_Functionality : MonoBehaviour
             ConfirmationModal confirmationModal = modal.GetComponent<ConfirmationModal>();
             confirmationModal.SetWarningMessage("There is already an existing save file in this slot.\n Would you like to overwrite this save?");
             confirmationModal.OnConfirmAction.AddListener(() => SaveGame(slotNumber, modal));
-
             confirmationModal.OnCancelAction.AddListener(() => Destroy(modal));
         }
         else
@@ -178,8 +174,22 @@ public class Save_Functionality : MonoBehaviour
 
     private void LoadGame(int slotNumber)
     {
+        Debug.Log("Load scene");
+
+
+        if (!MainScene.isLoaded)
+        {
+            Debug.Log("Loading Main Scene");
+            UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("MainMenu");
+            // UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("Utilities");        
+            
+            UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("MainScene");
+            // StartCoroutine(LoadMainSceneAsync());            
+        }
+
         if (dialogueRunner == null)
         {
+            Debug.Log("Null dialogrunner");
             return;
         }
 
@@ -189,14 +199,16 @@ public class Save_Functionality : MonoBehaviour
 
         if (File.Exists(filePath))
         {
+            Debug.Log("file exist");
             string json = File.ReadAllText(filePath);
             SaveData saveData = JsonUtility.FromJson<SaveData>(json);
+            PlayerPrefs.SetString("LoadScene", saveData.currentNode);
             gameManager.setDialogueLog(saveData.dialogueLog);
 
             dialogueRunner.StartDialogue(saveData.currentNode);
+            menuPanel.SetActive(false);
         }
         Debug.Log("Loading game slot: " + slotNumber);
-        menuPanel.SetActive(false);
     }
 
     string GetSaveFilePath(int slotNumber)
@@ -209,5 +221,22 @@ public class Save_Functionality : MonoBehaviour
         }
 
         return Path.Combine(directoryPath, $"save_{slotNumber}.json");
+    }
+    public Sprite GetBackgroundByName(string imageName)
+    {
+        return SearchArray(backgroundSprites, imageName);
+    }
+
+    private T SearchArray<T>(T[] array, string name) where T : UnityEngine.Object
+    {
+        foreach (T element in array)
+        {
+            if (element.name == name)
+            {
+                return element;
+            }
+        }
+        Debug.LogError($"Element with name '{name}' not found in array!");
+        return null;
     }
 }
