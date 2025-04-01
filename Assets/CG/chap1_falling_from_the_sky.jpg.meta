@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      chap1_falling_from_the_sky_0: 8451784817861510027
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
