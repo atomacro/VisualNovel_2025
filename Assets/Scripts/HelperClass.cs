@@ -6,7 +6,6 @@ namespace VisualNovel_2025
 {
     public class HelperClass
     {
-
         public GameObject GetGameObjectFromAnotherScene(String name, Scene scene)
         {
             foreach (GameObject obj in scene.GetRootGameObjects())

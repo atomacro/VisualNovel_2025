@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        dialogueRunner.AddCommandHandler<string>("setbackgroundtrue", (name) => this.pagination.SetBackgroundValueTrue(name));
+        dialogueRunner.AddCommandHandler<string>("setbackgroundtrue", (name) => pagination.SetBackgroundValueTrue(name));
     }
 }
 // private void Awake()
