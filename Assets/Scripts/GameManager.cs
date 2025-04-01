@@ -1,10 +1,8 @@
 using UnityEngine;
-using Yarn;
 using Yarn.Unity;
 using System.Collections.Generic;
-using TMPro;
-using System;
-using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
+using VisualNovel_2025;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,6 +17,8 @@ public class GameManager : MonoBehaviour
     private OptionsListView optionsListView => optionsListViewObject.gameObject.GetComponent<OptionsListView>();
     private DialogueRunner dialogueRunner => dialogueRunnerObject.gameObject.GetComponent<DialogueRunner>();
     private CanvasGroup optionsListViewCanvavGroup => optionsListViewObject.gameObject.GetComponent<CanvasGroup>();
+
+    private Pagination pagination;
 
     private bool isLogged = false;
 
@@ -50,5 +50,14 @@ public class GameManager : MonoBehaviour
     {
         lineView.typewriterEffectSpeed = PlayerPrefs.GetFloat("TextSpeed", 50);
         canvasFader.FadeIn(3f);
+        HelperClass helper = new HelperClass();
+        Scene Utility = UnityEngine.SceneManagement.SceneManager.GetSceneByName("Utilities");
+        GameObject gallery = helper.GetGameObjectFromAnotherScene("Gallery", Utility);
+        GameObject pagination = helper.GetChildGameObject("Pagination", gallery);
+        this.pagination = pagination.GetComponent<Pagination>(); 
+    }
+
+    private void Awake(){
+        dialogueRunner.AddCommandHandler<string>("setbackgroundtrue", (name) => this.pagination.SetBackgroundValueTrue(name));
     }
 }
