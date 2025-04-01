@@ -70,7 +70,7 @@ I look around.
 Luna: "..."
 
 <<changefade SceneManager Cliffside_0 1.0>>
-
+<<setbackgroundtrue "Cliffside_0">>
 This might be it.
 
 I can feel it. #choice
