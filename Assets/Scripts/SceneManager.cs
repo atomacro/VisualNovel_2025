@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using VisualNovel_2025;
 using UnityEngine.SceneManagement;
 using System.Linq;
-using UnityEditor.Playables;
 public class SceneManager : MonoBehaviour
 {
     public VariableStorageBehaviour yarnVariableStorage;

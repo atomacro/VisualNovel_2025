@@ -8,10 +8,10 @@ public class MainMenuAudio : MonoBehaviour
     [SerializeField] private AudioClip audioClip;
     private HelperClass helper = new HelperClass();
     private Scene Utilities => UnityEngine.SceneManagement.SceneManager.GetSceneByName("Utilities");
-    public void Start(){
-
+    public void Awake(){
         AudioSource audioSource = helper.GetGameObjectFromAnotherScene("UISounds", Utilities).GetComponent<AudioSource>();
         audioSource.clip = audioClip;
+        audioSource.loop = true;
         audioSource.Play();
     }
 }
