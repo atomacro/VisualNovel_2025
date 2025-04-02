@@ -20,7 +20,7 @@ title: Scene3
 
 // <<fadeaudio SceneManager BackgroundMusic 3 false>>
 
-// BG: Town Scenery
+// BGScenery: Town 
 
 Sol: “Do you have any hobbies?”
 
@@ -101,7 +101,7 @@ Sol: “What are you talking about? Come on, I still have change from earlier!�
 <<hidecharacterfade SceneManager Character_1 0.5>>
 <<hidecharacterfade SceneManager Character_2 0.5>>
 <<changefade SceneManager Black 1>>
-// BG: Mall
+
 <<wait 1>>
 <<changefade SceneManager Mall_GroundFloor_0 1>>
 <<showcharacterfade SceneManager Character_1 0.5>>
@@ -456,6 +456,8 @@ Actually, he’s probably fixated on the idea of a pet store too, now that he re
 
 Sol: "Well, let’s go!"
 
+<<fadeaudio SceneManager BackgroundMusic 2.5 false>>
+
 <<hidecharacterfade SceneManager Character_1 0.5>>
 <<hidecharacterfade SceneManager Character_2 0.5>>
 <<changefade SceneManager Black 1>>
@@ -476,6 +478,9 @@ title: Scene5
 <<movecharacter SceneManager Character_2 -192 -104 -0.5 0.5>>
 <<showcharacterfade SceneManager Character_2 0.5>>
 <<setNextNode Skip "Scene6">>
+
+<<changeaudio SceneManager BackgroundMusic LOOP_take_it_easy>>
+<<fadeaudio SceneManager BackgroundMusic 2.5 true>>
 
 While we were going down the floor, I… 
 
@@ -539,6 +544,7 @@ Luna: "Isn’t this pet store unusually big for a mall this small?"
 Sol: "Hey, at least they’re being taken care of."
 
 <<changecharacter SceneManager Character_1 luna_neutral_0>>
+<<fadeaudio SceneManager BackgroundMusic 0 false>>
 
 …
 
