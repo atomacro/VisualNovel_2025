@@ -5,7 +5,6 @@
 <<set $chapterNumber to "3">>
 <<set $chapterTitle to "Aurora">>
 
-// BG: Town
 <<changefade SceneManager Playground_Sunset_0 1>>
 <<wait 1>>
 <<changecharacter SceneManager Character_1 luna_surprised_0>>
@@ -49,6 +48,9 @@ She still knows me?
 
 <<changecharacter SceneManager Character_3 aurora_happy_0>>
 
+
+<<changeaudio SceneManager BackgroundMusic Aurora>>
+<<fadeaudio SceneManager BackgroundMusic 3 true>>
 Aurora: "Oh my God! It IS you!"
 
 She runs in my direction. I’m frozen in place.
@@ -355,6 +357,7 @@ Luna: "What are you plotting?"
 
 <<changecharacter SceneManager Character_3 aurora_lookaway_0>>
 
+<<fadeaudio SceneManager BackgroundMusic 3 false>>
 Aurora: "You see…"
 
 <<changecharacter SceneManager Character_3 aurora_mock_0>>
@@ -542,6 +545,8 @@ Sol: "It doesn’t feel lonely in her company."
 Luna: "Didn’t you say she gets annoying?"
 
 <<changecharacter SceneManager Character_2 sol_relaxed_0>>
+<<changeaudio SceneManager BackgroundMusic a_place_to_rest_ones_wings>>
+<<fadeaudio SceneManager BackgroundMusic 3 true>>
 
 Sol: "She does."
 Sol: "The way she treated me was the same way I did to you when you first arrived."
@@ -650,7 +655,7 @@ I said nothing and just looked down at the ground smiling.
 <<showcharacterfade SceneManager Character_2 1>>
 
 Sol: "We should get going."
-
+<<fadeaudio SceneManager BackgroundMusic 3 false>>
 Sol stands up.
 
 Sol: "Wanna come over?"
