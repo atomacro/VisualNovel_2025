@@ -185,13 +185,20 @@ title: Scene4
 <<declare $scene4PlayerChoice = "" >>
 <<setNextNode Skip "Scene5">>
 <<changefade SceneManager Mall_GadgetStore_0 0.5>>
+<<wait 1>>
+<<changecharacter SceneManager Character_1 luna_lookaway_0>>
+<<movecharacter SceneManager Character_1 164 -97 0.5 0.5>>
+<<showcharacterfade SceneManager Character_1 0.5>>
 
-
-// BG: Gadget Store or Mall
+<<changecharacter SceneManager Character_2 sol_happy_0>>
+<<movecharacter SceneManager Character_2 -192 -104 -0.5 0.5>>
+<<showcharacterfade SceneManager Character_2 0.5>>
 	
 Sol: “We’re here!”
 
 It was right in front of the escalator going up.
+
+<<changecharacter SceneManager Character_1 luna_relaxed_0>>
 
 Luna: “Hey… are you sure you aren’t going to break something?”
 
@@ -200,11 +207,21 @@ Sol: “It’s why my mom trusts me with fragile things.”
 
 Luna: “...I suppose I can’t deny that. You didn’t trip when you returned our cups.”
 
+<<changecharacter SceneManager Character_2 sol_sad_0>>
+
 Sol: “That’s the bare minimum…”
+
+<<changecharacter SceneManager Character_1 luna_lookaway_0>>
+<<changecharacter SceneManager Character_2 sol_lookaway_0>>
 
 We started looking for a good phone to use.
 
+<<changecharacter SceneManager Character_1 luna_relaxed_0>>
+<<changecharacter SceneManager Character_2 sol_relaxed_0>>
+
 Luna: “What about this one?”
+
+<<changecharacter SceneManager Character_2 sol_happy_0>>
 
 Sol: “Open it, open it!”
 
@@ -216,6 +233,8 @@ We tried the one where you cross roads with a little character hopping.
 
 Sol: “This game! I like this game, I play it all the time.”
 Sol: “Whoever gets the highest points wins.”
+
+<<changecharacter SceneManager Character_1 luna_smiling_0>>
 
 Luna: “You sure about that?”
 
@@ -257,40 +276,65 @@ Sol: “Alright, get the other phone next to this!”
 We started playing for a short time.
 
 Honestly, I missed this game. It’s been years since I last played this.
-	
+
+<<changecharacter SceneManager Character_1 luna_crying_0>>
+<<changecharacter SceneManager Character_2 sol_crying_0>>
+
 Sol & Luna: “Nooooooo…”
  
 We somehow lost at the same time.
 
 Hm?
 
+<<changecharacter SceneManager Character_1 luna_surprised_0>>
+
 Luna: “Did… Did we get the same score?”
+
+<<changecharacter SceneManager Character_2 sol_happy_0>>
 
 Sol: “Oh, we did!”
 
+<<changecharacter SceneManager Character_1 luna_happy_0>>
+
 Luna: “I guess being competitive didn’t really matter.”
 
-Sol: “Woah, were you trying to be better than me?”
+<<changecharacter SceneManager Character_2 sol_smiling_0>>
 
+Sol: “Woah, were you trying to be better than me?”
 Sol: “I’ll have you know, I got high scores when I played this game.”
+
+<<changecharacter SceneManager Character_1 luna_relaxed_0>>
 
 Luna: “We got a tie.”
 
-Sol: “Then that means we’re the same!”
+<<changecharacter SceneManager Character_2 sol_happy_0>>
 
-“Hey, we should check the phones’ galleries!”
+Sol: “Then that means we’re the same!”
+Sol: “Hey, we should check the phones’ galleries!”
 
 I just looked at him.
 
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
+
 Luna: “Do you like peeping at people?”
+
+<<changecharacter SceneManager Character_2 sol_tense_0>>
 
 Sol recoils from me.
 
+<<changecharacter SceneManager Character_2 sol_angry_0>>
+
 Sol: “You’re weird!!”
+
+<<changecharacter SceneManager Character_2 sol_relaxed_0>>
 
 Store Clerk: “Quiet down please.”
 
+<<changecharacter SceneManager Character_1 luna_pissed_0>>
+
 Luna: “Hush! You’re too loud!”
+
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
 
 Sol: "Sorry… It won’t happen again…”
 
@@ -298,35 +342,55 @@ He says as he slowly opens the camera app.
 
 His finger’s going towards the switch camera icon.
 
+<<changecharacter SceneManager Character_1 luna_pissed_0>>
+
 Luna: “...Oh no, you don’t.”
 
 I held onto his wrist.
 
 Sol: “Ow, ow, ow! Pleaaase, just this once?”
 
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
+
 Store Clerk: “If you’re staying loud, we’re kicking you out.”
+
+<<changecharacter SceneManager Character_2 sol_crying_0>>
 
 Sol: “But…!”
 
 Sigh.
 
+<<changecharacter SceneManager Character_1 luna_relaxed_0>>
+
 Luna: “Fine. Let’s do it.”
+
+<<changecharacter SceneManager Character_2 sol_happy_0>>
 
 Sol: “Yes!”
 
 He raises the phone’s camera up, but…
 
+<<changecharacter SceneManager Character_2 sol_lookaway_0>>
+
 Sol: “...My hands are so small, I can’t hold it still…”
 
 I take the left end of the phone.
 
+<<changecharacter SceneManager Character_2 sol_smiling_0>>
+
 Luna: "Better?"
 
+<<changecharacter SceneManager Character_2 sol_happy_0>>
+
 Sol: "Smile!"
+
+<<changecharacter SceneManager Character_1 luna_surprised_0>>
 
 Luna: "Hey, wai-"
 
 Click!
+
+<<changecharacter SceneManager Character_1 luna_pissed_0>>
 
 I looked at him.
 
@@ -338,9 +402,11 @@ Sol:"Let’s view the picture!"
 
 Sol opens the gallery
 
+<<changecharacter SceneManager Character_1 luna_relaxed_0>>
+
 Oh…
 
-// CG: The two of them holding the camera in both ends
+<<changefade SceneManager chap2_selfie_0 1.0>>
 
 That’s… not bad…
 
@@ -350,9 +416,13 @@ Luna: "Uh… Let’s view the other pics…!"
 
 Sol: "Aww, you’re blushing! Is that really you, Luna?"
 
+<<changecharacter SceneManager Character_1 luna_pissed_0>>
+
 Luna: "Just shut up, will you?"
 
-// CG ends → BG: Gadget Store or Mall
+<<changefade SceneManager Mall_GadgetStore_0 0.5>>
+
+<<changecharacter SceneManager Character_1 luna_relaxed_0>>
 
 Sol: "Oh, these people are so bad at taking pictures."
 
@@ -382,17 +452,30 @@ We went back near the entrance. Why didn’t he think of this earlier?
 
 Actually, he’s probably fixated on the idea of a pet store too, now that he remembered where it is.
 
+<<changecharacter SceneManager Character_2 sol_happy_0>>
+
 Sol: "Well, let’s go!"
 
+<<hidecharacterfade SceneManager Character_1 0.5>>
+<<hidecharacterfade SceneManager Character_2 0.5>>
+<<changefade SceneManager Black 1>>
 <<jump Scene5>>
 
 ===
 
 title: Scene5
 ---
-<<setNextNode Skip "Scene6">>
 
-// BG: Mall
+<<changefade SceneManager Mall_GroundFloor_0 1>>
+<<wait 1>>
+<<changecharacter SceneManager Character_1 luna_relaxed_0>>
+<<movecharacter SceneManager Character_1 164 -97 0.5 0.5>>
+<<showcharacterfade SceneManager Character_1 0.5>>
+
+<<changecharacter SceneManager Character_2 sol_neutral_0>>
+<<movecharacter SceneManager Character_2 -192 -104 -0.5 0.5>>
+<<showcharacterfade SceneManager Character_2 0.5>>
+<<setNextNode Skip "Scene6">>
 
 While we were going down the floor, I… 
 
@@ -402,39 +485,60 @@ Sol: "Hmm?"
 
 Luna: "I remember having a pet fish."
 
+<<changecharacter SceneManager Character_2 sol_relaxed_0>>
+
 Sol: "Oh? Is it a betta?"
 
 Luna: "Uh… I guess? It’s those pretty fishes with big tails. Are they called bettas? Mine was orange-ish."
 Luna: "Wait, how did you know?"
+
+<<changecharacter SceneManager Character_2 sol_happy_0>>
 
 Sol: "Because I actually have one at home! Its name is Mond. Mine’s blue!"
 Sol: "They’re easy to take care of. Mine’s very beautiful!"
 
 Luna: "Oh… They are, maybe…"
 
+<<changecharacter SceneManager Character_1 luna_lookaway_0>>
+
 The pet store was still cleaning up inside, so we weren’t allowed in, but some of the pets were visible outside.
 
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
+
 Luna: "A spider…"
+
+<<changecharacter SceneManager Character_2 sol_smiling_0>>
 
 Sol: "Cute, isn’t it?"
 
 Luna: "I mean, yeah it’s cute."
 Luna: "It’s cool that it’s constantly cautious about its home."
 
+<<changecharacter SceneManager Character_2 sol_smiling_0>>
+
 Sol: "That’s pretty normal. It’s their territory after all!"
 Sol: "Oh! Is this pet store for exotic pets or something?"
 Sol: "Nevermind, there’s a dog down there. I didn’t see."
 Sol: "I love dogs too! Listen, it’s making little noises!"
 
+<<changecharacter SceneManager Character_1 luna_relaxed_0>>
+
 Luna: "Do we actually just have the same interests?"
 
+<<changecharacter SceneManager Character_2 sol_relaxed_0>>
+
 Sol: "Hey, who wouldn’t love animals?"
+
+<<changecharacter SceneManager Character_2 sol_smiling_0>>
+
 Sol: "There are parrots inside too! Do you see them?"
 
 Luna: "There are cats and hamsters too."
 Luna: "Isn’t this pet store unusually big for a mall this small?"
 
 Sol: "Hey, at least they’re being taken care of."
+
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
 
 …
 
@@ -446,6 +550,8 @@ Something’s wrong.
 
 Sol: "Look! There’s a…"
 
+<<changecharacter SceneManager Character_2 sol_relaxed_0>>
+
 Sol paused while pointing at one of the fishes.
 
 There’s one that seemed familiar. A little too familiar.
@@ -455,6 +561,8 @@ A faint, orange-colored fish.
 Sol: "A… betta…?"
 Sol: "…Luna?"
 
+<<changecharacter SceneManager Character_2 sol_sad_0>>
+
 I’m… I don’t know how to…
 
 This looks like my betta.
@@ -463,7 +571,11 @@ Sonne. In the exact shape I last saw it.
 
 All pale, tattered, and having no will to swim. It was close to its death because of neglect. It was barely even moving at the bottom of the tank.
 
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
+
 I still feel the same sense of guilt whenever I try to remember it. But when I see it right in front of me…
+
+<<changecharacter SceneManager Character_2 sol_relaxed_0>>
 
 Sol: "Hey, Luna?"
 
@@ -490,6 +602,8 @@ People always think this fish is cheap and easy to take care of, so it probably 
 
 No one’s going to buy any of them in such a sorry state.
 
+<<changecharacter SceneManager Character_2 sol_neutral_0>>
+
 Sol: "What… No, maybe I shouldn’t ask."
 Sol: "…"
 Sol: "Maybe we should get out of here."
@@ -500,6 +614,8 @@ Sol: "Do you want to take a breather outside?"
 Sol: "We can stay by the playground. It’s not so far from here."
 
 Luna: "It’s getting late. Aren’t your parents going to look for you?"
+
+<<changecharacter SceneManager Character_2 sol_smiling_0>>
 
 Sol: "They trust me! I’m never running away from them."
 Sol: "Besides, I’ve gone home way later than this before. It’s still early. We have time!"
@@ -512,9 +628,13 @@ Sol: "Besides, shouldn’t you trust your parents too?"
 
 Luna: "…I guess. They raised me after all."
 
+<<changecharacter SceneManager Character_2 sol_happy_0>>
+
 Sol: "Let’s start walking now. To the playground!"
 
 Sol started sprinting outside the mall. He’s pretty energetic.
+
+<<changecharacter SceneManager Character_1 luna_lookaway_0>>
 
 I looked back at the pet store and felt sad. Do I feel sad for the creatures?
 
@@ -528,6 +648,8 @@ I should get going…
 
 A person went past me, walking towards the store.
 
+<<changecharacter SceneManager Character_1 luna_lookaway_0>>
+
 I looked back. Again.
 
 I caught a glimpse of them looking at the creatures from outside.
@@ -538,19 +660,36 @@ Sol: "Hey, what are you looking at?"
 
 I heard Sol approaching from behind.
 
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
+
 Luna: "…Nothing. Let’s go."
 
+<<hidecharacterfade SceneManager Character_1 0.5>>
+<<hidecharacterfade SceneManager Character_2 0.5>>
+<<changefade SceneManager Black 1>>
 
-// BG: Playground
+<<changefade SceneManager Mall_GroundFloor_0 1>>
+<<wait 1>>
+<<changecharacter SceneManager Character_1 luna_relaxed_0>>
+<<movecharacter SceneManager Character_1 164 -97 0.5 0.5>>
+<<showcharacterfade SceneManager Character_1 0.5>>
+
+<<changecharacter SceneManager Character_2 sol_neutral_0>>
+<<movecharacter SceneManager Character_2 -192 -104 -0.5 0.5>>
+<<showcharacterfade SceneManager Character_2 0.5>>
 
 Sol: "Hm?"
 
 Luna: "Are you... I mean... Earlier..."
 
+<<changecharacter SceneManager Character_2 sol_smiling_0>>
+
 Sol: "I'm fine."
 Sol: "I think it's to be expected that pet stores are going to be like that."
 
 Luna: "How so?"
+
+<<changecharacter SceneManager Character_2 sol_neutral_0>>
 
 Sol: "They're there for money."
 Sol: "They're just going to be sold anyway."
@@ -561,6 +700,8 @@ I remember going to one with someone. All the pets seemed in a bad condition.
 
 Sol: "Imagine if some parent buys their kid a betta, only for it to die the very same day."
 Sol: "They’ll probably just blame it on the kid for not taking care of it."
+
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
 
 Luna: "...It does seem plausible."
 Luna: "But why so specific? Do you know someone who experienced that?"
@@ -574,9 +715,23 @@ Luna: "Where are we going?"
 
 Sol: "You'll see."
 
-// BG: Playground
+<<hidecharacterfade SceneManager Character_1 0.5>>
+<<hidecharacterfade SceneManager Character_2 0.5>>
+<<changefade SceneManager Black 1>>
+
+<<changefade SceneManager Playground_Sunset_0 1>>
+<<wait 1>>
+<<changecharacter SceneManager Character_1 luna_relaxed_0>>
+<<movecharacter SceneManager Character_1 164 -97 0.5 0.5>>
+<<showcharacterfade SceneManager Character_1 0.5>>
+
+<<changecharacter SceneManager Character_2 sol_smiling_0>>
+<<movecharacter SceneManager Character_2 -192 -104 -0.5 0.5>>
+<<showcharacterfade SceneManager Character_2 0.5>>
 
 Luna: "...A playground?"
+
+<<changecharacter SceneManager Character_2 sol_happy_0>>
 
 Sol: "Oh, come on. We're still kids!"
 
@@ -584,30 +739,47 @@ There were other... kids playing, but I’d rather not interact with them.
 I see them the same way I used to. Faceless.
 Everyone I don’t know is faceless.
 
+<<changecharacter SceneManager Character_2 sol_lookaway_0>>
+
 Sol: "..."
 
 Hm?
 
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
+
 Luna: "What's the matter? You cold?"
+
+<<changecharacter SceneManager Character_2 sol_sad_0>>
 
 Sol: "No, it's just that... I never actually liked too much company."
 
 Luna: "You?"
+
+<<changecharacter SceneManager Character_2 sol_neutral_0>>
 
 Sol: "I know, I know. It's unbelievable."
 Sol: "I've talked to other people but only made one friend!"
 
 Luna: "Who, me?"
 
+<<changecharacter SceneManager Character_2 sol_happy_0>>
+
 Sol: "No. You're the second! Actually, you might know who she is."
 
 Luna: "I don't have friends...?"
 
+<<changecharacter SceneManager Character_1 luna_relaxed_0>>
+
 When I looked around, I saw a familiar girl playing with the others.
 A girl with shoulder-length brown hair and a pretty face.
+
+<<changecharacter SceneManager Character_1 luna_neutral_0>>
+
 My heart sank.
 I suddenly felt cold.
 I sat down on the nearest bench to catch my breath.
+
+<<changecharacter SceneManager Character_2 sol_relaxed_0>>
 
 Sol: "Wha- hey! Are you alright?!"
 
@@ -617,6 +789,8 @@ Luna: "Can I ask something?"
 Luna: "Do you know who that is?"
 
 I pointed at the girl.
+
+<<changecharacter SceneManager Character_2 sol_happy_0>>
 
 Sol: "That's her!"
 
