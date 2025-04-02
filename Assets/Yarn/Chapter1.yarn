@@ -48,6 +48,11 @@ title: Scene1
 <<declare $chapterNumber to "1">>
 <<declare $chapterTitle to "Casus">>
 <<setNextNode Skip "Scene2">>
+
+<<hidecharacter SceneManager Character_1>>
+<<hidecharacter SceneManager Character_2>>
+<<hidecharacter SceneManager Character_3>>
+
 <<movecharacter SceneManager Character_1 0 0>>
 <<movecharacter SceneManager Character_2 0 0>>
 <<movecharacter SceneManager Character_3 0 0>>
@@ -344,7 +349,7 @@ Sol: “Come on, I know a place where we can talk.”
 <<hidecharacterfade SceneManager Character_1 0.5>>
 <<hidecharacterfade SceneManager Character_2 0.5>>
 <<changefade SceneManager Cafe_Exterior_Morning_0 1>>
-<<setbackgroundtrue Cafe_Exterior_0>>
+<<setbackgroundtrue Cafe_Exterior_Morning_0>>
 
 
 <<wait 1.5>>
@@ -603,6 +608,7 @@ Sol: “Wanna take a walk?”
 <<hidecharacterfade SceneManager Character_1 0.5>>
 <<hidecharacterfade SceneManager Character_2 0.5>>
 <<changefade SceneManager Black 1>>
+
 <<jump Scene3>>
 
 ===
